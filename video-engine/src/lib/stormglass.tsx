@@ -14,12 +14,12 @@ import {MONO, monoW} from './prospect';
  * Oxblood is the seal alone. Every faced character here takes `cues` (the beatPose pattern).
  */
 export const SG = {
-  plum: '#2E2440', plumL: '#46395E', mauve: '#5B5874', mauveL: '#8A84A6', lilac: '#B7AECB',
-  apricot: '#F2A65A', apricotL: '#FFD29A', sedge: '#5E6B34', sedgeL: '#8A9A4C', sedgeD: '#3E4824',
-  taiga: '#1D2A22', taigaL: '#2F4234', fireweed: '#C44C82', fireweedL: '#E27FAE', peat: '#3E3226',
-  glass: '#CFE4E0', glassD: '#8FB5B0', glassL: '#F0FAF8', crystal: '#F6F1E2', brass: '#B98A3A', brassL: '#E9C46A', brassD: '#7A5820',
+  plum: '#2F3A3A', plumL: '#46524F', mauve: '#55606A', mauveL: '#7C8790', lilac: '#AEB8BC',
+  apricot: '#F2A65A', apricotL: '#FFD29A', sedge: '#6B6A3A', khaki: '#6B6A3A', sedgeL: '#8A9A4C', sedgeD: '#3E4824',
+  taiga: '#1D2A22', taigaL: '#2F4234', fireweed: '#A65A7E', fireweedL: '#C98AA6', peat: '#3E3226',
+  glass: '#DCD6E6', glassD: '#A79FB8', glassL: '#F4F1F8', lens: '#3E3654', blush: '#E07A5F', crystal: '#F6F1E2', brass: '#B98A3A', brassL: '#E9C46A', brassD: '#7A5820',
   lemon: '#FFE45C', lemonL: '#FFF6B8', lemonD: '#D9B20F', oxblood: '#7E2630', oxbloodL: '#A8424E', oxbloodD: '#4E1219',
-  ink: '#1A1424', paper: '#EFE6D2', paperD: '#D3C6A8', wood: '#B27A45', woodL: '#D9A36A', woodD: '#7A4E26', sepia: '#B49A72',
+  ink: '#1A1424', inkL: '#3A2E4A', paper: '#EFE6D2', paperD: '#D3C6A8', wood: '#E3C99A', woodL: '#F2E2BF', woodD: '#A8885A', sepia: '#B49A72',
 };
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
@@ -79,40 +79,43 @@ const Fern: React.FC<{x: number; y: number; len: number; g: number; ang: number;
 };
 
 /**
- * StormGlass. Origin (x, y) is the base's ground line, centre. At scale 1 it stands about 600 tall, 240 wide.
- *  grow 0..1     crystals inside branch up
- *  charge 0..1   lemon inner light (a bolt just struck)
- *  seal          'plain' | '2019' | 'test' the wax stamp; sealGlow 0..1, bulge 0..1 (wax bead weeps)
- *  lift 0..1     the cap lifts and tilts (test weather outside)
- *  taps 0..1     the six brass taps open one after another; tapFlow lemon trickles climb
- *  blush 0..1    ember blush from the base up
- *  ribbons 0..2  rosettes pinned on the stand
- *  look -1..1    pupils and lean
+ * StormGlass. Origin (x, y) is the bracket foot's ground line, centre. At scale 1 it stands about 660 tall, 260 wide.
+ * Silhouette (Gate 0D 2026-11-27): a FitzRoy storm glass, a TEARDROP flask (wide bulb low, drawn neck high) sealed with
+ * oxblood wax over the neck tip, held by two brass straps on a brass wall-bracket backplate with a finial, so it reads as
+ * a barometer-family instrument, never SampleTube's stoppered cylinder or a lab jar. The face sits in a clear lens in the
+ * bulb; crystals grow from the bottom only and never cross the face.
+ *  grow 0..1     crystals branch up from the bottom
+ *  charge 0..1   lemon inner light for a few frames after a bolt (lightning only)
+ *  seal          'plain' | '2019' | 'test'; sealGlow 0..1, bulge 0..1 (wax weeps)
+ *  lift 0..1     the collar and seal lift off the neck (weather outside)
+ *  taps 0..1     six brass taps on the foot open in turn (brass glint, never lemon)
+ *  blush 0..1    a rose-ember flush from the bottom (the hero's emotion, its own role)
+ *  ribbons 0..2  brass-and-parchment rosettes on the bracket
  */
 export const StormGlass: React.FC<{
   f: number; x: number; y: number; s?: number; emotion?: GlassEmotion; grow?: number; charge?: number; seal?: 'plain' | '2019' | 'test';
-  sealGlow?: number; bulge?: number; lift?: number; taps?: number; blush?: number; ribbons?: number; look?: number; cues?: number[]; seed?: number;
+  sealGlow?: number; bulge?: number; slump?: number; qtag?: number; lift?: number; taps?: number; blush?: number; ribbons?: number; look?: number; cues?: number[]; seed?: number;
   label?: boolean; squash?: number; facing?: 1 | -1;
-}> = ({f, x, y, s = 1, emotion = 'calm', grow = 1, charge = 0, seal = 'plain', sealGlow = 0, bulge = 0, lift = 0, taps = 0, blush = 0, ribbons = 0, look = 0, cues, seed = 5, label = true, squash = 0, facing = 1}) => {
+}> = ({f, x, y, s = 1, emotion = 'calm', grow = 1, charge = 0, seal = 'plain', sealGlow = 0, bulge = 0, slump = 0, qtag = 0, lift = 0, taps = 0, blush = 0, ribbons = 0, look = 0, cues, seed = 5, label = true, squash = 0, facing = 1}) => {
   const id = uid(`sg${seed}`);
-  const bp = beatPose(f, seed, cues, 520);
-  const breath = 1 + 0.018 * Math.sin(f / 13 + seed);
+  const bp = beatPose(f, seed, cues, 560);
+  const breath = 1 + 0.016 * Math.sin(f / 13 + seed);
   const blink = ((f + seed * 23) % 97) < 4;
   const tb = tones(SG.brass);
   const sq = clamp01(squash);
   const sway = 3 * Math.sin(f / 29 + seed) + bp.tilt * 0.4;
-  const lean = look * 3 + bp.skew * 0.6;
-  // crystals
+  const lean = look * 2.5 + bp.skew * 0.6;
+  const FLASK = 'M -16 -545 C -16 -478 -28 -432 -66 -372 C -110 -306 -120 -214 -102 -160 C -84 -108 84 -108 102 -160 C 120 -214 110 -306 66 -372 C 28 -432 16 -478 16 -545 Z';
   const ferns = [] as React.ReactNode[];
   const cCol = charge > 0.05 ? SG.lemonL : SG.crystal;
-  for (let i = 0; i < 7; i++) {
-    const fx = -62 + i * 21;
-    const len = 150 + 140 * h01(seed + 9, i);
-    const ang = (i - 3) * 9 + (h01(seed, i) - 0.5) * 10;
-    ferns.push(<Fern key={i} x={fx} y={-110} len={len} g={grow * (0.75 + 0.25 * h01(seed + 5, i))} ang={ang} seed={seed + i} color={cCol} sway={sway * (0.5 + h01(seed, i + 3))} />);
+  for (let i = 0; i < 9; i++) {
+    const fx = -72 + i * 18;
+    const len = 40 + 36 * h01(seed + 9, i);
+    const ang = (i - 4) * 13 + (h01(seed, i) - 0.5) * 8;
+    ferns.push(<Fern key={i} x={fx} y={-120} len={len} g={grow * (0.75 + 0.25 * h01(seed + 5, i))} ang={ang} seed={seed + i} color={cCol} sway={sway * (0.5 + h01(seed, i + 3))} />);
   }
-  const eyeY = -350, mouthY = -292;
-  const pup = look * 7;
+  const eyeY = -282, mouthY = -222;
+  const pup = look * 8;
   const brow: Record<GlassEmotion, [number, number]> = {
     calm: [0, 0], curious: [-6, 4], startled: [-14, -14], surprised: [-12, -12], worried: [8, -10], proud: [-4, -4], sheepish: [6, -6], determined: [10, 10], uneasy: [6, -4],
   };
@@ -128,6 +131,7 @@ export const StormGlass: React.FC<{
     determined: `M -20 ${mouthY + 2} L 20 ${mouthY + 2}`,
     uneasy: `M -20 ${mouthY + 4} q 10 -6 20 0 q 10 6 20 0`,
   };
+  const open = emotion === 'startled' || emotion === 'surprised';
   const capLift = clamp01(lift);
   const tapN = 6;
   const sealText = seal === '2019' ? '2019' : seal === 'test' ? 'TEST' : '';
@@ -137,91 +141,106 @@ export const StormGlass: React.FC<{
       <defs>
         <FormGradient id={`${id}b`} t={tb} />
         <linearGradient id={`${id}g`} x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stopColor={SG.glassL} stopOpacity={0.85} />
-          <stop offset="0.35" stopColor={SG.glass} stopOpacity={0.55} />
-          <stop offset="1" stopColor={SG.glassD} stopOpacity={0.75} />
+          <stop offset="0" stopColor={SG.glassL} stopOpacity={0.9} />
+          <stop offset="0.4" stopColor={SG.glass} stopOpacity={0.6} />
+          <stop offset="1" stopColor={SG.glassD} stopOpacity={0.85} />
         </linearGradient>
-        <radialGradient id={`${id}c`} cx="0.5" cy="0.75" r="0.7">
-          <stop offset="0" stopColor={SG.lemon} stopOpacity={0.9} />
+        <radialGradient id={`${id}c`} cx="0.5" cy="0.8" r="0.7">
+          <stop offset="0" stopColor={SG.lemon} stopOpacity={0.95} />
           <stop offset="1" stopColor={SG.lemon} stopOpacity={0} />
         </radialGradient>
         <linearGradient id={`${id}e`} x1="0" x2="0" y1="1" y2="0">
-          <stop offset="0" stopColor={SG.apricot} stopOpacity={0.8} />
-          <stop offset="1" stopColor={SG.apricot} stopOpacity={0} />
+          <stop offset="0" stopColor={SG.blush} stopOpacity={0.85} />
+          <stop offset="1" stopColor={SG.blush} stopOpacity={0} />
         </linearGradient>
-        <clipPath id={`${id}k`}><rect x={-96} y={-500} width={192} height={410} rx={90} /></clipPath>
+        <clipPath id={`${id}k`}><path d={FLASK} /></clipPath>
       </defs>
       <ContactShadow cx={0} cy={2} rx={150} ry={20} opacity={0.42} />
       <g transform={`scale(${1 + sq * 0.06} ${1 - sq * 0.08})`}>
-        {/* brass stand */}
-        <path d="M -120 0 L -104 -70 L 104 -70 L 120 0 Z" fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={6} strokeLinejoin="round" />
-        <rect x={-112} y={-96} width={224} height={30} rx={8} fill={tb.key} stroke={SG.ink} strokeWidth={5} />
-        <path d="M -98 -90 L 98 -90" stroke={SG.brassL} strokeWidth={3} opacity={0.8} />
-        {[-100, 100].map((rx) => <circle key={rx} cx={rx * 0.92} cy={-82} r={5} fill={tb.core} stroke={SG.ink} strokeWidth={2} />)}
-        {/* six taps */}
+        {/* the wall bracket: backplate with a finial, behind the flask */}
+        <path d="M -78 -40 L -78 -600 Q -78 -690 0 -700 Q 78 -690 78 -600 L 78 -40 Z" fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={6} />
+        <path d="M -40 -150 C -40 -300 -26 -420 -18 -560 L 18 -560 C 26 -420 40 -300 40 -150 Z" fill={SG.ink} opacity={0.35} />
+        <path d="M -96 -150 C -110 -260 -60 -340 -30 -380 L 30 -380 C 60 -340 110 -260 96 -150 Z" fill={SG.ink} opacity={0.28} />
+        <path d="M -60 -60 L -60 -600 Q -58 -668 0 -680" stroke={SG.brassL} strokeWidth={4} fill="none" opacity={0.7} />
+        <circle cx={0} cy={-722} r={18} fill={tb.key} stroke={SG.ink} strokeWidth={5} />
+        {[-0.6, 0.6].map((k) => <circle key={k} cx={k * 100} cy={-560} r={0} />)}
+        {/* foot with the six taps */}
+        <path d="M -130 0 L -116 -58 L 116 -58 L 130 0 Z" fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={6} strokeLinejoin="round" />
+        <rect x={-122} y={-82} width={244} height={28} rx={8} fill={tb.key} stroke={SG.ink} strokeWidth={5} />
         {Array.from({length: tapN}, (_, i) => {
-          const tx = -82 + i * 32.8;
-          const open = clamp01(taps * tapN - i);
+          const tx = -95 + i * 38;
+          const op = clamp01(taps * tapN - i);
           return (
-            <g key={i} transform={`translate(${tx} -36)`}>
-              <rect x={-9} y={-12} width={18} height={24} rx={4} fill={tb.base} stroke={SG.ink} strokeWidth={3} />
-              <g transform={`rotate(${open * 90})`}><rect x={-12} y={-3} width={24} height={6} rx={3} fill={SG.brassL} stroke={SG.ink} strokeWidth={2} /></g>
-              {open > 0.05 && <circle cx={0} cy={0} r={4 + 2 * Math.sin(f / 4 + i)} fill={SG.lemon} opacity={0.6 * open} />}
+            <g key={i} transform={`translate(${tx} -30)`}>
+              <rect x={-10} y={-12} width={20} height={24} rx={4} fill={tb.base} stroke={SG.ink} strokeWidth={3} />
+              <g transform={`rotate(${op * 90})`}><rect x={-13} y={-3} width={26} height={6} rx={3} fill={SG.brassL} stroke={SG.ink} strokeWidth={2} /></g>
+              {op > 0.05 && <circle cx={4} cy={-6} r={3 + 1.5 * Math.sin(f / 4 + i)} fill={SG.glassL} opacity={0.9 * op} />}
             </g>
           );
         })}
-        {label && <Lab x={0} y={-12 + 0} text="THE MODEL" size={15} fill={SG.paper} />}
-        {/* ribbons */}
-        {Array.from({length: Math.floor(clamp01(ribbons / 2) * 2 + 0.001)}, (_, i) => (
-          <g key={`r${i}`} transform={`translate(${i ? 96 : -96} -60) rotate(${(i ? 8 : -8) + 4 * Math.sin(f / 9 + i)})`}>
-            <path d="M -8 10 L -14 46 L -2 38 L 4 50 L 8 12 Z" fill={i ? SG.fireweed : SG.lemonD} stroke={SG.ink} strokeWidth={2.5} />
+        {/* rosettes: brass and parchment with an ink tail */}
+        {Array.from({length: Math.round(clamp01(ribbons / 2) * 2)}, (_, i) => (
+          <g key={`r${i}`} transform={`translate(${i ? 104 : -104} -430) rotate(${(i ? 8 : -8) + 4 * Math.sin(f / 9 + i)})`}>
+            <path d="M -8 10 L -14 50 L -2 42 L 4 54 L 8 12 Z" fill={SG.ink} stroke={SG.ink} strokeWidth={2.5} />
             {Array.from({length: 10}, (_, k) => {
               const a = (k / 10) * Math.PI * 2;
-              return <circle key={k} cx={Math.cos(a) * 14} cy={Math.sin(a) * 14} r={7} fill={i ? SG.fireweedL : SG.lemon} stroke={SG.ink} strokeWidth={2} />;
+              return <circle key={k} cx={Math.cos(a) * 15} cy={Math.sin(a) * 15} r={7.5} fill={i ? SG.paperD : SG.brassL} stroke={SG.ink} strokeWidth={2} />;
             })}
             <circle cx={0} cy={0} r={11} fill={SG.paper} stroke={SG.ink} strokeWidth={3} />
           </g>
         ))}
-        {/* glass body */}
-        <g transform={`translate(0 0) rotate(${lean} 0 -96) scale(1 ${breath})`} style={{transformOrigin: '0px -96px'}}>
-          <rect x={-100} y={-504} width={200} height={418} rx={94} fill={SG.plum} opacity={0.22} />
+        {/* the flask */}
+        <g transform={`rotate(${lean} 0 -110) translate(0 ${-110 * (1 - breath)}) scale(1 ${breath})`}>
+          <path d={FLASK} fill={SG.ink} opacity={0.18} transform="translate(8 6)" />
           <g clipPath={`url(#${id}k)`}>
+            <rect x={-130} y={-560} width={260} height={460} fill={SG.glass} opacity={0.35} />
+            <ellipse cx={0} cy={-252} rx={86} ry={66} fill={SG.lens} opacity={0.55} />
             {ferns}
-            {charge > 0.02 && <rect x={-100} y={-504} width={200} height={418} fill={`url(#${id}c)`} opacity={clamp01(charge)} />}
-            {blush > 0.02 && <rect x={-100} y={-504 + 418 * (1 - clamp01(blush))} width={200} height={418 * clamp01(blush)} fill={`url(#${id}e)`} />}
+            {charge > 0.02 && <rect x={-130} y={-560} width={260} height={460} fill={`url(#${id}c)`} opacity={clamp01(charge)} />}
+            {blush > 0.02 && <rect x={-130} y={-110 - 440 * clamp01(blush)} width={260} height={440 * clamp01(blush)} fill={`url(#${id}e)`} />}
           </g>
-          <rect x={-100} y={-504} width={200} height={418} rx={94} fill={`url(#${id}g)`} stroke={SG.ink} strokeWidth={6} />
-          <RimLight d="M 78 -440 Q 96 -300 80 -150" w={6} color={SG.apricotL} opacity={0.75} />
-          <path d="M -70 -430 Q -84 -300 -70 -170" stroke={SG.glassL} strokeWidth={10} strokeLinecap="round" opacity={0.7} />
-          <path d="M -54 -440 Q -62 -400 -56 -370" stroke="#FFFFFF" strokeWidth={5} strokeLinecap="round" opacity={0.8} />
-          {/* face, etched */}
+          <path d={FLASK} fill={`url(#${id}g)`} fillOpacity={0.55} stroke={SG.ink} strokeWidth={6} strokeLinejoin="round" />
+          <RimLight d="M 74 -360 Q 116 -280 100 -170" w={6} color={SG.apricotL} opacity={0.75} />
+          <path d="M -60 -350 Q -100 -280 -88 -186" stroke={SG.glassL} strokeWidth={9} strokeLinecap="round" opacity={0.75} fill="none" />
+          <path d="M -8 -530 L -8 -460" stroke="#FFFFFF" strokeWidth={4} strokeLinecap="round" opacity={0.7} />
+          {/* face in the lens */}
           <g transform={`translate(${look * 6} 0)`}>
-            {[-38, 38].map((ex, i) => (
+            {[-36, 36].map((ex, i) => (
               <g key={ex}>
-                <ellipse cx={ex} cy={eyeY} rx={20} ry={blink ? 2 : emotion === 'startled' || emotion === 'surprised' ? 24 : 20} fill={SG.glassL} stroke={SG.ink} strokeWidth={4} />
-                {!blink && <circle cx={ex + pup} cy={eyeY + 2} r={8} fill={SG.ink} />}
-                {!blink && <circle cx={ex + pup + 3} cy={eyeY - 2} r={2.6} fill="#FFFFFF" />}
-                <path d={`M ${ex - 20} ${eyeY - 30 + (i ? br : bl)} L ${ex + 20} ${eyeY - 30 + (i ? bl : br) * 0.4}`} stroke={SG.ink} strokeWidth={5} strokeLinecap="round" />
+                <ellipse cx={ex} cy={eyeY} rx={24} ry={blink ? 3 : open ? 28 : 24} fill="#FFFFFF" stroke={SG.ink} strokeWidth={5} />
+                {!blink && <circle cx={ex + pup} cy={eyeY + 3} r={10} fill={SG.ink} />}
+                {!blink && <circle cx={ex + pup + 3.5} cy={eyeY - 1} r={3.2} fill="#FFFFFF" />}
+                <path d={`M ${ex - 22} ${eyeY - 36 + (i ? br : bl)} L ${ex + 22} ${eyeY - 36 + (i ? bl : br) * 0.4}`} stroke={SG.ink} strokeWidth={6} strokeLinecap="round" />
               </g>
             ))}
-            <path d={mouth[emotion]} stroke={SG.ink} strokeWidth={4.5} fill={emotion === 'startled' || emotion === 'surprised' ? SG.plumL : 'none'} strokeLinecap="round" />
+            <path d={mouth[emotion]} stroke={SG.ink} strokeWidth={5} fill={open ? SG.inkL : 'none'} strokeLinecap="round" />
           </g>
-          {/* brass cap and wax seal */}
-          <g transform={`translate(0 ${-504 - capLift * 46}) rotate(${capLift * -10})`}>
-            <rect x={-74} y={-34} width={148} height={40} rx={10} fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={5} />
-            <rect x={-60} y={-46} width={120} height={16} rx={6} fill={tb.key} stroke={SG.ink} strokeWidth={4} />
-            <path d="M -66 -24 L 66 -24" stroke={SG.brassL} strokeWidth={2.5} opacity={0.8} />
-            <g transform={`translate(0 -56) scale(${1 + 0.12 * clamp01(bulge)})`}>
-              {sealGlow > 0.02 && <circle cx={0} cy={0} r={52} fill={SG.oxbloodL} opacity={0.35 * clamp01(sealGlow) * (0.8 + 0.2 * Math.sin(f / 5))} />}
+          {/* the two straps */}
+          <path d="M -36 -440 Q 0 -432 36 -440 L 36 -424 Q 0 -416 -36 -424 Z" fill={tb.key} stroke={SG.ink} strokeWidth={4} />
+          <path d="M -104 -150 Q 0 -128 104 -150 L 100 -132 Q 0 -110 -100 -132 Z" fill={tb.key} stroke={SG.ink} strokeWidth={4} />
+          {qtag > 0.02 && (
+            <g transform={`translate(26 -548) rotate(${18 * Math.sin(f / 9) * (0.4 + 0.6 * (1 - clamp01(qtag)))})`} opacity={clamp01(qtag * 2)}>
+              <path d="M 0 0 L 0 46" stroke={SG.ink} strokeWidth={3} />
+              <rect x={-24} y={46} width={48} height={58} rx={6} fill={SG.paper} stroke={SG.ink} strokeWidth={4} />
+              <circle cx={0} cy={54} r={4} fill={SG.ink} />
+              <text x={0} y={96} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={SG.ink}>?</text>
+            </g>
+          )}
+          {/* collar and wax seal over the neck tip */}
+          <g transform={`translate(0 ${-capLift * 54}) rotate(${capLift * -12} 0 -545)`}>
+            <rect x={-24} y={-562} width={48} height={22} rx={6} fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={4} />
+            <g transform={`translate(0 -594) scale(${1 + 0.14 * clamp01(bulge)})`}>
+              {sealGlow > 0.02 && <circle cx={0} cy={0} r={50} fill={SG.oxbloodL} opacity={0.35 * clamp01(sealGlow) * (0.8 + 0.2 * Math.sin(f / 5))} />}
               <path d="M -38 4 C -44 -20 -26 -38 -2 -38 C 24 -40 44 -22 40 2 C 42 22 22 34 0 32 C -22 34 -40 22 -38 4 Z" fill={SG.oxblood} stroke={SG.ink} strokeWidth={4} />
               <ellipse cx={-10} cy={-16} rx={14} ry={7} fill={SG.oxbloodL} opacity={0.7} />
               <circle cx={0} cy={0} r={24} fill="none" stroke={SG.oxbloodD} strokeWidth={3} />
-              {sealText && <text x={0} y={sealText2 ? -2 : 7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={sealText2 ? 13 : 19} fill={SG.paper}>{sealText}</text>}
+              {sealText && <text x={0} y={(sealText2 ? -2 : 7) + 5 * clamp01(slump)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={sealText2 ? 13 : 19} fill={SG.paper} transform={`skewX(${-14 * clamp01(slump)}) scale(1 ${1 - 0.28 * clamp01(slump)})`}>{sealText}</text>}
               {sealText2 && <text x={0} y={13} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={9} fill={SG.paper}>{sealText2}</text>}
               {bulge > 0.1 && <path d={`M 26 22 q 4 ${10 + 26 * clamp01(bulge)} 0 ${18 + 30 * clamp01(bulge)} q -6 -4 -2 -${18 + 30 * clamp01(bulge)}`} fill={SG.oxblood} stroke={SG.ink} strokeWidth={2.5} />}
             </g>
           </g>
         </g>
+        {label && <Lab x={0} y={-12} text="THE MODEL" size={16} fill={SG.paper} />}
       </g>
     </g>
   );
@@ -362,7 +381,7 @@ export const MapTile: React.FC<{f: number; x: number; y: number; size?: number; 
     <g transform={`translate(${x} ${y - lift}) rotate(${rot})`}>
       {r > 0.02 && <ContactShadow cx={0} cy={size * 0.3 + lift} rx={size * 0.6} ry={size * 0.08} opacity={0.35 * r} />}
       <path d={`M ${-size / 2} ${-size * 0.3} L ${size / 2} ${-size * 0.3} L ${size / 2} ${size * 0.3} L ${-size / 2} ${size * 0.3} Z`} transform="translate(0 16)" fill={SG.peat} stroke={SG.ink} strokeWidth={5} />
-      <path d={`M ${-size / 2} ${-size * 0.3} L ${size / 2} ${-size * 0.3} L ${size / 2} ${size * 0.3} L ${-size / 2} ${size * 0.3} Z`} fill={SG.sedge} stroke={SG.ink} strokeWidth={5} />
+      <path d={`M ${-size / 2} ${-size * 0.3} L ${size / 2} ${-size * 0.3} L ${size / 2} ${size * 0.3} L ${-size / 2} ${size * 0.3} Z`} fill={SG.khaki} stroke={SG.ink} strokeWidth={5} />
       {Array.from({length: 18}, (_, i) => <circle key={`n${i}`} cx={-size / 2 + 16 + h01(seed + 4, i) * (size - 32)} cy={-size * 0.3 + 12 + h01(seed + 6, i) * (size * 0.6 - 24)} r={5 + 5 * h01(seed, i)} fill={SG.sedgeL} opacity={0.7} />)}
       {Array.from({length: cells - 1}, (_, i) => <path key={`v${i}`} d={`M ${-size / 2 + cs * (i + 1)} ${-size * 0.3} L ${-size / 2 + cs * (i + 1)} ${size * 0.3}`} stroke={SG.ink} strokeWidth={1.6} opacity={0.5} />)}
       {Array.from({length: 2}, (_, i) => <path key={`h${i}`} d={`M ${-size / 2} ${-size * 0.3 + (size * 0.6 / 3) * (i + 1)} L ${size / 2} ${-size * 0.3 + (size * 0.6 / 3) * (i + 1)}`} stroke={SG.ink} strokeWidth={1.6} opacity={0.5} />)}
@@ -393,7 +412,7 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
   const [nx, ny] = pt(value, r * 0.8);
   const j = clamp01(jump);
   return (
-    <g transform={`translate(${x} ${y - j * 14 * Math.exp(-0) })`}>
+    <g transform={`translate(${x} ${y - j * 14})`}>
       <defs><FormGradient id={`${id}b`} t={tb} /></defs>
       <ContactShadow cx={0} cy={44} rx={r * 1.05} ry={16} opacity={0.4} />
       <rect x={-r - 30} y={0} width={2 * r + 60} height={44} rx={10} fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={6} />
@@ -402,7 +421,8 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
       {bk > 0.02 && <path d={`M ${b0x} ${b0y} A ${r * 0.88} ${r * 0.88} 0 0 1 ${b1x} ${b1y} L ${c1x} ${c1y} A ${r * 0.66} ${r * 0.66} 0 0 0 ${c0x} ${c0y} Z`} fill={SG.mauveL} opacity={0.75 * bk} stroke={SG.ink} strokeWidth={3} />}
       {ticks}
       <path d={`M 0 0 L ${nx} ${ny}`} stroke={SG.ink} strokeWidth={14} strokeLinecap="round" />
-      <path d={`M 0 0 L ${nx} ${ny}`} stroke={SG.oxblood} strokeWidth={7} strokeLinecap="round" />
+      <path d={`M 0 0 L ${nx} ${ny}`} stroke={SG.inkL} strokeWidth={7} strokeLinecap="round" />
+      <circle cx={nx} cy={ny} r={9} fill={SG.brassL} stroke={SG.ink} strokeWidth={3} />
       <circle cx={0} cy={0} r={22} fill={tb.key} stroke={SG.ink} strokeWidth={5} />
       <text x={0} y={-r * 0.3} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={SG.ink}>% PER °C</text>
     </g>
@@ -449,6 +469,52 @@ export const ModelRacer: React.FC<{f: number; x: number; y: number; s?: number; 
       ))}
       {[0, 1, 2].map((i) => <circle key={`d${i}`} cx={-14 + i * 14} cy={-120} r={4} fill={SG.ink} opacity={0.6} />)}
       {st > 0.3 && <path d="M 30 -190 q 6 -12 0 -22" stroke={SG.glassL} strokeWidth={4} fill="none" opacity={st} />}
+    </g>
+  );
+};
+
+/**
+ * RangeColumn (Gate 0B 2026-11-27): a projected RANGE drawn with ONE treatment from floor to ceiling, so no part of
+ * it reads more trustworthy than another. Units are multiples of TODAY (the only solid token, at the base).
+ *  lo, hi       floor and ceiling in units (Alaska 2.16 to 6.94, the world 1.76 to 2.40)
+ *  grow 0..1    racks up from the floor to the ceiling (k < lo/hi just shows the floor rising)
+ *  floorK 0..1  the floor section clicking in
+ *  ghost        a pale outline-only preview (the hook) with a question mark
+ *  today        draw the TODAY token
+ *  label        a small mono tag on the column's left at mid-height
+ */
+export const RangeColumn: React.FC<{f: number; x: number; y: number; w?: number; unit?: number; lo: number; hi: number; grow?: number; floorK?: number;
+  ghost?: boolean; today?: boolean; label?: string; seed?: number; sway?: number}> =
+({f, x, y, w = 130, unit = 56, lo, hi, grow = 1, floorK = 1, ghost = false, today = true, label, seed = 1, sway = 1}) => {
+  const id = uid('rc');
+  const g = clamp01(grow), fk = clamp01(floorK);
+  const top = lo + (hi - lo) * g;
+  const yLo = -unit * lo * fk - (1 - fk) * unit, yTop = -unit * top;
+  const sw = sway * 4 * Math.sin(f / 17 + seed) * g;
+  const bandH = Math.max(0, yLo - yTop);
+  const hatch = [] as React.ReactNode[];
+  for (let i = -20; i < 40; i++) hatch.push(<path key={i} d={`M ${-w / 2 + i * 16} ${yLo} l ${bandH * 0.6} ${-bandH}`} stroke={SG.lemon} strokeWidth={5} opacity={ghost ? 0.35 : 0.85} />);
+  const ticks = [] as React.ReactNode[];
+  for (let u = 2; u < top; u++) ticks.push(<path key={u} d={`M ${-w / 2} ${-unit * u} L ${w / 2} ${-unit * u}`} stroke={SG.lemonD} strokeWidth={2} strokeDasharray="6 6" opacity={u > lo ? 0.9 : 0.5} />);
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <ContactShadow cx={0} cy={2} rx={w * 0.7} ry={10} opacity={0.4} />
+      {today && <StrikeToken x={0} y={-unit / 2} w={w} today fill={1} />}
+      <g transform={`translate(${sw * 0.3} 0) skewX(${sw * 0.3})`}>
+        {fk > 0.02 && <path d={`M ${-w / 2} ${-unit} L ${-w / 2} ${yLo} M ${w / 2} ${-unit} L ${w / 2} ${yLo}`} stroke={SG.lemon} strokeWidth={3} strokeDasharray="8 8" opacity={0.7} />}
+        {bandH > 1 && (
+          <g>
+            <defs><clipPath id={id}><rect x={-w / 2} y={yTop} width={w} height={bandH} /></clipPath></defs>
+            <rect x={-w / 2} y={yTop} width={w} height={bandH} fill={SG.lemon} opacity={ghost ? 0.06 : 0.16} />
+            <g clipPath={`url(#${id})`}>{hatch}</g>
+            {ticks}
+            <rect x={-w / 2} y={yTop} width={w} height={bandH} fill="none" stroke={SG.ink} strokeWidth={6} />
+            <rect x={-w / 2} y={yTop} width={w} height={bandH} fill="none" stroke={SG.lemon} strokeWidth={3.5} strokeDasharray={ghost ? '10 8' : undefined} />
+          </g>
+        )}
+        {ghost && g > 0.5 && <text x={0} y={(yLo + yTop) / 2 + 26} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={80} fill={SG.lemon} stroke={SG.ink} strokeWidth={3}>?</text>}
+        {label && g > 0.2 && <Lab x={-w / 2 - monoW(label, 16) / 2 - 26} y={(yLo + yTop) / 2} text={label} size={16} />}
+      </g>
     </g>
   );
 };

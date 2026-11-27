@@ -7,6 +7,14 @@
 #
 # Always put the track's `credit` line in the Gmail draft.
 pool:
+  # ADDED 2026-11-27: every curious/wonder entry had played inside 30 days (Thinking Music 11-16, Easy Lemon 11-25, Investigations 11-19). Downloaded and verified this run.
+  - title: "Dreams Become Real"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dreams%20Become%20Real.mp3"
+    license: "CC BY 4.0"
+    credit: '"Dreams Become Real" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [wonder, curious, dreamy, hopeful]
   - title: "Lightless Dawn"
     composer: "Kevin MacLeod"
     source: "incompetech.com"
