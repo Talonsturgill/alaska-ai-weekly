@@ -350,6 +350,13 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
   makes.** A flat skin-colour silhouette read as clip art next to modelled brass. When a hand
   holds a pen, place it FROM the tip: compute the pinch point from where the line ends, never
   the reverse, or the pen points away from its own line.
+- **A hand that acts is the lib `Hand`, driven by cues, never one hand-drawn path.** A stamp, a
+  tick, a tap or a touch drawn as translate-and-squash of a single silhouette read to seat 1 on
+  11-28 as "no wrist or finger articulation and no anticipation, press, recoil or settle", and
+  Motion was the lowest axis on 33 of 39 cards that fortnight. `Hand` (lib/hand.tsx) puts its
+  origin on the work point (tool tip or index fingertip), turns at the wrist, bends at the
+  knuckles and runs the whole strike from `cues`; sync the mark to `handAction(f, cues).press`.
+  `CheckHand` takes `cues` for the same rig. `python3 scripts/hand_check.py` is the measure.
 - **A reader at a microscope has an eye at the eyepiece.** Derive the scope's position from
   the rig's face (feet minus about 400 times scale), and keep that offset when the same pair
   reappears at background scale.
