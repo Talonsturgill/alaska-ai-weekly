@@ -155,7 +155,7 @@ const Room: React.FC<{f: number; tableY?: number; lamp?: boolean; seed?: number}
   <g>
     <rect data-band="ok" x={-60} y={-60} width={1200} height={2040} fill={NB.room} />
     <rect x={-60} y={-60} width={1200} height={tableY - 200} fill={NB.roomL} opacity={0.55} />
-    {/* window onto a dark range under stars */}
+    {/* window onto the range at first light */}
     <g transform="translate(700 470)">
       <defs><linearGradient id={`win${seed}`} x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor={NB.sky} /><stop offset="1" stopColor={NB.skyL} /></linearGradient></defs>
       <rect x={0} y={0} width={300} height={260} fill={`url(#win${seed})`} stroke={INK} strokeWidth={6} />
@@ -202,9 +202,9 @@ const S1a: React.FC<SceneProps> = ({p}) => {
   const lineEnd = Math.min(Bt.x + Bt.w, nx);
   return (
     <Frame p={p} z0={1.06} z1={1.0} overlay={<>
-          <Plate x={540} text="A MACHINE · DEEP LEARNING" y={520} size={30} tone="ultra" p={win(f, 8, b(2))} />
-          <Plate x={540} text="TRACED ON SATELLITE TILES" y={594} size={30} p={win(f, b(2) + 2, b(3))} />
-          <Plate x={540} text="CIRCA 2000 · CIRCA 2020" y={668} size={30} tone="dark" p={win(f, b(3) + 4)} />
+          <Plate x={540} text="A MACHINE · DEEP LEARNING" y={530} size={30} tone="ultra" p={win(f, 8, b(2))} />
+          <Plate x={540} text="TRACED ON SATELLITE TILES" y={604} size={30} p={win(f, b(2) + 2, b(3))} />
+          <Plate x={540} text="CIRCA 2000 · CIRCA 2020" y={678} size={30} tone="dark" p={win(f, b(3) + 4)} />
         </>}>
       <SVG>
         <TableTop f={f} glow={glow} seed={1} />
@@ -236,9 +236,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
   const tiles = Array.from({length: 7}, (_, i) => i);
   return (
     <Frame p={p} warmth={0.05} cam={(ff) => ({z: lerp(1.45, 1.0, easeIO(ff, b(4), 22)), fx: 540, fy: lerp(980, 920, easeIO(ff, b(4), 22))})} overlay={<>
-          <Plate x={540} text="LANDSAT IMAGES" y={500} size={32} p={win(f, b(4) + 4, b(41))} />
-          <Plate x={540} text="CIRCA 2000" y={576} size={32} tone="dark" p={win(f, b(41) + 2, b(5))} />
-          <Plate x={540} text="2000 AND 2020" y={652} size={34} tone="ultra" p={win(f, b(5) + 2)} />
+          <Plate x={540} text="LANDSAT IMAGES" y={530} size={32} p={win(f, b(4) + 4, b(41))} />
+          <Plate x={540} text="CIRCA 2000" y={606} size={32} tone="dark" p={win(f, b(41) + 2, b(5))} />
+          <Plate x={540} text="2000 AND 2020" y={682} size={34} tone="ultra" p={win(f, b(5) + 2)} />
         </>}>
       <SVG>
         <TableTop f={f} seed={2} />
@@ -308,9 +308,9 @@ const S3: React.FC<SceneProps> = ({p}) => {
   hy = lerp(hy, 1600, away);
   return (
     <Frame p={p} z0={1.0} z1={1.05} warmth={0.05} overlay={<>
-          <Plate x={540} text="CHECKED BY HAND · PER TU GRAZ" y={520} size={30} tone="plate" p={win(f, b(6) + 4, b(7))} />
-          <Plate x={540} text="MANUAL REFINEMENT · PER THE PAPER" y={594} size={30} tone="plate" p={win(f, b(7) + 2, b(8))} />
-          <Plate x={540} text="NATURE CLIMATE CHANGE · NOVEMBER 20TH" displayLines={['NATURE CLIMATE CHANGE', 'NOVEMBER 20TH']} y={668} size={30} tone="dark" p={win(f, b(8) + 6)} />
+          <Plate x={540} text="CHECKED BY HAND · PER TU GRAZ" y={530} size={30} tone="plate" p={win(f, b(6) + 4, b(7))} />
+          <Plate x={540} text="MANUAL REFINEMENT · PER THE PAPER" y={604} size={30} tone="plate" p={win(f, b(7) + 2, b(8))} />
+          <Plate x={540} text="NATURE CLIMATE CHANGE · NOVEMBER 20TH" displayLines={['NATURE CLIMATE CHANGE', 'NOVEMBER 20TH']} y={678} size={30} tone="dark" p={win(f, b(8) + 6)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1240} seed={3} />
@@ -416,10 +416,10 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const tape = 270 * (9 / 35) * 1.0 * clamp01(lin(f, b(13), 24));
   return (
     <Frame p={p} warmth={0.05} cam={(ff) => ({z: lerp(1.4, 1.0, pull), fx: 540, fy: 900})} overlay={<>
-          <Plate x={540} text="WORLD · ICE-CONTACT LAKES" y={520} size={32} tone="plate" p={win(f, b(11) + 4, b(42) + 10)} />
-          <Plate x={540} text="WORLD · +3,567 LAKES" y={596} size={34} tone="plate" p={win(f, b(42) + 12, b(50))} />
-          <Plate x={540} text="WORLD · +35% LAKES" y={674} size={34} tone="plate" p={win(f, b(50) + 2, b(13))} />
-          <Plate x={540} text="WORLD · AREA +9%" y={752} size={34} tone="plate" p={win(f, b(13) + 4)} />
+          <Plate x={540} text="WORLD · ICE-CONTACT LAKES" y={530} size={32} tone="plate" p={win(f, b(11) + 4, b(42) + 10)} />
+          <Plate x={540} text="WORLD · +3,567 LAKES" y={606} size={34} tone="plate" p={win(f, b(42) + 12, b(50))} />
+          <Plate x={540} text="WORLD · +35% LAKES" y={684} size={34} tone="plate" p={win(f, b(50) + 2, b(13))} />
+          <Plate x={540} text="WORLD · AREA +9%" y={762} size={34} tone="plate" p={win(f, b(13) + 4)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1420} lamp={false} seed={5} />
@@ -427,7 +427,6 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <g>
           <rect x={64} y={600} width={952} height={640} fill="#000" opacity={0.3} transform="translate(10 12)" />
           <rect x={64} y={600} width={952} height={640} fill={NB.vellum} stroke={INK} strokeWidth={6} />
-          <text x={540} y={648} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} fill={INK}>WORLD · ICE-CONTACT LAKES</text>
           {[[90, 610], [990, 610], [90, 1230], [990, 1230]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={11} fill={NB.oakD} stroke={INK} strokeWidth={3} />)}
           {Array.from({length: OLD}, (_, i) => <path key={i} d={lakeBlob(110 + (i % 14) * 62 + 14 * h01(80, i), 690 + Math.floor(i / 14) * 70 + 14 * h01(81, i), 10, 7, 500 + i, 8, 0.35)} fill={NB.lakeD} stroke={INK} strokeWidth={2} opacity={0.75} />)}
           {Array.from({length: NEW}, (_, i) => <LakeChip key={`n${i}`} x={130 + h01(82, i) * 820} y={700 + h01(83, i) * 500} r={11} pop={(f - popT(i)) / 9} seed={i} />)}
@@ -463,19 +462,11 @@ const ReleaseCard: React.FC<{f: number; x: number; y: number; s?: number; lit?: 
       <rect x={-330} y={-300} width={660} height={560} fill={NB.card} stroke={INK} strokeWidth={5} />
       <rect x={-330} y={-300} width={660} height={64} fill={NB.roomL} stroke={INK} strokeWidth={5} />
       <text x={0} y={-258} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={NB.vellumL}>PRESS RELEASE · TU GRAZ</text>
-      <g transform="translate(-60 -310)"><rect x={-30} y={-14} width={60} height={40} rx={6} fill={NB.brass} stroke={INK} strokeWidth={4} /><text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={9} fill={INK}>TU GRAZ</text></g>
+      <g transform="translate(-60 -310)"><rect x={-40} y={-14} width={80} height={40} rx={6} fill={NB.brass} stroke={INK} strokeWidth={4} /><text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={9} fill={INK}>TU GRAZ</text></g>
       {Array.from({length: 4}, (_, i) => <rect key={i} x={-290} y={-210 + i * 30} width={560 * (0.7 + 0.3 * h01(9, i))} height={10} rx={4} fill={NB.cardD} />)}
       <rect x={-300} y={-86} width={600 * clamp01(lit)} height={56} rx={6} fill="#F3E39A" stroke="#D9C25A" strokeWidth={lit > 0.02 ? 3 : 0} />
       <text x={0} y={-48} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={23} fill={INK} opacity={f >= 0 ? 1 : 0}>"PARTICULARLY PRONOUNCED IN ALASKA"</text>
-      {quote < 0 && Array.from({length: 5}, (_, i) => <rect key={`b${i}`} x={-290} y={-8 + i * 30} width={500 * (0.6 + 0.4 * h01(19, i))} height={10} rx={4} fill={NB.cardD} />)}
-      {quote >= 0 && (
-        <g>
-          <rect x={-300} y={-6} width={600 * clamp01(quote)} height={92} rx={6} fill="#F3E39A" stroke="#D9C25A" strokeWidth={quote > 0.02 ? 3 : 0} />
-          <text x={0} y={30} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={21} fill={INK}>"CONTACT WITH A LAKE FURTHER</text>
-          <text x={0} y={62} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={21} fill={INK}>ACCELERATES THE LOSS OF ICE"</text>
-          <text x={0} y={120} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={INK}>TOBIAS BOLCH · CO-AUTHOR</text>
-        </g>
-      )}
+      {Array.from({length: 5}, (_, i) => <rect key={`b${i}`} x={-290} y={-8 + i * 30} width={500 * (0.6 + 0.4 * h01(19, i))} height={10} rx={4} fill={NB.cardD} />)}
       {tk > 0.01 && (
         <g transform={`translate(${330 + (1 - spring(tk)) * 120} -250)`}>
           <rect x={-10} y={-20} width={60} height={300} rx={8} fill={NB.cobalt} stroke={INK} strokeWidth={4} />
@@ -509,14 +500,14 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const tabs = clamp01((f - b(15) + 4) / 14);
   return (
     <Frame p={p} z0={1.0} z1={1.06} warmth={0.05} overlay={<>
-          <Plate x={540} text="PRESS RELEASE · TU GRAZ" y={480} size={30} p={win(f, b(14) + 8, b(43))} />
-          <Plate x={540} text={'"PARTICULARLY PRONOUNCED IN ALASKA" · PER TU GRAZ'} displayLines={['"PARTICULARLY PRONOUNCED', 'IN ALASKA" · PER TU GRAZ']} y={554} size={28} p={win(f, b(43) + 6, b(15))} />
-          <Plate x={540} text="NO ALASKA NUMBER IN THE RELEASE" y={670} size={30} tone="dark" p={win(f, b(15) + 6)} />
+          <Plate x={540} text="PRESS RELEASE · TU GRAZ" y={530} size={30} p={win(f, b(14) + 8, b(43))} />
+          <Plate x={540} text={'"PARTICULARLY PRONOUNCED IN ALASKA" · PER TU GRAZ'} displayLines={['"PARTICULARLY PRONOUNCED', 'IN ALASKA" · PER TU GRAZ']} y={604} size={28} p={win(f, b(43) + 6, b(15))} />
+          <Plate x={540} text="NO ALASKA NUMBER IN THE RELEASE" y={720} size={30} tone="dark" p={win(f, b(15) + 6)} />
         </>}>
       <SVG>
         <TableTop f={f} seed={6} />
         <HeldTravel f={f} x={170} y={660} w={700} h={600} mode="shadow" seed={61}>
-          <g transform={`rotate(${(1 - swing) * -12} 740 300)`}><ReleaseCard f={f} x={470} y={980} s={0.9} lit={lit} tabs={tabs} /></g>
+          <g transform={`rotate(${(1 - swing) * -12} 740 300)`}><ReleaseCard f={f} x={470} y={1070} s={0.88} lit={lit} tabs={tabs} /></g>
         </HeldTravel>
         <Nib f={f} x={960} y={1300} s={0.45} emotion={f >= b(15) ? 'surprised' : 'curious'} look={-0.8} lookY={-0.6} cues={[b(14), b(43), b(15)]} seed={7} label={false} ink={0} />
       </SVG>
@@ -549,21 +540,22 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const stamp = f >= b(18) ? spring(clamp01((f - b(18)) / 12)) : 0;
   const digits = val.toString().padStart(5, '0').split('').map(Number);
   // our hand: opens the folder, then clicks, then stamps
-  let hx = lerp(1100, 360, easeIO(f, b(16) - 14, 12)), hy = lerp(1500, 1080, easeIO(f, b(16) - 14, 12)), press = 0;
-  if (f >= b(17) - 12) { const k = easeIO(f, b(17) - 12, 10); hx = lerp(360, 900, k); hy = lerp(1080, 760, k); press = Math.floor(f / 4) % 2 && roll < 1 ? 1 : 0; }
-  if (f >= b(18) - 12) { const k = easeIO(f, b(18) - 12, 10); hx = lerp(900, 760, k); hy = lerp(760, 1100, k); press = f >= b(18) && f < b(18) + 6 ? 1 : 0; }
+  let hx = lerp(700, 470, easeIO(f, b(16) - 14, 12)), hy = lerp(1700, 1180, easeIO(f, b(16) - 14, 12)), press = 0;
+  if (f >= b(17) - 12) { const k = easeIO(f, b(17) - 12, 10); hx = lerp(470, 1030, k); hy = lerp(1180, 1080, k); press = Math.floor(f / 4) % 2 && roll < 1 ? 1 : 0; }
+  if (f >= b(18) - 12) { const k = easeIO(f, b(18) - 12, 10); hx = lerp(1030, 760, k); hy = lerp(1080, 1268, k); press = f >= b(18) && f < b(18) + 6 ? 1 : 0; }
   return (
     <Frame p={p} z0={1.0} z1={1.05} warmth={0.04} overlay={<>
-          <Plate x={540} text="THE AUTHORS' OPEN DATA · FIGSHARE" y={500} size={30} p={win(f, b(16) + 4, b(17))} />
-          <Plate x={540} text="13,685 LAKES · MATCHES THE PAPER · OUR COUNT" displayLines={['13,685 LAKES · MATCHES THE PAPER', 'OUR COUNT']} y={574} size={28} tone="count" p={win(f, b(17) + 10, b(18))} />
-          <Plate x={540} text="OUR COUNT · COUNT ONLY" y={690} size={30} tone="count" p={win(f, b(18) + 6)} />
+          <Plate x={540} text="THE AUTHORS' OPEN DATA · FIGSHARE" y={530} size={30} p={win(f, b(16) + 4, b(17))} />
+          <Plate x={540} text="13,685 LAKES · OUR COUNT" displayLines={['13,685 LAKES · OUR COUNT']} y={604} size={28} tone="count" p={win(f, b(17) + 10, b(18))} />
+          <Plate x={540} text="MATCHES THE PAPER · COUNT ONLY · OUR COUNT" y={720} size={30} tone="count" p={win(f, b(18) + 6)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1260} lamp seed={7} />
         <g transform="translate(260 1190)">
           <ContactShadow cx={0} cy={60} rx={220} ry={18} opacity={0.45} />
           <path d="M -200 50 L -180 -60 L 180 -60 L 200 50 Z" fill="#C9A35E" stroke={INK} strokeWidth={5} />
-          <g transform={`rotate(${-70 * open} -180 -60)`}><path d="M -180 -60 L -170 -170 L 170 -170 L 180 -60 Z" fill="#D9B46E" stroke={INK} strokeWidth={5} /><text x={0} y={-108} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={INK}>THE AUTHORS' OPEN DATA</text></g>
+          <NLab x={0} y={22} text="THE AUTHORS' OPEN DATA" size={15} />
+          <g transform={`rotate(${-40 * open} -180 -60)`}><path d="M -180 -60 L -170 -170 L 170 -170 L 180 -60 Z" fill="#D9B46E" stroke={INK} strokeWidth={5} /></g>
           {Array.from({length: 5}, (_, i) => {
             const k = clamp01(open * 1.4 - i * 0.1);
             return <g key={i} transform={`translate(${-60 + i * 30 * k} ${-40 - 60 * k}) rotate(${(i - 2) * 14 * k})`}><rect x={-70} y={-50} width={140} height={100} fill={NB.tile} stroke={INK} strokeWidth={3} /><path d={lakeBlob(0, 6, 30, 20, 90 + i)} fill={NB.lake} stroke={NB.ultra} strokeWidth={3} /></g>;
@@ -577,15 +569,15 @@ const S7: React.FC<SceneProps> = ({p}) => {
           </g>
         </HeldTravel>
         <g transform="translate(720 1060)">
-          <ContactShadow cx={0} cy={140} rx={160} ry={14} opacity={0.4} />
-          <rect x={-150} y={0} width={300} height={130} fill={NB.vellumL} stroke={NB.cobalt} strokeWidth={4} transform="skewX(-10)" />
+          <ContactShadow cx={0} cy={210} rx={160} ry={14} opacity={0.4} />
+          <rect x={-150} y={0} width={300} height={200} fill={NB.vellumL} stroke={NB.cobalt} strokeWidth={4} transform="skewX(-10)" />
           <text x={0} y={40} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={NB.cobalt}>OUR TALLY · ICE-CONTACT</text>
           <text x={0} y={70} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={INK}>2000 · 10,118</text>
           <text x={0} y={96} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={INK}>2020 · 13,685</text>
-          {stamp > 0.01 && <g transform={`translate(30 70) rotate(-12) scale(${2 - stamp})`} opacity={clamp01(stamp * 2)}><rect x={-100} y={-30} width={200} height={60} rx={6} fill="none" stroke={NB.cobalt} strokeWidth={6} /><text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} fill={NB.cobalt}>OUR COUNT</text></g>}
+          {stamp > 0.01 && <g transform={`translate(10 158) rotate(-6) scale(${2 - stamp})`} opacity={clamp01(stamp * 2)}><rect x={-100} y={-30} width={200} height={60} rx={6} fill="none" stroke={NB.cobalt} strokeWidth={6} /><text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} fill={NB.cobalt}>OUR COUNT</text></g>}
         </g>
         <Nib f={f} x={140} y={1210} s={0.5} emotion="curious" look={0.8} cues={[b(16), b(17), b(18)]} seed={7} ink={0} label={false} />
-        <CheckHand f={f} x={hx} y={hy} s={1.0} press={press} angle={-15} role="ours" />
+        <CheckHand f={f} x={hx} y={hy} s={0.85} press={press} angle={185} role="ours" />
       </SVG>
     </Frame>
   );
@@ -638,10 +630,10 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const [vx, vy] = akProject(-143.42, 60.15, AK_FIT);
   return (
     <Frame p={p} warmth={0.04} cam={(ff) => ({z: lerp(1.0, 1.25, easeIO(ff, b(20), 40)) - 0.25 * easeIO(ff, b(45) - 10, 20), fx: lerp(540, vx + 60, easeIO(ff, b(20), 40) * (1 - easeIO(ff, b(45) - 10, 20))), fy: lerp(960, vy + 80, easeIO(ff, b(20), 40) * (1 - easeIO(ff, b(45) - 10, 20)))})} overlay={<>
-          <Plate x={540} text="ALASKA · OUR COUNT" y={490} size={30} tone="count" p={win(f, b(19) + 6, b(44))} />
-          <Plate x={540} text="ALASKA · 931 TO 1,078 · +16% · OUR COUNT" displayLines={['ALASKA · 931 TO 1,078', '+16% · OUR COUNT']} y={564} size={30} tone="count" p={win(f, b(44) + 6, b(20))} />
-          <Plate x={540} text="ALASKA · ABOUT 880 TO 1,190 SQ KM · +35% · OUR COUNT" displayLines={['ALASKA · ABOUT 880 TO 1,190 SQ KM', '+35% · OUR COUNT']} y={684} size={28} tone="count" p={win(f, b(20) + 6, b(45))} />
-          <Plate x={540} text="AREA · +35% VS +9% · OUR COUNT" y={800} size={30} tone="count" p={win(f, b(45) + 6)} />
+          <Plate x={540} text="ALASKA · 931 TO 1,078 · +16% · OUR COUNT" y={530} size={26} tone="count" p={win(f, b(44) + 4, b(20))} />
+          <Plate x={540} text="ALASKA · ABOUT 880 SQ KM IN 2000 · OUR COUNT" y={600} size={26} tone="count" p={win(f, b(20) + 6, b(45))} />
+          <Plate x={540} text="AREA · +35% VS +9% · OUR COUNT" y={670} size={26} tone="count" p={win(f, b(45) + 6, b(51))} />
+          <Plate x={540} text="ABOUT 1,190 SQ KM · OUR COUNT" y={740} size={26} tone="count" p={win(f, b(51) + 4)} />
         </>}>
       <SVG>
         <TableTop f={f} seed={8} />
@@ -652,24 +644,24 @@ const S8: React.FC<SceneProps> = ({p}) => {
           </g>
         </HeldTravel>
         <g transform="translate(840 1180)"><ReleaseCard f={f} x={0} y={0} s={0.3} tabs={1} slip={ease(f, b(44), 12)} arm={false} /></g>
-        <TapeMeasure f={f} x={160} y={1250} len={tapeW} label={tapeA < 10 ? 'WORLD AREA' : undefined} marks={[{at: 9 * SC, label: '9%'}]} />
-        <TapeMeasure f={f} x={160} y={1310} len={tapeA} label={tapeA > 10 ? 'ALASKA AREA' : undefined} marks={[{at: 9 * SC, label: '9%'}, {at: 35 * SC, label: '35% · OUR COUNT', color: NB.cobalt}]} />
-        <Nib f={f} x={980} y={1240} s={0.34} emotion={f > b(45) ? 'surprised' : 'wonder'} look={-0.7} label={false} cues={[b(19), b(44), b(20), b(45)]} seed={7} ink={0} />
-        <CheckHand f={f} x={hx} y={hy} s={1.0} angle={-20} role="ours" />
+        <TapeMeasure f={f} x={160} y={1222} len={tapeW} label={tapeA < 10 ? 'WORLD AREA' : undefined} marks={[{at: 9 * SC, label: '9%'}]} />
+        <TapeMeasure f={f} x={160} y={1318} len={tapeA} label={tapeA > 10 ? 'ALASKA AREA' : undefined} marks={[{at: 9 * SC, label: '9%'}, {at: 35 * SC, label: '35% · OUR COUNT', color: NB.cobalt}]} />
+        <Nib f={f} x={120} y={1300} s={0.34} emotion={f > b(45) ? 'surprised' : 'wonder'} look={0.7} label={false} cues={[b(19), b(44), b(20), b(45)]} seed={7} ink={0} />
+        {away < 1 && <CheckHand f={f} x={hx} y={hy} s={1.0} angle={-20} role="ours" />}
       </SVG>
     </Frame>
   );
 };
 
-// ---- S8b: MULTIPLIED, SWELLED (back at the wall: our hand pins the Alaska vellum beside the world sheet)
-const SSeam: React.FC<SceneProps> = ({p}) => {
+// ---- S16: MULTIPLIED, SWELLED (back at the wall: our hand pins the Alaska vellum beside the world sheet)
+const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const pin = ease(f, b(22) - 6, 12);
   const hx = lerp(1150, 820, easeIO(f, b(22) - 18, 12)) + 500 * easeIO(f, b(22) + 14, 14);
   const hy = lerp(1500, 760, easeIO(f, b(22) - 18, 12)) + 800 * easeIO(f, b(22) + 14, 14);
   return (
     <Frame p={p} warmth={0.04} cam={(ff) => ({z: 1.0 + 0.03 * easeIO(ff, 0, p.dur), fx: lerp(520, 560, easeIO(ff, 0, p.dur)), fy: 920})} overlay={<>
-          <Plate x={540} text="THE WORLD'S LAKES MULTIPLIED · ALASKA'S SWELLED" displayLines={["THE WORLD'S LAKES MULTIPLIED", "ALASKA'S SWELLED"]} y={500} size={32} tone="dark" p={win(f, b(22) + 6)} />
+          <Plate x={540} text="THE WORLD'S LAKES MULTIPLIED · ALASKA'S SWELLED" displayLines={["THE WORLD'S LAKES MULTIPLIED", "ALASKA'S SWELLED"]} y={530} size={32} tone="dark" p={win(f, b(22) + 6)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1420} lamp={false} seed={5} />
@@ -706,9 +698,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const hx = lerp(-200, 120, bar) - 400 * easeIO(f, b(23) + 20, 12);
   return (
     <Frame p={p} warmth={0.03} cam={(ff) => ({z: lerp(1.0, 1.7, easeIO(ff, b(23) + 10, 16)) - 0.7 * pull, fx: lerp(540, 330, easeIO(ff, b(23) + 10, 16) * (1 - pull)), fy: 1040})} overlay={<>
-          <Plate x={540} text="THE WORLD'S ADDED AREA · OUR COUNT" y={520} size={30} tone="count" p={win(f, b(23) + 6, b(46))} />
-          <Plate x={540} text="ABOUT HALF THE WORLD'S ADDED AREA · OUR COUNT" displayLines={["ABOUT HALF THE WORLD'S", 'ADDED AREA · OUR COUNT']} y={594} size={30} tone="count" p={win(f, b(46) + 6, b(24))} />
-          <Plate x={540} text="1,078 OF 13,685 · ABOUT 1 IN 13 · OUR COUNT" displayLines={['1,078 OF 13,685 · ABOUT 1 IN 13', 'OUR COUNT']} y={714} size={30} tone="count" p={win(f, b(24) + 4)} />
+          <Plate x={540} text="THE WORLD'S ADDED AREA · OUR COUNT" y={530} size={30} tone="count" p={win(f, b(23) + 6, b(46))} />
+          <Plate x={540} text="ABOUT HALF THE WORLD'S ADDED AREA · OUR COUNT" displayLines={["ABOUT HALF THE WORLD'S", 'ADDED AREA · OUR COUNT']} y={604} size={30} tone="count" p={win(f, b(46) + 6, b(24))} />
+          <Plate x={540} text="1,078 OF 13,685 · ABOUT 1 IN 13 · OUR COUNT" displayLines={['1,078 OF 13,685 · ABOUT 1 IN 13', 'OUR COUNT']} y={724} size={30} tone="count" p={win(f, b(24) + 4)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1280} seed={9} />
@@ -719,8 +711,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
             <rect x={110} y={1030} width={860} height={90} rx={8} fill={NB.vellumL} stroke={INK} strokeWidth={3} />
             <rect x={110} y={1030} width={430 * lit} height={90} rx={8} fill={NB.lake} stroke={INK} strokeWidth={3} />
             <rect x={540} y={1030} width={430} height={90} rx={8} fill={NB.tile} stroke={INK} strokeWidth={3} />
-            {lit > 0.6 && <text x={325} y={1088} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} fill={INK}>ALASKA</text>}
-            <text x={755} y={1088} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={NB.vellumL}>REST OF WORLD</text>
+            {lit > 0.6 && <NLab x={325} y={1075} text="ALASKA" size={26} fill={NB.lakeL} />}
+            {(easeIO(f, b(23) + 10, 16) * (1 - pull) < 0.15) && <text x={755} y={1088} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={NB.vellumL}>REST OF WORLD</text>}
             <path d="M 540 1000 L 540 1150" stroke={INK} strokeWidth={6} strokeDasharray="12 8" />
           </g>
         </HeldTravel>
@@ -749,10 +741,10 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const cloud = (f * 1.6) % 1500;
   return (
     <Frame p={p} bg="#4A4664" warmth={0.02} cam={(ff) => ({z: lerp(1.25, 1.0, rise), fx: 540, fy: lerp(1100, 980, rise)})} overlay={<>
-          <Plate x={540} text="BERING GLACIER · AERIAL VIEW" y={480} size={30} tone="dark" p={win(f, b(25) + 8, b(47))} />
-          <Plate x={540} text="VITUS LAKE · BIGGEST ALASKA GAIN · OUR COUNT" displayLines={['VITUS LAKE · BIGGEST ALASKA GAIN', 'OUR COUNT']} y={554} size={28} tone="count" p={win(f, b(47) + 6, b(52))} />
-          <Plate x={540} text="C. 2000 · ABOUT 105 SQ KM · OUR COUNT" displayLines={['C. 2000 · ABOUT 105 SQ KM', 'OUR COUNT']} y={670} size={28} tone="count" p={win(f, b(52) + 2, b(26))} />
-          <Plate x={540} text="C. 2020 · ABOUT 158 SQ KM · OUR COUNT" displayLines={['C. 2020 · ABOUT 158 SQ KM', 'OUR COUNT']} y={786} size={30} tone="count" p={win(f, b(26) + 6)} />
+          <Plate x={540} text="BERING GLACIER · AERIAL VIEW" y={530} size={30} tone="dark" p={win(f, b(25) + 8, b(47))} />
+          <Plate x={540} text="VITUS LAKE · BIGGEST ALASKA GAIN · OUR COUNT" displayLines={['VITUS LAKE · BIGGEST ALASKA GAIN', 'OUR COUNT']} y={604} size={28} tone="count" p={win(f, b(47) + 6, b(52))} />
+          <Plate x={540} text="C. 2000 · ABOUT 105 SQ KM · OUR COUNT" displayLines={['C. 2000 · ABOUT 105 SQ KM', 'OUR COUNT']} y={720} size={28} tone="count" p={win(f, b(52) + 2, b(26))} />
+          <Plate x={540} text="C. 2020 · ABOUT 158 SQ KM · OUR COUNT" displayLines={['C. 2020 · ABOUT 158 SQ KM', 'OUR COUNT']} y={836} size={30} tone="count" p={win(f, b(26) + 6)} />
         </>}>
       <SVG>
         <defs>
@@ -837,9 +829,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const l40 = lin(f, b(29) - 2, 24) * (40 / 70);
   return (
     <Frame p={p} bg="#4A4664" z0={1.0} z1={1.05} warmth={0.01} overlay={<>
-          <Plate x={540} text="THE CASE FOR YES" y={490} size={40} tone="dark" p={win(f, b(27) + 4)} />
-          <Plate x={300} text="LAKE-ENDING · 66 CM A YEAR · ON AVERAGE" displayLines={['LAKE-ENDING · 66 CM', 'A YEAR · ON AVERAGE']} y={574} size={24} p={win(f, b(28) + 10)} />
-          <Plate x={790} text="ON LAND · 40 CM A YEAR" displayLines={['ON LAND · 40 CM', 'A YEAR']} y={682} size={24} p={win(f, b(29) + 6)} />
+          <Plate x={540} text="THE CASE FOR YES" y={530} size={40} tone="dark" p={win(f, b(27) + 4)} />
+          <Plate x={300} text="LAKE-ENDING · 66 CM A YEAR · ON AVERAGE" displayLines={['LAKE-ENDING · 66 CM', 'A YEAR · ON AVERAGE']} y={614} size={24} p={win(f, b(28) + 10)} />
+          <Plate x={790} text="ON LAND · 40 CM A YEAR" displayLines={['ON LAND · 40 CM', 'A YEAR']} y={722} size={24} p={win(f, b(29) + 6)} />
         </>}>
       <SVG>
         <DawnWorld f={f} seed={11} />
@@ -891,12 +883,12 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const tag = ease(f, b(30) + 2, 14);
   const lift = easeIO(f, b(31) - 6, 26);
-  const hx = lerp(1150, 860, easeIO(f, b(31) - 20, 14)) + 500 * lift;
-  const hy = lerp(1600, 1200, easeIO(f, b(31) - 20, 14)) + 700 * lift;
+  const hx = lerp(-200, 210, easeIO(f, b(31) - 20, 14)) - 500 * lift;
+  const hy = lerp(1600, 1190, easeIO(f, b(31) - 20, 14)) + 700 * lift;
   return (
     <Frame p={p} bg={NB.gravelD} warmth={0.01} cam={(ff) => ({z: lerp(1.15, 1.0, easeIO(ff, 0, p.dur)), fx: 540, fy: 980})} overlay={<>
-          <Plate x={540} text="TOBIAS BOLCH · CO-AUTHOR · TU GRAZ" y={480} size={28} p={win(f, b(30) + 6, b(31) - 2)} />
-          <Plate x={540} text={'"CONTACT WITH A LAKE FURTHER ACCELERATES THE LOSS OF ICE" · TOBIAS BOLCH · PER TU GRAZ'} displayLines={['TOBIAS BOLCH · PER TU GRAZ']} y={552} size={28} tone="dark" p={win(f, b(31) + 4)} />
+          <Plate x={540} text="TOBIAS BOLCH · CO-AUTHOR · TU GRAZ" y={530} size={28} p={win(f, b(30) + 6, b(31) - 2)} />
+          <Plate x={540} text={'"CONTACT WITH A LAKE FURTHER ACCELERATES THE LOSS OF ICE" · TOBIAS BOLCH · PER TU GRAZ'} displayLines={['TOBIAS BOLCH · PER TU GRAZ']} y={602} size={28} tone="dark" p={win(f, b(31) + 4)} />
         </>}>
       <SVG>
         <ShoreTop f={f} />
@@ -915,12 +907,12 @@ const S12: React.FC<SceneProps> = ({p}) => {
           </g>
         </g>
         {/* the 66 column from above: a glass ring with its water, lifted toward the viewer */}
-        <g transform={`translate(${780 + 300 * lift} ${1240 + 500 * lift}) scale(${1 + 0.5 * lift})`}>
+        <g transform={`translate(${200 - 300 * lift} ${1180 + 500 * lift}) scale(${1 + 0.5 * lift})`}>
           <ContactShadow cx={14 + 30 * lift} cy={14 + 30 * lift} rx={70} ry={70} opacity={0.4 * (1 - lift * 0.6)} />
           <circle cx={0} cy={0} r={62} fill={NB.vellumL} opacity={0.45} stroke={INK} strokeWidth={5} />
           <circle cx={0} cy={0} r={52} fill={NB.lake} stroke={NB.lakeD} strokeWidth={3} />
           <ellipse cx={-14} cy={-16} rx={20} ry={10} fill={NB.lakeL} opacity={0.8 + 0.2 * Math.sin(f / 5)} />
-          <NLab x={0} y={-96} text="66 CM" size={16} />
+          {lift < 0.5 && <NLab x={0} y={-96} text="66 CM" size={16} />}
         </g>
         <CheckHand f={f} x={hx} y={hy} s={1.1} angle={-25} role="study" />
       </SVG>
@@ -939,19 +931,19 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const tap = easeIO(f, b(53) - 10, 10) * (1 - easeIO(f, b(53) + 14, 12));
   return (
     <Frame p={p} warmth={-0.01} cam={(ff) => ({z: 1.0 + 0.04 * easeIO(ff, 0, p.dur), fx: 560, fy: 960})} overlay={<>
-          <Plate x={540} text="MACHINE LEARNING · WEIGHS THE FACTORS" displayLines={['MACHINE LEARNING', 'WEIGHS THE FACTORS']} y={490} size={30} tone="dark" p={win(f, b(32) + 6, b(48))} />
-          <Plate x={540} text="LAKE · CLIMATE · GLACIER SHAPE" y={610} size={30} tone="dark" p={win(f, b(48) + 4, b(53))} />
-          <Plate x={540} text="LAKE-ENDING GLACIERS · WORLDWIDE" y={684} size={30} tone="dark" p={win(f, b(53) + 2, b(33))} />
-          <Plate x={240} text="LAKE ~11% · LAKE-ENDING GLACIERS · WORLDWIDE" displayLines={['LAKE ~11%', 'LAKE-ENDING GLACIERS', 'WORLDWIDE']} y={758} size={22} p={win(f, b(33) + 4)} />
-          <Plate x={540} text="CLIMATE ~43%" y={900} size={22} p={win(f, b(34) + 4)} />
-          <Plate x={800} text="GLACIER SHAPE ~46%" y={966} size={22} p={win(f, b(35) + 4)} />
+          <Plate x={540} text="MACHINE LEARNING · WEIGHS THE FACTORS" displayLines={['MACHINE LEARNING', 'WEIGHS THE FACTORS']} y={530} size={30} tone="dark" p={win(f, b(32) + 6, b(48))} />
+          <Plate x={540} text="LAKE · CLIMATE · GLACIER SHAPE" y={650} size={30} tone="dark" p={win(f, b(48) + 4, b(53))} />
+          <Plate x={540} text="LAKE-ENDING GLACIERS · WORLDWIDE" y={724} size={30} tone="dark" p={win(f, b(53) + 2, b(33))} />
+          <Plate x={240} text="LAKE ~11% · LAKE-ENDING GLACIERS · WORLDWIDE" displayLines={['LAKE ~11%', 'LAKE-ENDING GLACIERS', 'WORLDWIDE']} y={798} size={22} p={win(f, b(33) + 4)} />
+          <Plate x={540} text="CLIMATE ~43%" y={940} size={22} p={win(f, b(34) + 4)} />
+          <Plate x={800} text="GLACIER SHAPE ~46%" y={1006} size={22} p={win(f, b(35) + 4)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1300} lamp={false} seed={13} />
-        <rect x={-60} y={-60} width={1200} height={2040} fill="#E8E2D2" opacity={0.12} style={{mixBlendMode: 'soft-light'}} />
-        <g transform="translate(70 1262)"><WaterTube f={f} x={0} y={0} h={200} level={66 / 70} label={f >= b(53) ? 'LAKE-ENDING · WORLDWIDE' : '66 CM · ALL FACTORS'} /></g>
+        <rect data-band="ok" x={-60} y={-60} width={1200} height={2040} fill="#DCE0E8" opacity={0.14} style={{mixBlendMode: 'soft-light'}} />
+        <g transform="translate(190 1262)"><WaterTube f={f} x={0} y={0} h={200} level={66 / 70} label={f >= b(53) ? 'LAKE-ENDING · WORLDWIDE' : '66 CM · ALL FACTORS'} /></g>
         <HeldTravel f={f} x={100} y={560} w={820} h={700} mode="sweep" seed={131}><g transform={`translate(0 ${(1 - lower) * -900})`}>
-          <WeighRail f={f} x={500} y={1260} w={760} railY={-640}>
+          <WeighRail f={f} x={500} y={1260} w={760} railY={-520} plate="">
             {[[-250, 11, b(33), 64, 'LAKE'], [0, 43, b(34), 124, 'CLIMATE'], [250, 46, b(35), 130, 'SHAPE']].map(([x, sh, bb, ww, lab], i) => (
               <g key={i}>
                 <SpringScale f={f} x={x as number} y={0} ext={ext(bb as number, sh as number)} weightW={ww as number} label={lab as string} land={land(bb as number)} seed={i + 1} lake={i === 0} />
@@ -961,13 +953,13 @@ const S13: React.FC<SceneProps> = ({p}) => {
           </WeighRail>
         </g></HeldTravel>
         {/* the release card's TU Graz clip arm at the rail's right end, an empty pan already hanging from it */}
-        <g transform="translate(990 520)">
+        <g transform="translate(990 640)">
           <path d="M 60 760 L 60 0 L -20 0" stroke={INK} strokeWidth={20} fill="none" strokeLinecap="round" />
           <path d="M 60 760 L 60 0 L -20 0" stroke={NB.brass} strokeWidth={10} fill="none" strokeLinecap="round" />
           <rect x={-46} y={-16} width={52} height={36} rx={6} fill={NB.brass} stroke={INK} strokeWidth={4} />
           <SpringScale f={f} x={-20} y={40} ext={0} empty swing={0.6} seed={4} />
         </g>
-        {tap > 0.01 && <CheckHand f={f} x={lerp(-120, 110, tap)} y={lerp(1500, 1050, tap)} s={0.9} angle={30} role="study" press={f >= b(53) && f < b(53) + 6 ? 1 : 0} />}
+        {tap > 0.01 && <CheckHand f={f} x={lerp(60, 150, tap)} y={lerp(1700, 1180, tap)} s={0.9} angle={200} role="study" press={f >= b(53) && f < b(53) + 6 ? 1 : 0} />}
         <Nib f={f} x={930} y={1270} s={0.36} emotion={f >= b(35) ? 'curious' : 'calm'} look={-0.6 - 0.3 * clamp01((f - b(33)) / 30)} lookY={-0.5} label={false} cues={[b(32), b(48), b(33), b(35)]} seed={7} ink={0} />
       </SVG>
     </Frame>
@@ -983,9 +975,9 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const turn = easeIO(f, 4, 20);
   return (
     <Frame p={p} bg="#4A4664" warmth={-0.02} cam={(ff) => ({z: 1.0 + 0.04 * easeIO(ff, 0, p.dur), fx: 560, fy: 980})} overlay={<>
-          <Plate x={540} text="A REAL PUSH · THE SMALLEST OF THE THREE" displayLines={['A REAL PUSH', 'THE SMALLEST OF THE THREE']} y={490} size={30} tone="dark" p={win(f, 4, b(37) - 2)} />
-          <Plate x={540} text="ALASKA'S SPLIT · NOT IN THE RELEASE OR ABSTRACT" displayLines={["ALASKA'S SPLIT", 'NOT IN THE RELEASE OR ABSTRACT']} y={610} size={28} tone="count" p={win(f, b(37) + 8, b(38))} />
-          <Plate x={540} text="COULD BE BIGGER · OR SMALLER" y={726} size={28} tone="dark" p={win(f, b(38) + 4)} />
+          <Plate x={540} text="A REAL PUSH · THE SMALLEST OF THE THREE" displayLines={['A REAL PUSH', 'THE SMALLEST OF THE THREE']} y={530} size={30} tone="dark" p={win(f, 4, b(37) - 2)} />
+          <Plate x={540} text="ALASKA'S SPLIT · NOT IN THE RELEASE OR ABSTRACT" displayLines={["ALASKA'S SPLIT", 'NOT IN THE RELEASE OR ABSTRACT']} y={640} size={28} tone="count" p={win(f, b(37) + 8, b(38))} />
+          <Plate x={540} text="COULD BE BIGGER · OR SMALLER" y={756} size={28} tone="dark" p={win(f, b(38) + 4)} />
         </>}>
       <SVG>
         <DawnWorld f={f} seed={14} />
@@ -1026,8 +1018,8 @@ const S15: React.FC<SceneProps> = ({p}) => {
   const stroke = easeIO(f, b(40) + 22, 14);
   return (
     <Frame p={p} z0={1.0} z1={1.06} warmth={0.05} overlay={<>
-          <Plate x={540} text="THE MAP ENDS · CIRCA 2020" y={500} size={32} tone="dark" p={win(f, b(39) + 10, b(40))} />
-          <Plate x={540} text="NEXT MAP · NOT DRAWN YET" y={576} size={32} tone="dark" p={win(f, b(40) + 4)} />
+          <Plate x={540} text="THE MAP ENDS · CIRCA 2020" y={530} size={32} tone="dark" p={win(f, b(39) + 10, b(40))} />
+          <Plate x={540} text="NEXT MAP · NOT DRAWN YET" y={606} size={32} tone="dark" p={win(f, b(40) + 4)} />
         </>}>
       <SVG>
         <TableTop f={f} seed={15} />
@@ -1038,7 +1030,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
           </g>
         </HeldTravel>
         <path d={`M ${edge} 480 L ${edge} 1320`} stroke={INK} strokeWidth={6} strokeDasharray="18 10" />
-        <g transform={`translate(${edge + 24} 900) rotate(90)`}><text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>THE MAP ENDS · CIRCA 2020</text></g>
+        <NLab x={edge - 30} y={900} text="THE MAP ENDS · CIRCA 2020" size={18} rot={90} />
         <path d={`M 420 980 L ${Math.min(edge, nx)} 980`} stroke={NB.ultra} strokeWidth={6} strokeLinecap="round" />
         {stroke > 0.5 && <circle cx={edge + 70} cy={1000} r={6} fill={NB.ultra} />}
         <Nib f={f} x={nx + 40 * step} y={980 + 20 * step - 14 * Math.sin(stroke * Math.PI)} s={0.6} emotion={run >= 1 ? 'curious' : 'focused'} stroke={(run > 0 && run < 1) || (stroke > 0 && stroke < 1) ? 1 : 0} splay={run >= 1 ? 0.5 : 0} look={run >= 1 ? 0.3 : 0} lookY={run >= 1 ? 0.8 : 0} cues={[b(39), b(40)]} seed={7} ink={run >= 1 ? 0 : 1} />
@@ -1049,7 +1041,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
   );
 };
 
-const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13, 14: S14, 15: S15, 16: SSeam};
+const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13, 14: S14, 15: S15, 16: S16};
 const SHOT_ORDER = [1, 3, 4, 5, 6, 7, 8, 16, 9, 10, 11, 12, 13, 14, 15];
 
 type Beat = {id: number; at: number; label: string};

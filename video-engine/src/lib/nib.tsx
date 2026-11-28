@@ -76,13 +76,12 @@ export type NibEmotion = 'calm' | 'curious' | 'proud' | 'surprised' | 'sheepish'
  * Nib. Origin is the TIP (the contact point with the sheet). About 430 px tall at s=1.
  *  splay 0..1   the tines open (unsure) ; stroke 0..1 a drawing bob (the tip presses, the body leans)
  *  tick 0..1    a carmine tick sticker on the right shoulder (a person checked it)
- *  tag 0..1     an OUR COUNT tag on a string from the collar
  *  look -1..1   the pupil looks left/right ; lean degrees ; squash 0..1 landing squash
  */
 export const Nib: React.FC<{
-  f: number; x: number; y: number; s?: number; emotion?: NibEmotion; splay?: number; stroke?: number; tick?: number; tag?: number;
+  f: number; x: number; y: number; s?: number; emotion?: NibEmotion; splay?: number; stroke?: number; tick?: number;
   look?: number; lookY?: number; lean?: number; squash?: number; cues?: number[]; seed?: number; label?: boolean; facing?: 1 | -1; ink?: number;
-}> = ({f, x, y, s = 1, emotion = 'calm', splay = 0, stroke = 0, tick = 0, tag = 0, look = 0, lookY = 0, lean = 0, squash = 0, cues, seed = 7, label = true, facing = 1, ink = 1}) => {
+}> = ({f, x, y, s = 1, emotion = 'calm', splay = 0, stroke = 0, tick = 0, look = 0, lookY = 0, lean = 0, squash = 0, cues, seed = 7, label = true, facing = 1, ink = 1}) => {
   const id = uid(`nb${seed}`);
   const bp = beatPose(f, seed, cues, 430);
   const ts = tones(NB.steel);
@@ -98,21 +97,6 @@ export const Nib: React.FC<{
   const eyeY = -232;
   const pup = look * 9;
   const pupY = lookY * 7;
-  const brows: Record<NibEmotion, [number, number]> = {
-    calm: [0, 0], curious: [-7, 3], proud: [-4, -4], surprised: [-12, -12], sheepish: [6, -8], focused: [9, 9], uneasy: [7, -5], wonder: [-10, -8],
-  };
-  const [bl, br] = brows[emotion];
-  const mouthY = -168;
-  const mouths: Record<NibEmotion, string> = {
-    calm: `M -18 ${mouthY} q 18 9 36 0`,
-    curious: `M -12 ${mouthY + 2} q 12 -6 24 0`,
-    proud: `M -22 ${mouthY - 2} q 22 16 44 0`,
-    surprised: `M -9 ${mouthY - 4} a 9 11 0 1 0 18 0 a 9 11 0 1 0 -18 0`,
-    sheepish: `M -16 ${mouthY + 2} q 8 6 16 0 q 8 -4 16 2`,
-    focused: `M -16 ${mouthY + 1} L 16 ${mouthY + 1}`,
-    uneasy: `M -18 ${mouthY + 3} q 9 -6 18 0 q 9 6 18 0`,
-    wonder: `M -10 ${mouthY - 3} a 10 9 0 1 0 20 0 a 10 9 0 1 0 -20 0`,
-  };
   const open = emotion === 'surprised' || emotion === 'wonder';
   return (
     <g transform={`translate(${x} ${y}) scale(${s * facing} ${s})`}>
@@ -459,10 +443,10 @@ export const WeighRail: React.FC<{f: number; x: number; y: number; w?: number; p
       <path d={`M -10 ${railY + 20} L -10 -60`} stroke={NB.brassL} strokeWidth={5} opacity={0.7} />
       <rect x={-w / 2} y={railY - 24} width={w} height={34} rx={10} fill={`url(#${id}b)`} stroke={NB.ink} strokeWidth={6} />
       {[-w / 2 + 14, w / 2 - 14].map((ex) => <circle key={ex} cx={ex} cy={railY - 7} r={20} fill={tb.key} stroke={NB.ink} strokeWidth={5} />)}
-      <g transform={`translate(0 ${railY - 76})`}>
+      {plate && <g transform={`translate(0 ${railY - 76})`}>
         <rect x={-(monoW(plate, 20) + 40) / 2} y={-26} width={monoW(plate, 20) + 40} height={46} rx={8} fill={NB.roomL} stroke={NB.ink} strokeWidth={5} />
         <text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={1.5} fill={NB.brassL}>{plate}</text>
-      </g>
+      </g>}
       <g transform={`translate(0 ${railY})`}>{children}</g>
       <circle cx={0} cy={railY - 7} r={9 + Math.sin(f / 30)} fill={NB.brassL} stroke={NB.ink} strokeWidth={3} />
     </g>
