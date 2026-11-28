@@ -2,6 +2,7 @@ import React from 'react';
 import {tones, FormGradient, RimLight, ContactShadow} from './lighting';
 import {figureIdle, FigurePose} from './figureidle';
 import {MONO, monoW} from './prospect';
+import {Hand, HandPencil} from './hand';
 
 /**
  * THE NIB FAMILY (2026-11-28, "The Map Swelled").
@@ -159,10 +160,28 @@ export const Nib: React.FC<{
  * CheckHand: a person's right hand and cuff holding a carmine pencil. Origin is the PENCIL TIP (the grip
  * point is drawn around it, so placing the tip places the hand). angle in degrees (0 = pencil pointing
  * straight down-left at 35deg from vertical). press 0..1 squashes the hand on a tick.
+ * Pass `cues` (strike frames) for the articulated lib Hand (lib/hand.tsx): wrist, knuckles, anticipation,
+ * press, recoil and settle. New episodes should; the cue-less path is kept so Ep1128 renders as shipped.
  */
-export const CheckHand: React.FC<{f: number; x: number; y: number; s?: number; angle?: number; press?: number; seed?: number; arm?: number; role?: 'study' | 'ours'}> =
-({f, x, y, s = 1, angle = 0, press = 0, seed = 3, arm = 1, role = 'study'}) => {
+export const CheckHand: React.FC<{f: number; x: number; y: number; s?: number; angle?: number; press?: number; seed?: number; arm?: number; role?: 'study' | 'ours'; cues?: number[]}> =
+({f, x, y, s = 1, angle = 0, press = 0, seed = 3, arm = 1, role = 'study', cues}) => {
   const ours = role === 'ours';
+  // cues given: the articulated lib Hand (machine pass 2026-11-28, queue lib-hand-asset) with the same
+  // role colours and tool, striking on each cue. Without cues this is the rigid hand Ep1128 shipped.
+  if (cues) {
+    return (
+      <Hand f={f} x={x} y={y} s={s} angle={angle} cues={cues} press={press} seed={seed} arm={arm > 0 ? 300 : 0}
+        skin={NB.skin} sleeve={ours ? NB.pine : NB.cuff} cuff={ours ? NB.pineD : NB.cuffD} ink={NB.ink}>
+        {ours ? (
+          <g>
+            <rect x={-30} y={-96} width={60} height={86} rx={14} fill={NB.pine} stroke={NB.ink} strokeWidth={4} />
+            <rect x={-20} y={-84} width={40} height={26} rx={4} fill={NB.vellumL} stroke={NB.ink} strokeWidth={2.5} />
+            <circle cx={0} cy={-6} r={10} fill={NB.pineD} stroke={NB.ink} strokeWidth={3} />
+          </g>
+        ) : <HandPencil color={NB.carmine} colorL={NB.carmineL} ink={NB.ink} />}
+      </Hand>
+    );
+  }
   const cuff = ours ? NB.pine : NB.cuff, cuffD = ours ? NB.pineD : NB.cuffD;
   const id = uid(`ch${seed}`);
   const tk = tones(NB.skin);

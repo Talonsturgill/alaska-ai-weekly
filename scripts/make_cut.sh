@@ -174,6 +174,13 @@ step ui_chrome        2 python3 scripts/ui_chrome_check.py
 # band on 24 of 26 stills; Ep1118 drew its local Near in 13 of 16 scenes. Advisory: names a local
 # set component (data-band="ok") drawn in more than six scenes and over half the film.
 step repeat_set       0 python3 scripts/repeat_set_check.py
+# Machine pass 2026-11-28 (music-bed-not-built): the 11-28 full cut stopped at the mix on a missing
+# music_bed.wav (the track was fetched with --out music.mp3), and rebuilding the bed rewrote the credit,
+# so credits_check failed in preflight. The bed and its credit are two files; check them here. Full
+# cuts only: a --source-only pass may run before the music is fetched.
+if [ $SOURCE_ONLY = 0 ]; then
+  step music_bed      2 python3 scripts/music_bed_check.py
+fi
 
 if [ ${#SOURCE_FAILS[@]} -gt 0 ]; then
   say "make_cut: STOPPED after the source gates, ${#SOURCE_FAILS[@]} failed: ${SOURCE_FAILS[*]}. Fix them all, then relaunch ($(( $(date +%s) - T0 ))s)."

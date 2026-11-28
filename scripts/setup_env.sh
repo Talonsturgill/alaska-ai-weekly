@@ -36,6 +36,10 @@ python3 "$(dirname "${BASH_SOURCE[0]}")/pillow_check.py" --repair \
 python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
   || python3 -m pip install --break-system-packages -q librosa faster_whisper \
   || echo "setup_env: WARN librosa/faster_whisper install failed (Gemini VO soundcheck/align will break)"
+# Machine pass 2026-11-28 (hf-whisper-rate-limit): 11-26 paid for three Gemini takes, then died on a
+# Hugging Face 429 fetching faster-whisper-small mid-synth. Fill the cache here, with backoff, before
+# anything is paid for. Best effort: a WARN, never a setup failure.
+python3 "$(dirname "${BASH_SOURCE[0]}")/whisper_prefetch.py" || echo "setup_env: WARN faster-whisper models not cached; the VO synth will fetch them mid-run"
 # num2words: vo_soundcheck.py's WER canonicalizer converts digit tokens (heard: "4,700",
 # "50") to their spelled-out word form (reference script: "four thousand seven hundred",
 # "fifty") so a correct read doesn't get penalized for spelling numbers differently than

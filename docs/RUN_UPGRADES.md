@@ -4147,3 +4147,13 @@ In-run fixes:
 - 7d0d3f7: the unsupported NEXT MAP · NOT DRAWN YET plate replaced, IN 2000 changed to C. 2000, WORLDWIDE added on the 66 cm plate, the quote given its ellipsis, the closing frame cleared of type on type.
 
 Queued: gate0 rounds (repeat 14), music pool (repeat 4), lib Hand asset (repeat 1), music-bed-not-built, share-bar-quantity, one-outdoor-vocabulary (repeat 1).
+
+## 2026-11-28 weekly machine pass
+Shipped:
+- 79b789b, the engine advance: lib/hand.tsx, an articulated Hand with wrist, knuckles, two-segment fingers and a cue-driven anticipation, strike, press, recoil and settle, plus idle life between cues. CheckHand uses it when given cues. HandLook and scripts/hand_check.py show the strike bends 6.1% of the box past a rigid shift, 7.9x the shipped CheckHand.
+- 0b0a246: music_bed_check, a make_cut source gate for a missing or non-WAV bed or a stale credit. get_music keeps a same-track credit.
+- 0e513fe: five verified CC BY 4.0 tracks in the curious/wonder pool.
+- cce6f2c: whisper_prefetch.py fills the faster-whisper cache before any paid synth.
+- 4f31a05: queue updates.
+
+The showrunner reran every verify command and all passed. Still open: share-bar-quantity, one-outdoor-vocabulary, low-motion holds, synth-only ambience, credits OCR alias. Owner-only: the Gate 0 round cap (repeat 14).
