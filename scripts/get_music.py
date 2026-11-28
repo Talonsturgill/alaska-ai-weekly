@@ -126,13 +126,28 @@ def pool_pick(mood):
         pool = m or pool
     return random.choice(pool) if pool else None
 
+def kept_credit(path, url):
+    """the credit string already recorded for this same track, or "" (a different track gets a new one)"""
+    try:
+        prev = json.load(open(path))
+    except (OSError, ValueError):
+        return ""
+    if url and prev.get("url") == url:
+        return str(prev.get("credit", "")).strip()
+    return ""
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url"); ap.add_argument("--title", default=""); ap.add_argument("--composer", default="")
     ap.add_argument("--license", default=""); ap.add_argument("--source", default=""); ap.add_argument("--credit", default="")
     ap.add_argument("--pool", action="store_true"); ap.add_argument("--mood", default="")
     ap.add_argument("--out", default="out/dispatch/music_bed.wav")
-    a = ap.parse_args(); os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
+    a = ap.parse_args()
+    # machine pass 2026-11-28 (music-bed-not-built): 11-28 passed --out music.mp3, so the credit named an
+    # mp3 and the mix found no music_bed.wav. The output is a WAV the mix reads, so refuse anything else.
+    if not a.out.lower().endswith(".wav"):
+        print(f"--out must be the WAV the mix reads (out/dispatch/music_bed.wav), not {a.out}", file=sys.stderr); sys.exit(2)
+    os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     if a.pool or not a.url:
         t = pool_pick(a.mood)
         if not t: print("no pool track available", file=sys.stderr); sys.exit(2)
@@ -145,13 +160,18 @@ def main():
         print("download failed: " + track["url"], file=sys.stderr); sys.exit(1)
     if not to_wav(tmp, a.out):
         print("not valid audio / convert failed: " + track["url"], file=sys.stderr); sys.exit(1)
+    # 11-28: rebuilding the bed for the same track recomputed a differently worded credit, the end card
+    # still painted the old one, and credits_check failed in preflight. Same url, no --credit: keep it.
+    credit_path = os.path.join(os.path.dirname(os.path.abspath(a.out)), "music_credit.json")
+    if not track["credit"]:
+        track["credit"] = kept_credit(credit_path, track["url"])
     credit = track["credit"] or " ".join(x for x in [
         f'"{track["title"]}"' if track["title"] else "", track["composer"],
         f'({track["source"]})' if track["source"] else "",
         # a middle dot, never " - ": the credit is painted in the end card and the house bans dashes
         f'· {track["license"]}' if track["license"] else ""] if x).strip()
     json.dump({**track, "credit": credit, "wav": a.out, "duration": round(dur(a.out), 1)},
-              open(os.path.join(os.path.dirname(os.path.abspath(a.out)), "music_credit.json"), "w"), indent=2)
+              open(credit_path, "w"), indent=2)
     print("CREDIT: " + credit)
     print(a.out)   # LAST line = the prepared wav
 
