@@ -706,6 +706,11 @@ CREDITS_MUSIC_MAX = 34        # licence-line ceiling, px (historical default 32)
 # hosts with any leading www. removed.
 _HOST_NAMES = {
     "newsminer.com": "FAIRBANKS DAILY NEWS-MINER",
+    "nature.com": "NATURE CLIMATE CHANGE",
+    "phys.org": "TU GRAZ VIA PHYS.ORG",
+    "tugraz.at": "TU GRAZ",
+    "figshare.com": "FIGSHARE",
+    "en.wikipedia.org": "WIKIPEDIA",
     "alaskasnewssource.com": "ALASKA'S NEWS SOURCE",
     "adn.com": "ANCHORAGE DAILY NEWS",
     "alaskapublic.org": "ALASKA PUBLIC MEDIA",

@@ -6,36 +6,39 @@ import {MONO, monoW} from './prospect';
 /**
  * THE NIB FAMILY (2026-11-28, "The Map Swelled").
  *
- * Nib is a knee-high brushed-steel drafting-pen nib that stands on its split tines. It is the
- * DEEP-LEARNING TRACER: its breather hole is its eye, its slit its mouth line, its ultramarine
- * reservoir holds the only ink the machine uses. It is never damaged; it changes only by gaining
- * neutral things (a carmine tick sticker on its shoulder, an OUR COUNT tag on its collar).
+ * Nib is a knee-high steel drafting-pen nib that stands on its split tines. It is the study's
+ * DEEP-LEARNING TRACER: its breather hole is its one eye (eye only, no brows or mouth: it acts
+ * through its tines, its lean and its ink line), its ultramarine reservoir holds the only ink the
+ * machine uses. It is never damaged and never carries OUR COUNT material.
  *
- * Colour law: ULTRAMARINE is the machine's ink alone (Nib, its lines). CARMINE is the human pencil
- * alone (CheckHand, ticks, corrections). COBALT is the OUR COUNT label alone. Lakes are glacial-flour
- * TURQUOISE. Every faced character here takes `cues` (the beatPose pattern).
+ * Colour law (LAW.*): ULTRAMARINE is the machine's line alone. PERSIMMON (NB.carmine key) is the
+ * study's checker's pencil alone, hairline strokes only. PINE (NB.cobalt key) is OUR COUNT alone, in
+ * stamp, slip, tab and type form. NICKEL (NB.brass key) is the scales, weights and steel tape. Lakes
+ * are rock-flour TURQUOISE.
  *
- * Also here: CheckHand (a person's hand with a carmine pencil, origin at the pencil tip), LightTable
- * (side view, with a lamp), LandsatTile (grey satellite tile with ice, rock and a turquoise lake blob),
- * LakeOutline (an eased ink trace of a blob), lakeBlob (the blob path), LakeChip (a popcorn lake chip),
- * TapeMeasure (a tailor's tape that creeps out), SpringScale (one brass spring scale with a pan) and
- * WeighRail (three or four spring scales on one brass rail under a MACHINE LEARNING MODELS plate).
+ * Also here: CheckHand (role 'study' = oatmeal cuff and persimmon pencil, role 'ours' = pine cuff and
+ * tally clicker; origin at the tool tip), LightTable (side view with a lamp), LandsatTile, lakeBlob,
+ * LakeFill, LakeOutline, LakeChip, TapeMeasure (a steel tape with plated ticks), BrassWeight (a
+ * machined nickel cylinder, optional turquoise lake inlay), SpringScale and WeighRail.
  */
 export const NB = {
-  room: '#1C1E26', roomL: '#2A2C36', roomD: '#121319',
-  vellum: '#F1E8D0', vellumD: '#D9CCA8', vellumL: '#FBF6E6', glow: '#FFF3D0',
+  room: '#2A2018', roomL: '#3A2D22', roomD: '#1C150F',
+  vellum: '#F6DDA8', vellumD: '#E0C084', vellumL: '#FCEFCF', glow: '#FFF3D0',
   oak: '#6B4E34', oakL: '#8E6A48', oakD: '#4A3422',
   steel: '#B9BEC8', steelD: '#7D8494', steelL: '#E8ECF2',
   ultra: '#3346C8', ultraL: '#6A7CF0', ultraD: '#1F2C8A',
-  carmine: '#B3263A', carmineL: '#D9506A', carmineD: '#7A1424',
-  cobalt: '#2F6FA8', cobaltL: '#5C97CC',
+  carmine: '#E0662A', carmineL: '#F59060', carmineD: '#A8441A',
+  cobalt: '#2F6B45', cobaltL: '#4E9466',
   lake: '#7FC8C2', lakeD: '#4FA39C', lakeL: '#B5E4DF',
   ice: '#EEF3F6', iceD: '#BFCBD6', rock: '#8C8A86', rockD: '#5E5C59', tile: '#9A9894', tileD: '#6E6C68',
-  brass: '#B98A3A', brassL: '#E9C46A', brassD: '#7A5820',
-  skin: '#C98E6A', skinD: '#9C6646', skinL: '#E2B08E', cuff: '#3E5A7A', cuffD: '#2A3E56',
-  sky: '#3B4660', skyL: '#5B6888', peak: '#8E9AB8', gravel: '#77706A', gravelD: '#4E4842',
-  ink: '#15161D', inkL: '#33343F', paper: '#F1E8D0', paperD: '#D9CCA8',
+  brass: '#8E949C', brassL: '#D3D7DC', brassD: '#4E535A',
+  skin: '#C98E6A', skinD: '#9C6646', skinL: '#E2B08E', cuff: '#CDBFA3', cuffD: '#A89A7E', pine: '#2F6B45', pineD: '#1E4A2E',
+  sky: '#5E5A78', skyL: '#E9B49A', peak: '#9A93B0', iceRim: '#F6C6C6', hilite: '#F3E39A', hiliteEdge: '#D9C25A', gravel: '#77706A', gravelD: '#4E4842',
+  ink: '#15161D', inkL: '#33343F', paper: '#F6DDA8', paperD: '#E0C084',
+  card: '#F2F3EF', cardD: '#D8DAD3', steelTape: '#C9CDD3',
 };
+/** colour-law aliases: persimmon is the study's pencil, pine is OUR COUNT, nickel the scales. */
+export const LAW = {persimmon: NB.carmine, pine: NB.cobalt, nickel: NB.brass, ultra: NB.ultra, lake: NB.lake};
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 const h01 = (a: number, b = 0) => {
@@ -111,7 +114,6 @@ export const Nib: React.FC<{
     wonder: `M -10 ${mouthY - 3} a 10 9 0 1 0 20 0 a 10 9 0 1 0 -20 0`,
   };
   const open = emotion === 'surprised' || emotion === 'wonder';
-  const tg = clamp01(tag);
   return (
     <g transform={`translate(${x} ${y}) scale(${s * facing} ${s})`}>
       <defs>
@@ -142,7 +144,7 @@ export const Nib: React.FC<{
         {/* the slit from the breather hole to the tip, opening with splay */}
         <path d={`M 0 ${eyeY + 34} L ${-sp * 6} -10`} stroke={NB.ink} strokeWidth={4} />
         {sp > 0.05 && <path d={`M 0 ${eyeY + 34} L ${sp * 6} -10`} stroke={NB.ink} strokeWidth={4} />}
-        <RimLight d="M 96 -300 C 100 -230 70 -150 30 -60" w={6} color="#9FE7E0" opacity={0.7} />
+        <RimLight d="M 96 -300 C 100 -230 70 -150 30 -60" w={6} color="#F4F7FA" opacity={0.75} />
         <path d="M -82 -300 C -86 -230 -60 -150 -24 -64" stroke={NB.steelL} strokeWidth={7} strokeLinecap="round" opacity={0.6} fill="none" />
         {/* the breather-hole eye */}
         <g transform={`translate(${look * 4} 0)`}>
@@ -153,26 +155,12 @@ export const Nib: React.FC<{
           {!blink && <circle cx={pup} cy={eyeY + 2 + pupY} r={6} fill={NB.ink} />}
           {!blink && <circle cx={pup + 4} cy={eyeY - 3 + pupY} r={3.5} fill="#FFFFFF" />}
           <circle cx={0} cy={eyeY} r={34} fill="none" stroke={NB.ultra} strokeWidth={4} opacity={0.85} />
-          {/* steel brows */}
-          <path d={`M -40 ${eyeY - 46 + bl} L -12 ${eyeY - 50 + bl * 0.4}`} stroke={NB.ink} strokeWidth={7} strokeLinecap="round" />
-          <path d={`M 12 ${eyeY - 50 + br * 0.4} L 40 ${eyeY - 46 + br}`} stroke={NB.ink} strokeWidth={7} strokeLinecap="round" />
-          <path d={mouths[emotion]} stroke={NB.ink} strokeWidth={5} fill={open ? NB.inkL : 'none'} strokeLinecap="round" />
         </g>
         {/* neutral additions */}
         {tick > 0.02 && (
           <g transform={`translate(70 -318) scale(${0.4 + 0.6 * (1 - Math.exp(-6 * clamp01(tick)) * Math.cos(8 * clamp01(tick)))}) rotate(-8)`}>
             <circle cx={0} cy={0} r={20} fill={NB.vellumL} stroke={NB.ink} strokeWidth={3} />
             <path d="M -9 1 L -2 9 L 11 -9" stroke={NB.carmine} strokeWidth={5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          </g>
-        )}
-        {tg > 0.02 && (
-          <g transform={`translate(-58 -350) rotate(${14 * Math.sin(f / 10) * (0.4 + 0.6 * (1 - tg)) - 6})`} opacity={clamp01(tg * 2)}>
-            <path d="M 0 0 L -10 54" stroke={NB.ink} strokeWidth={3} />
-            <g transform="translate(-10 54) rotate(8)">
-              <rect x={-52} y={0} width={104} height={34} rx={5} fill={NB.vellumL} stroke={NB.ink} strokeWidth={3} />
-              <circle cx={-40} cy={17} r={4} fill={NB.ink} />
-              <text x={6} y={23} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={13} fill={NB.cobalt} transform={`scale(${facing} 1)`}>OUR COUNT</text>
-            </g>
           </g>
         )}
       </g>
@@ -188,8 +176,10 @@ export const Nib: React.FC<{
  * point is drawn around it, so placing the tip places the hand). angle in degrees (0 = pencil pointing
  * straight down-left at 35deg from vertical). press 0..1 squashes the hand on a tick.
  */
-export const CheckHand: React.FC<{f: number; x: number; y: number; s?: number; angle?: number; press?: number; seed?: number; arm?: number}> =
-({f, x, y, s = 1, angle = 0, press = 0, seed = 3, arm = 1}) => {
+export const CheckHand: React.FC<{f: number; x: number; y: number; s?: number; angle?: number; press?: number; seed?: number; arm?: number; role?: 'study' | 'ours'}> =
+({f, x, y, s = 1, angle = 0, press = 0, seed = 3, arm = 1, role = 'study'}) => {
+  const ours = role === 'ours';
+  const cuff = ours ? NB.pine : NB.cuff, cuffD = ours ? NB.pineD : NB.cuffD;
   const id = uid(`ch${seed}`);
   const tk = tones(NB.skin);
   const pr = clamp01(press);
@@ -199,13 +189,25 @@ export const CheckHand: React.FC<{f: number; x: number; y: number; s?: number; a
       <defs><FormGradient id={`${id}k`} t={tk} /></defs>
       <ContactShadow cx={10} cy={6} rx={22} ry={6} opacity={0.35} />
       <g transform={`translate(0 ${pr * 6}) scale(${1 + pr * 0.04} ${1 - pr * 0.05})`}>
-        {/* the pencil: tip at the origin, running up the frame */}
-        <path d="M 0 0 L -9 -34 L 9 -34 Z" fill="#E7C9A0" stroke={NB.ink} strokeWidth={3} strokeLinejoin="round" />
-        <path d="M 0 0 L -3 -11 L 3 -11 Z" fill={NB.carmine} />
-        <rect x={-10} y={-260} width={20} height={228} fill={NB.carmine} stroke={NB.ink} strokeWidth={4} />
-        <path d="M -3 -250 L -3 -40" stroke={NB.carmineL} strokeWidth={3} />
-        <rect x={-11} y={-282} width={22} height={24} fill="#C8C8C8" stroke={NB.ink} strokeWidth={3} />
-        <rect x={-10} y={-300} width={20} height={20} rx={6} fill="#E49AA2" stroke={NB.ink} strokeWidth={3} />
+        {ours ? (
+          <g>
+            {/* our pine tally clicker held at the fingertips, its button at the origin */}
+            <rect x={-30} y={-96} width={60} height={86} rx={14} fill={NB.pine} stroke={NB.ink} strokeWidth={4} />
+            <rect x={-20} y={-84} width={40} height={26} rx={4} fill={NB.vellumL} stroke={NB.ink} strokeWidth={2.5} />
+            <circle cx={0} cy={-6} r={10} fill={NB.pineD} stroke={NB.ink} strokeWidth={3} />
+            <path d="M -18 -40 L 18 -40" stroke={NB.pineD} strokeWidth={3} />
+          </g>
+        ) : (
+          <g>
+            {/* the pencil: tip at the origin, running up the frame */}
+            <path d="M 0 0 L -9 -34 L 9 -34 Z" fill="#E7C9A0" stroke={NB.ink} strokeWidth={3} strokeLinejoin="round" />
+            <path d="M 0 0 L -3 -11 L 3 -11 Z" fill={NB.carmine} />
+            <rect x={-10} y={-260} width={20} height={228} fill={NB.carmine} stroke={NB.ink} strokeWidth={4} />
+            <path d="M -3 -250 L -3 -40" stroke={NB.carmineL} strokeWidth={3} />
+            <rect x={-11} y={-282} width={22} height={24} fill="#C8C8C8" stroke={NB.ink} strokeWidth={3} />
+            <rect x={-10} y={-300} width={20} height={20} rx={6} fill={NB.cuffD} stroke={NB.ink} strokeWidth={3} />
+          </g>
+        )}
         {/* the hand gripping at about 60 px up the pencil */}
         <path d="M -22 -64 C -48 -80 -58 -126 -40 -160 C -22 -192 30 -196 52 -170 C 70 -146 64 -104 40 -80 C 26 -66 6 -58 -8 -60 Z" fill={`url(#${id}k)`} stroke={NB.ink} strokeWidth={5} strokeLinejoin="round" />
         {/* thumb over the pencil and the index finger along it */}
@@ -214,9 +216,9 @@ export const CheckHand: React.FC<{f: number; x: number; y: number; s?: number; a
         <path d="M 30 -120 q 10 4 14 14 M 34 -144 q 10 4 12 14" stroke={NB.skinD} strokeWidth={3} fill="none" />
         <path d="M -6 -60 q 6 4 12 0" stroke={NB.skinD} strokeWidth={3} fill="none" />
         {/* the cuff and sleeve, out of frame upward */}
-        {arm > 0 && <path d="M -40 -164 L -70 -420 L 90 -440 L 56 -168 Z" fill={NB.cuff} stroke={NB.ink} strokeWidth={5} strokeLinejoin="round" />}
-        {arm > 0 && <path d="M -44 -182 Q 6 -200 58 -186" stroke={NB.cuffD} strokeWidth={8} fill="none" />}
-        {arm > 0 && <path d="M -56 -300 L 76 -312" stroke={NB.cuffD} strokeWidth={4} fill="none" opacity={0.7} />}
+        {arm > 0 && <path d="M -40 -164 L -70 -420 L 90 -440 L 56 -168 Z" fill={cuff} stroke={NB.ink} strokeWidth={5} strokeLinejoin="round" />}
+        {arm > 0 && <path d="M -44 -182 Q 6 -200 58 -186" stroke={cuffD} strokeWidth={8} fill="none" />}
+        {arm > 0 && <path d="M -56 -300 L 76 -312" stroke={cuffD} strokeWidth={4} fill="none" opacity={0.7} />}
       </g>
     </g>
   );
@@ -372,46 +374,55 @@ export const LakeChip: React.FC<{x: number; y: number; r?: number; pop?: number;
   );
 };
 
-/** a tailor's tape measure: a brass-capped case at x,y with the tape extended `len` px to the right, ticked. label rides the tip. */
-export const TapeMeasure: React.FC<{f: number; x: number; y: number; len: number; label?: string; sweat?: number}> = ({f, x, y, len, label, sweat = 0}) => {
+/** a steel tape: a case at x,y with the tape extended `len` px to the right, ticked. label rides the tip. */
+export const TapeMeasure: React.FC<{f: number; x: number; y: number; len: number; label?: string; sweat?: number; marks?: {at: number; label: string; color?: string}[]}> = ({f, x, y, len, label, sweat = 0, marks = []}) => {
   const L = Math.max(0, len);
   return (
     <g transform={`translate(${x} ${y})`}>
       <ContactShadow cx={L / 2} cy={30} rx={L / 2 + 50} ry={8} opacity={0.3} />
-      <rect x={0} y={-14} width={L} height={28} fill="#F2D95C" stroke={NB.ink} strokeWidth={3.5} />
+      <rect x={0} y={-14} width={L} height={28} fill={NB.steelTape} stroke={NB.ink} strokeWidth={3.5} />
       {Array.from({length: Math.floor(L / 16)}, (_, i) => <path key={i} d={`M ${i * 16 + 8} -14 l 0 ${i % 5 === 4 ? 16 : 9}`} stroke={NB.ink} strokeWidth={2} />)}
       <rect x={L - 6} y={-20} width={12} height={40} rx={2} fill={NB.brass} stroke={NB.ink} strokeWidth={3} />
-      <circle cx={-20} cy={0} r={42} fill={NB.carmineD === '' ? '' : '#3E5A7A'} stroke={NB.ink} strokeWidth={5} />
+      <circle cx={-20} cy={0} r={42} fill={NB.oakL} stroke={NB.ink} strokeWidth={5} />
       <circle cx={-20} cy={0} r={18} fill={NB.brassL} stroke={NB.ink} strokeWidth={4} />
       <path d={`M -20 0 L ${-20 + 14 * Math.cos(f / 8)} ${14 * Math.sin(f / 8)}`} stroke={NB.ink} strokeWidth={3} />
       {sweat > 0.05 && <path d={`M ${L + 6} ${-26 + 10 * ((f / 12) % 1)} q 5 8 0 12 q -5 -4 0 -12`} fill={NB.lakeL} stroke={NB.ink} strokeWidth={2} opacity={sweat} />}
       {label && <NLab x={L + 10 + monoW(label, 16) / 2 + 20} y={0} text={label} size={16} fill={NB.vellumL} />}
+      {marks.filter((m) => m.at <= L + 1).map((m) => <g key={m.label}><path d={`M ${m.at} -24 L ${m.at} 22`} stroke={m.color ?? NB.ink} strokeWidth={5} /><NLab x={m.at} y={48} text={m.label} size={15} fill={NB.vellumL} ink={m.color ?? NB.ink} edge={m.color ?? NB.ink} /></g>)}
     </g>
   );
 };
 
 /** a brass weight with a label plate; size by share. Origin at its bottom centre. */
-export const BrassWeight: React.FC<{x: number; y: number; w: number; label?: string; tint?: string}> = ({x, y, w, label, tint = NB.brass}) => {
+export const BrassWeight: React.FC<{x: number; y: number; w: number; label?: string; tint?: string; lake?: boolean}> = ({x, y, w, label, tint = NB.brass, lake = false}) => {
   const id = uid('bw');
   const t = tones(tint);
   const h = w * 0.72;
+  const ry = w * 0.14;
   return (
     <g transform={`translate(${x} ${y})`}>
-      <defs><FormGradient id={`${id}t`} t={t} /></defs>
-      <path d={`M ${-w / 2} 0 L ${-w * 0.42} ${-h} L ${w * 0.42} ${-h} L ${w / 2} 0 Z`} fill={`url(#${id}t)`} stroke={NB.ink} strokeWidth={5} strokeLinejoin="round" />
-      <rect x={-w * 0.18} y={-h - w * 0.14} width={w * 0.36} height={w * 0.14} rx={4} fill={t.key} stroke={NB.ink} strokeWidth={4} />
-      <path d={`M ${-w * 0.34} ${-h * 0.82} L ${-w * 0.4} ${-h * 0.1}`} stroke={NB.brassL} strokeWidth={4} opacity={0.8} />
-      {label && <text x={0} y={-h * 0.4} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={Math.min(26, (w * 0.8) / (label.length * 0.62))} fill={NB.ink}>{label}</text>}
+      <defs>
+        <linearGradient id={`${id}t`} x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stopColor={t.shade} /><stop offset="0.3" stopColor={t.key} /><stop offset="0.55" stopColor={t.base} /><stop offset="1" stopColor={t.core} />
+        </linearGradient>
+      </defs>
+      <path d={`M ${-w / 2} ${-h} L ${-w / 2} 0 A ${w / 2} ${ry} 0 0 0 ${w / 2} 0 L ${w / 2} ${-h} Z`} fill={`url(#${id}t)`} stroke={NB.ink} strokeWidth={5} />
+      <path d={`M ${-w / 2} ${-h * 0.35} A ${w / 2} ${ry} 0 0 0 ${w / 2} ${-h * 0.35}`} stroke={NB.brassD} strokeWidth={3} fill="none" />
+      <ellipse cx={0} cy={-h} rx={w / 2} ry={ry} fill={t.key} stroke={NB.ink} strokeWidth={4} />
+      <path d={`M -10 ${-h - 4} Q 0 ${-h - 30} 10 ${-h - 4}`} stroke={NB.ink} strokeWidth={6} fill="none" />
+      <path d={`M ${-w * 0.36} ${-h + 10} L ${-w * 0.36} -8`} stroke={NB.brassL} strokeWidth={5} opacity={0.85} />
+      {lake && <path d={lakeBlob(0, -h * 0.62, w * 0.3, w * 0.16, 77)} fill={NB.lake} stroke={NB.ink} strokeWidth={3} />}
+      {label && <text x={0} y={-h * (lake ? 0.2 : 0.4)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={Math.min(24, (w * 0.84) / (label.length * 0.62))} fill={NB.ink}>{label}</text>}
     </g>
   );
 };
 
 /**
- * SpringScale: a brass spring hanging from a hook at x,y, a pan on chains below; the spring's extension
+ * SpringScale: a nickel spring hanging from a hook at x,y, a pan on chains below; the spring's extension
  * is `ext` px (the honest share), the weight sits in the pan. empty draws an empty swinging pan.
  */
-export const SpringScale: React.FC<{f: number; x: number; y: number; ext: number; weightW?: number; label?: string; empty?: boolean; swing?: number; seed?: number; land?: number}> =
-({f, x, y, ext, weightW = 0, label, empty = false, swing = 0, seed = 1, land = 1}) => {
+export const SpringScale: React.FC<{f: number; x: number; y: number; ext: number; weightW?: number; label?: string; empty?: boolean; swing?: number; seed?: number; land?: number; lake?: boolean}> =
+({f, x, y, ext, weightW = 0, label, empty = false, swing = 0, seed = 1, land = 1, lake = false}) => {
   const coils = 9;
   const sw = swing * 6 * Math.sin(f / 9 + seed);
   const L = 60 + ext;
@@ -428,13 +439,13 @@ export const SpringScale: React.FC<{f: number; x: number; y: number; ext: number
         <path d="M 0 0 L -70 70 M 0 0 L 70 70" stroke={NB.ink} strokeWidth={3} />
         <path d="M -86 70 Q 0 104 86 70 Z" fill={NB.brass} stroke={NB.ink} strokeWidth={5} />
         <path d="M -70 76 Q 0 96 70 76" stroke={NB.brassL} strokeWidth={3} fill="none" />
-        {!empty && weightW > 0 && lk > 0.01 && <g transform={`translate(0 ${-(1 - lk) * 260})`}><BrassWeight x={0} y={74} w={weightW} label={label} /></g>}
+        {!empty && weightW > 0 && lk > 0.01 && <g transform={`translate(0 ${-(1 - lk) * 260})`}><BrassWeight x={0} y={74} w={weightW} label={label} lake={lake} /></g>}
       </g>
     </g>
   );
 };
 
-/** WeighRail: a brass rail on a column, n spring scales hanging from it; the plate reads its text. Origin: column foot. */
+/** WeighRail: a nickel rail on a column, n spring scales hanging from it; the plate reads its text. Origin: column foot. */
 export const WeighRail: React.FC<{f: number; x: number; y: number; w?: number; plate?: string; children?: React.ReactNode; railY?: number}> =
 ({f, x, y, w = 860, plate = 'MACHINE LEARNING MODELS', children, railY = -720}) => {
   const id = uid('wr');
