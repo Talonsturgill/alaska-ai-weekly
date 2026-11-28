@@ -7,6 +7,49 @@
 #
 # Always put the track's `credit` line in the Gmail draft.
 pool:
+  # ADDED 2026-11-28 machine pass (music-pool-drained, repeat 4: the curious/wonder branch fell back to a
+  # track played inside 30 days on 11-18, 11-25, 11-27 and 11-28). Five at once, each downloaded in full and
+  # measured with ffprobe: Clean Soul 306.7 s, Ascending the Vale 247.6 s, Gymnopedie No 1 187.1 s, Meditation Impromptu 02 249.1 s, Silver Blue Light 350.1 s.
+  - title: "Clean Soul"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Clean%20Soul.mp3"
+    license: "CC BY 4.0"
+    credit: '"Clean Soul" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    duration_s: 306.7
+    mood: [curious, calm, light, hopeful]
+  - title: "Ascending the Vale"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Ascending%20the%20Vale.mp3"
+    license: "CC BY 4.0"
+    credit: '"Ascending the Vale" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    duration_s: 247.6
+    mood: [wonder, curious, delicate, hopeful]
+  - title: "Gymnopedie No 1"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%201.mp3"
+    license: "CC BY 4.0"
+    credit: '"Gymnopedie No 1" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    duration_s: 187.1
+    mood: [delicate, pondering, reflective, curious]
+  - title: "Meditation Impromptu 02"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Meditation%20Impromptu%2002.mp3"
+    license: "CC BY 4.0"
+    credit: '"Meditation Impromptu 02" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    duration_s: 249.1
+    mood: [pondering, calm, ambient, curious]
+  - title: "Silver Blue Light"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Silver%20Blue%20Light.mp3"
+    license: "CC BY 4.0"
+    credit: '"Silver Blue Light" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    duration_s: 350.1
+    mood: [wonder, ambient, dreamy, curious]
   # ADDED 2026-11-27: every curious/wonder entry had played inside 30 days (Thinking Music 11-16, Easy Lemon 11-25, Investigations 11-19). Downloaded and verified this run.
   - title: "Dreams Become Real"
     composer: "Kevin MacLeod"
