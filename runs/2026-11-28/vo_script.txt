@@ -1,0 +1,21 @@
+A machine drew the world's glacier lakes. Twice.
+It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines.
+Then people checked the lines by hand.
+It's in Nature Climate Change, out November twentieth.
+So does a lake eat its glacier?
+Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent.
+But their area grew only about nine percent.
+The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.
+The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly.
+By our count, Alaska's lakes touching glaciers went from nine hundred thirty-one to one thousand seventy-eight.
+Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers.
+The world's lakes multiplied. Alaska's swelled.
+Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes.
+Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.
+Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.
+Tobias Bolch, a co-author at TU Graz, says contact with a lake further accelerates the loss of ice.
+Then the team's machine learning models weighed the factors.
+For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six.
+A real push. The smallest of the three.
+The release and abstract give no split for Alaska. Here, the push could be bigger, or smaller.
+The map stops at about twenty twenty. Who traces the next one?

@@ -1,0 +1,204 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A machine drew the world's glacier lakes. Twice.",
+   "claims": [
+    "c3"
+   ],
+   "t": "A machine drew the world's glacier lakes. Twice."
+  },
+  {
+   "idx": 1,
+   "text": "It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines.",
+   "claims": [
+    "c3",
+    "c4"
+   ],
+   "t": "It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines."
+  },
+  {
+   "idx": 2,
+   "text": "Then people checked the lines by hand.",
+   "claims": [
+    "c5"
+   ],
+   "t": "Then people checked the lines by hand."
+  },
+  {
+   "idx": 3,
+   "text": "It's in Nature Climate Change, out November twentieth.",
+   "claims": [
+    "c1"
+   ],
+   "t": "It's in Nature Climate Change, out November twentieth."
+  },
+  {
+   "idx": 4,
+   "text": "So does a lake eat its glacier?",
+   "claims": [
+    "narration"
+   ],
+   "t": "So does a lake eat its glacier?"
+  },
+  {
+   "idx": 5,
+   "text": "Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent.",
+   "claims": [
+    "c6"
+   ],
+   "t": "Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent."
+  },
+  {
+   "idx": 6,
+   "text": "But their area grew only about nine percent.",
+   "claims": [
+    "c19"
+   ],
+   "t": "But their area grew only about nine percent."
+  },
+  {
+   "idx": 7,
+   "text": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.",
+   "claims": [
+    "c7"
+   ],
+   "t": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number."
+  },
+  {
+   "idx": 8,
+   "text": "The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly.",
+   "claims": [
+    "c8",
+    "c9"
+   ],
+   "t": "The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly."
+  },
+  {
+   "idx": 9,
+   "text": "By our count, Alaska's lakes touching glaciers went from nine hundred thirty-one to one thousand seventy-eight.",
+   "claims": [
+    "c10"
+   ],
+   "t": "By our count, Alaska's lakes touching glaciers went from nine hundred thirty-one to one thousand seventy-eight."
+  },
+  {
+   "idx": 10,
+   "text": "Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers.",
+   "claims": [
+    "c11"
+   ],
+   "t": "Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers."
+  },
+  {
+   "idx": 11,
+   "text": "The world's lakes multiplied. Alaska's swelled.",
+   "claims": [
+    "c6",
+    "c19",
+    "c10",
+    "c11"
+   ],
+   "t": "The world's lakes multiplied. Alaska's swelled."
+  },
+  {
+   "idx": 12,
+   "text": "Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes.",
+   "claims": [
+    "c12",
+    "c20"
+   ],
+   "t": "Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes."
+  },
+  {
+   "idx": 13,
+   "text": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.",
+   "claims": [
+    "c13"
+   ],
+   "t": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight."
+  },
+  {
+   "idx": 14,
+   "text": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
+   "claims": [
+    "c14"
+   ],
+   "t": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty."
+  },
+  {
+   "idx": 15,
+   "text": "Tobias Bolch, a co-author at TU Graz, says contact with a lake further accelerates the loss of ice.",
+   "claims": [
+    "c2",
+    "c15"
+   ],
+   "t": "Tobias Bolch, a co-author at TU Graz, says contact with a lake further accelerates the loss of ice."
+  },
+  {
+   "idx": 16,
+   "text": "Then the team's machine learning models weighed the factors.",
+   "claims": [
+    "c16"
+   ],
+   "t": "Then the team's machine learning models weighed the factors."
+  },
+  {
+   "idx": 17,
+   "text": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six.",
+   "claims": [
+    "c17"
+   ],
+   "t": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six."
+  },
+  {
+   "idx": 18,
+   "text": "A real push. The smallest of the three.",
+   "claims": [
+    "c17"
+   ],
+   "t": "A real push. The smallest of the three."
+  },
+  {
+   "idx": 19,
+   "text": "The release and abstract give no split for Alaska. Here, the push could be bigger, or smaller.",
+   "claims": [
+    "c7"
+   ],
+   "t": "The release and abstract give no split for Alaska. Here, the push could be bigger, or smaller."
+  },
+  {
+   "idx": 20,
+   "text": "The map stops at about twenty twenty. Who traces the next one?",
+   "claims": [
+    "c18"
+   ],
+   "t": "The map stops at about twenty twenty. Who traces the next one?"
+  }
+ ],
+ "caption_fixups": {
+  "two thousand": "2000",
+  "twenty twenty": "2020",
+  "November twentieth": "November 20th",
+  "three thousand five hundred sixty-seven": "3,567",
+  "thirty-five percent": "35%",
+  "nine percent": "9%",
+  "nine hundred thirty-one": "931",
+  "one thousand seventy-eight": "1,078",
+  "sixteen percent": "16%",
+  "eleven hundred ninety": "1,190",
+  "one in thirteen": "1 in 13",
+  "a hundred five": "105",
+  "a hundred fifty-eight": "158",
+  "sixty-six": "66",
+  "about forty.": "about 40.",
+  "eleven percent": "11%",
+  "forty-three": "43",
+  "forty-six": "46"
+ },
+ "caption_quotes": [],
+ "caption_split_after": [
+  "It read Landsat satellite pictures",
+  "lakes touching glaciers"
+ ]
+}

@@ -51,6 +51,14 @@ pool:
   # ADDED 2026-11-24: every reflective/newsy/driving/warm entry had played inside 30 days (Echoes of Time v2 11-10). Downloaded and verified this run (HTTP 206 range probe, 180 s).
   # ADDED 2026-11-25: curious/wonder pool fell back to Deep Haze (11-21) and Light Thought var 1 (11-15). Downloaded and verified this run (126.4 s).
   # ADDED 2026-11-26: celebratory branch fell back to Wholesome (11-08). Downloaded and verified this run (180 s).
+  # ADDED 2026-11-28: the curious/wonder pool fell back to Wallpaper (11-18). Downloaded and verified this run (276.4 s source).
+  - title: "Aretes"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Aretes.mp3"
+    license: "CC BY 4.0"
+    credit: '"Aretes" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [wonder, curious, calm, hopeful]
   - title: "Life of Riley"
     composer: "Kevin MacLeod"
     source: "incompetech.com"

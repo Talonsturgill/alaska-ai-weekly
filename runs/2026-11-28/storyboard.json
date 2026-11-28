@@ -1,0 +1,2552 @@
+{
+  "run_date": "2026-11-28",
+  "slug": "the-map-swelled",
+  "title": "The Map Swelled",
+  "concept": "A study in Nature Climate Change (November 20th, Zhao et al., co-author Tobias Bolch of TU Graz) used deep learning to map glacier lakes worldwide from Landsat images of about 2000 and about 2020, and people checked them by hand. Lakes touching glaciers rose by 3,567, about 35 percent, but their area only about 9 percent. The release calls Alaska's growth particularly pronounced but prints no Alaska number, so we counted the authors' open map: our count matches their world lake count exactly, Alaska's went 931 to 1,078 while their area grew about 35 percent to about 1,190 sq km, about half the world's added area from about 1 in 13 of its lakes, Vitus Lake at Bering Glacier the biggest gain (about 105 to 158 sq km). The case for yes: lake-ending glaciers lost about 66 cm of water a year against about 40 on land, and Bolch says lake contact further accelerates loss. Then the team's machine learning models weighed the factors: lake about 11, climate about 43, glacier shape about 46, for lake-ending glaciers worldwide. A real push, the smallest of the three. The release and abstract give no split for Alaska. Drawn as NIB, a drafting-pen nib that traces lakes on glowing Landsat tiles while the study's persimmon pencil checks the lines and our pine-cuffed hand counts, a world of popcorn lake chips against Alaska's lakes rising like dough, two inventory rings at Vitus Lake with our pin, two glacier fronts with water columns, a rail of three spring scales, and the release card's blank WHY row hanging as an empty fourth pan.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 125.44,
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "grid-modular",
+    "register": "cartoon-interior-drafting-table",
+    "palette": "bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 lit from beneath, honey oak #6B4E34, Landsat frames #9A9894 with snowy ice #EEF3F6, rock-flour turquoise lakes #7FC8C2, ultramarine #3346C8 for the machine alone, persimmon #E0662A for the study's pencil alone, pine #2F6B45 for OUR COUNT alone, nickel #8E949C scales, lavender #5E5A78 to rose #E9B49A first light outdoors",
+    "camera_strategy": "overhead-light-table-and-ground-level-fronts",
+    "light_story": "bright amber lamplight that cools as the weighing begins and warms again at the end",
+    "metaphor": "a drafting-pen nib that traces lakes while a person's pencil checks it, lakes that rise like dough, two tree rings at one lake, and a rail of spring scales with an empty fourth pan"
+  },
+  "signature_shot": 10,
+  "palette": "bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 lit from beneath, honey oak #6B4E34, Landsat frames #9A9894 with snowy ice #EEF3F6, rock-flour turquoise lakes #7FC8C2, ultramarine #3346C8 for the machine alone, persimmon #E0662A for the study's pencil alone, pine #2F6B45 for OUR COUNT alone, nickel #8E949C scales, lavender #5E5A78 to rose #E9B49A first light outdoors",
+  "divergence_note": "Against the last four films: 11-27 an outdoor green-slate storm with lemon lightning (hue about 52) and a teardrop glass hero on a sedge ridge; 11-26 celadon CT tile and orchid under a bone lightbox, indoors before dawn; 11-25 bone noon snow at a rail fork with railway amber; 11-24 flat July overcast on olive tundra with vermilion pins. This film is a warm umber drafting den lit from BELOW by amber-cream vellum and a lamp, with three inks each reserved to one role (ultramarine about 232 for the machine's lines, persimmon about 20 as thin pencil strokes for the study's checker, pine about 143 for OUR COUNT stamps and slips) and turquoise lake fills (about 175); persimmon sits about 12 degrees from 11-24's vermilion pins, kept to hairline pencil strokes, never fills. The hero is a steel drafting-pen nib standing on its tines, a chisel silhouette unlike 11-27's teardrop flask, 11-26's round pulse or 11-23's cylinder. Honest overlaps: 11-26 also had a backlit table (a clinical bone CT lightbox; here warm cream vellum over grey satellite tiles in a dark room), 11-24 also used overhead map shots (here the overhead view is of a drafting table, not terrain), 11-26 also lit an interior from a glowing surface (a bone CT lightbox; here a warm vellum table plus a lamp key), and the scales are nickel, not 11-27's brass; the glacier fronts are hand-drawn in this palette.",
+  "treatment": {
+    "title": "The Map Swelled",
+    "summary": "A drafting-pen nib called NIB, the study's deep-learning tracer, draws glacier lakes on glowing Landsat tiles while the study's checker ticks its lines in persimmon pencil; our newsroom hand in a pine-green cuff counts the authors' open map and finds Alaska's lakes swelled more than they multiplied; THE CASE FOR YES is drawn at two real glacier fronts at first light; then a nickel rail of three spring scales (the team's machine learning models) weighs lake about 11, climate about 43, shape about 46, and the release card's empty WHY? tab hangs from the card's own clip as an empty pan.",
+    "judge_reasoning": "Judge reasoning: the showrunner judged the four pitches directly. All four independently cast the same hero, NIB, a drafting-pen nib whose breather hole is its eye, because the tool really does draw shorelines on satellite tiles; that convergence is the strongest evidence the casting is the story's own and not a default. The Dramatist wins on structure: THE CASE FOR YES gets the whole stage (66 vs 40 cm, Bolch's quote, Alaska's swelling, Vitus's two rings) BEFORE any counterweight arrives, then a rail of three nickel spring scales for the team's machine learning models lands the answer, and the release card's blank WHY row lifts off and becomes an empty fourth pan, ALASKA'S SPLIT \u00b7 NOT IN THE RELEASE OR ABSTRACT. That is the one picture that holds \"a real push, the smaller one\" and \"Alaska's split is open\" at the same time. Its loops are the cleanest: Nib's line stopping at a tile edge at 0:09 and again at the CIRCA 2020 edge in the button; the WHY row planted about 40 s and paid about 100 s."
+  },
+  "angle": {
+    "thesis": "Deep learning drew the world's glacier lakes and people checked them, and because the authors posted that map we could pull the Alaska numbers the release and abstract don't print: by our count, from about 2000 to 2020 Alaska's ice-contact lakes swelled more than they multiplied (about 16 percent more lakes, about 35 percent more area, roughly half the world's added lake area), while the study's own machine learning models rank the lake as the smallest of three predictors of loss for lake-ending glaciers worldwide, a real push but not the main one, and the release and abstract give no split for Alaska.",
+    "falsifiability": "False if our count failed to reproduce the paper's world total (it matches exactly, c9); if Alaska's lake count grew as fast as its area (c10 +16 percent vs c11 +35 percent); if Alaska's added area were a small share of the world's (c12 about half); or if lakes rivalled climate and glacier shape as a cause (c17 about 11 percent, ranges not overlapping 43 and 46).",
+    "supporting_facts": [
+      "The mechanism: deep learning drew glacier lakes worldwide from Landsat images for 2000 and 2020 (c3, c4), people checked them by hand (c5), and the whole inventory is public (c8).",
+      "The world multiplied, Alaska swelled: worldwide ice-contact lakes rose 35 percent in number (c6) but about 9 percent in area (c19); our count matches the world's lake count exactly (c9, count only) and finds Alaska's 931 to 1,078, +16 percent (c10), while their area grew about 35 percent (c11), about half the world's added area (c12) from about 1 in 13 of its ice-contact lakes (c20), Vitus Lake at Bering Glacier the biggest gain (c13).",
+      "The weight of the lake, both ways: lake-ending glaciers lose about 66 cm of water a year against about 40 on land (c14) and Bolch says contact further accelerates the loss (c15), but machine learning models give the lake about 11 percent, climate about 43, glacier shape about 46 (c16, c17)."
+    ],
+    "counterpoint_to_honor": "Gets its own scene at full strength: lake-ending glaciers lose ice about two thirds faster (c14) and the co-author says lake contact further accelerates loss (c15), and Alaska is where lake area grew most, while the release and abstract give no split for Alaska, so the local push could be bigger than the global 11 percent. The film says plainly it's an open question and holds both: a real push, the smaller one. Our count is ours, not peer reviewed, labelled on every surface; area carries about.",
+    "valence": "curious, leaning celebratory about the method: a global, human-checked, open census that a small Alaska newsroom could reproduce to the lake. No hazard claim, the abstract and release make none.",
+    "runner_up_angles": [
+      {
+        "angle": "Analyst B, the lake is mostly a witness: Alaska's swelling lakes are a gauge of loss driven by climate and shape",
+        "why_lost": "folded in as the second movement; on its own it under-sells the real accelerant (c14, c15) and loses the AI-and-open-data story the viewer can feel"
+      },
+      {
+        "angle": "Analyst C, open data lets Alaska pull its own numbers from a global paper",
+        "why_lost": "became the spine; on its own it risked ending on a methods brag without the cause question"
+      },
+      {
+        "angle": "Analyst A, AI-first human-checked map shows swelling not multiplying, a free repeatable way to track glaciers, not an alarm",
+        "why_lost": "'free, repeatable' implies a future update the record doesn't promise (c18 the map stops at 2020); kept as the button's question"
+      }
+    ],
+    "cross_challenge": "Round one: three analysts (mechanism, counterweight, Alaska upside). Round two: an editor red-teamed the synthesis and it was revised: dropped 'for the first time' and 'every lake', limited 'matches exactly' to the count, past tense with dates, cut 'gauge' as the study's verdict (our reading at most), put the model framing on the 11/43/46 split (c16 beside c17), one up-front OUR COUNT label, credit to the open data not to us, and promoted the world-multiplied-Alaska-swelled contrast (c19, c20) to the middle movement."
+  },
+  "claim_map": {
+    "1": [
+      "c3"
+    ],
+    "2": [
+      "c3"
+    ],
+    "3": [
+      "c3"
+    ],
+    "4": [
+      "c4"
+    ],
+    "41": [
+      "c3"
+    ],
+    "5": [
+      "c3"
+    ],
+    "6": [
+      "c5"
+    ],
+    "7": [
+      "c3"
+    ],
+    "8": [
+      "c1"
+    ],
+    "9": [
+      "narration"
+    ],
+    "10": [
+      "narration"
+    ],
+    "11": [
+      "c6"
+    ],
+    "50": [
+      "c6"
+    ],
+    "42": [
+      "c6"
+    ],
+    "13": [
+      "c19"
+    ],
+    "14": [
+      "c7"
+    ],
+    "43": [
+      "c7"
+    ],
+    "15": [
+      "c7"
+    ],
+    "16": [
+      "c8"
+    ],
+    "17": [
+      "c9"
+    ],
+    "18": [
+      "c9"
+    ],
+    "19": [
+      "c10"
+    ],
+    "44": [
+      "c10"
+    ],
+    "20": [
+      "c11"
+    ],
+    "45": [
+      "c11",
+      "c19"
+    ],
+    "51": [
+      "c11"
+    ],
+    "22": [
+      "c6",
+      "c19",
+      "c10",
+      "c11"
+    ],
+    "23": [
+      "c12"
+    ],
+    "46": [
+      "c12"
+    ],
+    "24": [
+      "c20"
+    ],
+    "25": [
+      "c13"
+    ],
+    "47": [
+      "c13"
+    ],
+    "52": [
+      "c13"
+    ],
+    "26": [
+      "c13"
+    ],
+    "27": [
+      "narration"
+    ],
+    "28": [
+      "c14"
+    ],
+    "29": [
+      "c14"
+    ],
+    "30": [
+      "c2"
+    ],
+    "31": [
+      "c15"
+    ],
+    "32": [
+      "c16"
+    ],
+    "48": [
+      "c17"
+    ],
+    "53": [
+      "c17"
+    ],
+    "33": [
+      "c17"
+    ],
+    "34": [
+      "c17"
+    ],
+    "35": [
+      "c17"
+    ],
+    "36": [
+      "c17"
+    ],
+    "37": [
+      "c7"
+    ],
+    "38": [
+      "narration"
+    ],
+    "39": [
+      "c18"
+    ],
+    "40": [
+      "narration"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "A dark light table and a grey Landsat tile with a turquoise lake against white ice; at 0.2 s the table clicks on from below and NIB drops tip-first onto the lake's shore with a squash",
+    "headline": "A MACHINE \u00b7 DEEP LEARNING",
+    "motion_by_s": 0.2,
+    "loopback": "Frame 1 is NIB dropping onto a lake's shore on the lit table; the last shot returns overhead to the same table, NIB's line stopped at the vellum's CIRCA 2020 edge and its tip hovering over blank vellum as at 0:03."
+  },
+  "open_loop": {
+    "plant_t": 18.38,
+    "pay_t": 104.67,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "caw",
+    "what": "Does a lake eat its glacier? Planted as a real turquoise lake lapping a white ice front at first light under the plate DOES A LAKE EAT ITS GLACIER? \u00b7 BY HOW MUCH?; paid when the LAKE weight lands in its pan and its spring stretches a real but short way, LAKE ~11% \u00b7 LAKE-ENDING GLACIERS \u00b7 WORLDWIDE, before CLIMATE and GLACIER SHAPE stretch theirs far past it."
+  },
+  "open_loop_2": {
+    "plant_t": 38.31,
+    "pay_t": 115.58,
+    "what": "What goes on the empty WHY? tab? Planted as two empty pine tabs, HOW MANY? and WHY?, snapping onto the release card's edge under PARTICULARLY PRONOUNCED IN ALASKA; our slip 931 TO 1,078 is clipped beside HOW MANY?, and WHY? is paid when it flutters into the empty pan now hanging from the survey stake at the lake-ending front, ALASKA'S SPLIT \u00b7 NOT IN THE RELEASE OR ABSTRACT."
+  },
+  "throughline": {
+    "object": "the cream vellum sheet on the light table",
+    "lands_in_button": "the vellum's right edge ruled THE MAP ENDS \u00b7 CIRCA 2020, blank vellum beyond it, NIB's tip hovering and both hands at rest beside it",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "V0 blank cream vellum over one grey tile as the table clicks on"
+      },
+      {
+        "at_s": 12.0,
+        "state": "V1 NIB's ultramarine outlines on it, each with a persimmon tick"
+      },
+      {
+        "at_s": 32.626,
+        "state": "V2 the release card pinned down over its edge by a TU Graz clip, two empty pine tabs on the card"
+      },
+      {
+        "at_s": 52.9,
+        "state": "V3 laid over the true outline of Alaska, its coastal lakes swelling past their circa-2000 pencil lines"
+      },
+      {
+        "at_s": 60.2,
+        "state": "V4 laid beside a WORLD sheet, the two side by side"
+      },
+      {
+        "at_s": 81.34,
+        "state": "V5 a strip of its Gulf coast carried into the field on a survey stake in front of the glacier fronts"
+      },
+      {
+        "at_s": 97.76,
+        "state": "V6 back on the table under the scale rail, the lake-ending column standing on its margin"
+      },
+      {
+        "at_s": 122.12,
+        "state": "V7 its right edge ruled THE MAP ENDS \u00b7 CIRCA 2020, blank vellum beyond, both hands at rest beside it"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 21.6,
+      "type": "scale-pullback",
+      "what": "the view pulls back to the whole world sheet on the wall as popcorn lake chips burst up",
+      "hold_s": 0.7
+    },
+    {
+      "t": 52.9,
+      "type": "build-on",
+      "what": "Alaska's coastal lakes rise like dough past their circa-2000 pencil lines",
+      "hold_s": 0.7
+    },
+    {
+      "t": 79.15,
+      "type": "build-on",
+      "what": "the band of new water between Vitus Lake's two inventory rings fills and shimmers",
+      "hold_s": 0.8
+    },
+    {
+      "t": 67.23,
+      "type": "scale-pullback",
+      "what": "the view pulls back from Alaska's half of the world's added lake area to show the other half the same size",
+      "hold_s": 0.8
+    },
+    {
+      "t": 110.61,
+      "type": "morph-to-chart",
+      "what": "the three springs settle at their shares, the LAKE spring a short stretch beside two long ones",
+      "hold_s": 0.7
+    },
+    {
+      "t": 115.58,
+      "type": "build-on",
+      "what": "the blank WHY? tab drops into the empty pan on the survey stake at the lake-ending front",
+      "hold_s": 0.6
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 1.15
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.85
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 1.1
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 16,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "at_s": 111.48,
+        "level": 0.35
+      },
+      {
+        "at_s": 112.58,
+        "level": 1.0
+      },
+      {
+        "line": 20,
+        "offset": 0.0,
+        "level": 1.1
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 111.58,
+    "riser_at": 96.76,
+    "silence_at": 111.58,
+    "payoff_at": 112.08,
+    "button_pattern": "callback",
+    "interrupt_at": 81.34,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "The trace",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "light-table-top",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the tile and NIB at x540 y980",
+      "means": "Overhead, the light table clicks on under a grey Landsat tile, NIB drops onto a turquoise lake's shore and skates an ultramarine shoreline round it, a CIRCA 2020 tile slides in and NIB's next line stops at its edge; then the view lifts as the tiles become a long strip scrolling under NIB, the dates flip to CIRCA 2020 and new small outlines pop up between the old ones",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "NIB + Landsat tiles + tile strip + ultramarine line",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "primary NIB and its line 55%, secondary the tile 30%, tertiary the table 15%"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-12.000"
+    },
+    {
+      "title": "Checked by hand",
+      "vo_line": 2,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "light-table-side",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "NIB and the hand at x540 y1000",
+      "means": "At eye level across the table the study's checker hand ticks NIB's outlines in persimmon, nudges one line as NIB watches, and slides a journal card under the vellum",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "NIB + persimmon pencil hand + journal card",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "primary NIB 45%, secondary the hand 35%, tertiary the card 20%"
+      },
+      "id": 2,
+      "start_s": 12.0,
+      "t": "12.000-18.380"
+    },
+    {
+      "title": "The question",
+      "vo_line": 4,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "dawn-lakeshore",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the lake and ice front at x540 y1000",
+      "means": "At ground level at first light a real turquoise lake laps against a white ice front and a ripple slaps its foot",
+      "ambient": "lake water lapping, a far gull",
+      "hero": {
+        "name": "real lake + ice front + first light",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "primary the waterline 55%, secondary the ice wall 30%, tertiary the peaks 15%"
+      },
+      "id": 3,
+      "start_s": 18.38,
+      "t": "18.380-21.600"
+    },
+    {
+      "title": "The world multiplied",
+      "vo_line": 5,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "eye",
+      "stage": "wall-sheet",
+      "pov": "instrument-screen",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the wall sheet at x540 y900",
+      "means": "A world sheet pinned on the wall bursts with popcorn lake chips among its old lakes, an ink total writes +3,567 on its margin, and a steel AREA tape stops at an inked 9% tick",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "world sheet + popcorn chips + ink total + AREA tape",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "primary the chips 50%, secondary the ink total 30%, tertiary the tape 20%"
+      },
+      "id": 4,
+      "start_s": 21.6,
+      "t": "21.600-31.860"
+    },
+    {
+      "title": "No Alaska number",
+      "vo_line": 7,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "high",
+      "stage": "release-card",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the release card at x540 y940",
+      "means": "From above the study's press release card swings in on a TU Graz clip arm, a highlighter sweeps its Alaska line, and two empty pine tabs, HOW MANY? and WHY?, snap onto its edge",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "release card + clip arm + pine tabs + highlighter",
+        "parts": 30,
+        "zones": 3,
+        "detail_note": "primary the card 60%, secondary the tabs 25%, tertiary the arm 15%"
+      },
+      "id": 5,
+      "start_s": 31.86,
+      "t": "31.860-39.520"
+    },
+    {
+      "title": "We counted",
+      "vo_line": 8,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "open-data-folder",
+      "pov": "exploded-diagram",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the tally counters at x540 y960",
+      "means": "Our pine-cuffed hand opens a folder of the authors' open data, clicks a tally counter as oak drums stop at 13,685, and stamps OUR COUNT on its own slip",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "pine-cuffed hand + open folder + oak drums + stamp",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "primary the drums 45%, secondary the hand and stamp 35%, tertiary the folder 20%"
+      },
+      "id": 6,
+      "start_s": 39.52,
+      "t": "39.520-46.960"
+    },
+    {
+      "title": "Alaska swelled",
+      "vo_line": 9,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "alaska-vellum",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the Alaska vellum at x540 y960",
+      "means": "Overhead our hand lays the Alaska vellum and clips 931 TO 1,078 beside the HOW MANY? tab, the coastal lakes rise like dough past their pencil lines, and Alaska's AREA tape stops at 35% beside the world's 9% on one scale",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "Alaska vellum + coastal lake outlines + two AREA tapes",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "primary the vellum 55%, secondary the lakes 30%, tertiary the tapes 15%"
+      },
+      "id": 7,
+      "start_s": 46.96,
+      "t": "46.960-60.200"
+    },
+    {
+      "title": "Multiplied, swelled",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "wall-sheet",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the two sheets at x540 y960",
+      "means": "Back at the wall, our hand pins the Alaska vellum beside the world sheet, the world's many small popcorn chips against Alaska's few swollen lakes",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "wall: world sheet + Alaska vellum + pine-cuffed hand",
+        "parts": 64,
+        "zones": 3,
+        "detail_note": "primary the two sheets 70%, secondary the hand 20%, tertiary the pins 10%"
+      },
+      "id": 8,
+      "start_s": 60.2,
+      "t": "60.200-64.920"
+    },
+    {
+      "title": "About half",
+      "vo_line": 12,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "half-bar",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the half bar at x540 y980",
+      "means": "Our hand slides in an oak frame with a vellum strip of the world's added lake area, its left half fills turquoise for Alaska, and thirteen lake chips drop on it, one tagged ALASKA",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "oak frame + half strip + thirteen chips + pine-cuffed hand",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "primary the strip 60%, secondary the chips 30%, tertiary the hand 10%"
+      },
+      "id": 9,
+      "start_s": 64.92,
+      "t": "64.920-72.540"
+    },
+    {
+      "title": "Two rings",
+      "vo_line": 13,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "bering-aerial",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "Vitus rings at x540 y1060",
+      "means": "An oblique aerial of the real Bering lobe at first light, its moraine stripes and crevasses raked by low sun, Vitus Lake at its foot with two inked inventory rings on the water, a pine flag dropping onto the shore from above and the band between the rings shimmering",
+      "ambient": "high wind over the ice",
+      "hero": {
+        "name": "aerial Bering lobe + Vitus rings + pine flag",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "primary the rings 55%, secondary the ice lobe 30%, tertiary the flag 15%"
+      },
+      "id": 10,
+      "start_s": 72.54,
+      "t": "72.540-81.340"
+    },
+    {
+      "title": "The case for yes",
+      "vo_line": 14,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "glacier-fronts",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the two fronts at x540 y1000",
+      "means": "At ground level at first light two glacier fronts stand side by side, one into a turquoise lake and one onto gravel, and two glass water columns fill to 66 and 40 cm",
+      "ambient": "cold wind off the ice, meltwater trickling",
+      "hero": {
+        "name": "two glacier fronts + water columns + survey stake",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "primary the fronts 55%, secondary the columns 35%, tertiary the stake 10%"
+      },
+      "id": 11,
+      "start_s": 81.34,
+      "t": "81.340-91.240"
+    },
+    {
+      "title": "Further accelerates",
+      "vo_line": 15,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "lakeshore-stake",
+      "pov": "orbital-aerial",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the stake on the shore at x540 y960",
+      "means": "From straight above the lake-ending front's shore, the survey stake's tag carries Bolch's line as ripples run in rings across the turquoise water, and the study's checker hand lifts the 66 column to carry it indoors",
+      "ambient": "water lapping, wind",
+      "hero": {
+        "name": "survey stake + tag + lake ripples + checker hand",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "primary the stake 45%, secondary the water 35%, tertiary the hand 20%"
+      },
+      "id": 12,
+      "start_s": 91.24,
+      "t": "91.240-97.760"
+    },
+    {
+      "title": "The weigh-in",
+      "vo_line": 16,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "scale-table",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the spring rail at x540 y980",
+      "means": "A nickel rail of three spring scales lowers onto the light table, an unexplained empty pan hanging from the release card's clip at its right end, the lake-ending column parked at the far margin, weights LAKE, CLIMATE and GLACIER SHAPE drop in and their springs stretch to their shares",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "nickel spring rail + weights + carried column + clip arm",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "primary the rail 60%, secondary the weights 25%, tertiary the column and clip 15%"
+      },
+      "id": 13,
+      "start_s": 97.76,
+      "t": "97.760-112.080"
+    },
+    {
+      "title": "The empty pan",
+      "vo_line": 18,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "lakefront-pan",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the empty pan on the stake at x600 y960",
+      "means": "At ground level back at the lake-ending front, the empty pan from the clip now hangs from the survey stake against the real ice, NIB small on the stake looks back at the water and holds still, then the blank WHY? tab flutters into the pan and it settles level, weighing nothing",
+      "ambient": "wind off the ice, water lapping",
+      "hero": {
+        "name": "lake-ending front + survey stake + empty pan + NIB",
+        "parts": 32,
+        "zones": 3,
+        "detail_note": "primary the empty pan on the stake 55%, secondary the lake-ending ice front and water 30%, tertiary NIB 15%"
+      },
+      "id": 14,
+      "start_s": 112.08,
+      "t": "112.080-122.120"
+    },
+    {
+      "title": "The map ends",
+      "vo_line": 20,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "light-table-edge",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the vellum edge at x540 y980",
+      "means": "Overhead, NIB skates its line to the vellum's right edge ruled THE MAP ENDS \u00b7 CIRCA 2020 and hovers over blank vellum as both hands come to rest beside it",
+      "ambient": "a quiet drafting room, the lamp's hum",
+      "hero": {
+        "name": "NIB + vellum edge + two hands",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "primary NIB and its line 50%, secondary the edge 30%, tertiary the hands 20%"
+      },
+      "id": 15,
+      "start_s": 122.12,
+      "t": "122.120-125.440"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A machine drew the world's glacier lakes. Twice.",
+      "phrase": "A machine drew the",
+      "shows": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir drops tip-first onto the shore of a turquoise lake on a grey Landsat tile as the light table clicks on under it, landing with a squash, a plate reads A MACHINE \u00b7 DEEP LEARNING",
+      "sfx": "click",
+      "means": "a machine \u00b7 deep learning",
+      "rehook": "",
+      "draw": {
+        "subject": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir",
+        "action": "drops tip-first onto the shore of a turquoise lake on a grey Landsat tile as the light table clicks on under it, landing with a squash",
+        "emotion": "curious",
+        "annotation": "A MACHINE \u00b7 DEEP LEARNING"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir drops tip-first onto the shore of a turquoise lake on a grey Landsat tile as the light table clicks on under it, landing with a squash, a plate reads A MACHINE \u00b7 DEEP LEARNING",
+        "reaction": "the lamp flickers on at the left",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "kick": true,
+      "t": "0.000-2.450",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.45,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.45
+      },
+      "offset": 2.45,
+      "vo": "A machine drew the world's glacier lakes. Twice.",
+      "phrase": "lakes. Twice.",
+      "shows": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates its tip around the lake as an ultramarine shoreline curls out behind it and closes with a snap, a plate reads TRACED ON SATELLITE TILES",
+      "sfx": "scribble",
+      "means": "traced on satellite tiles",
+      "rehook": "",
+      "draw": {
+        "subject": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir",
+        "action": "skates its tip around the lake as an ultramarine shoreline curls out behind it and closes with a snap",
+        "emotion": "focused",
+        "annotation": "TRACED ON SATELLITE TILES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates its tip around the lake as an ultramarine shoreline curls out behind it and closes with a snap, a plate reads TRACED ON SATELLITE TILES",
+        "reaction": "ink beads at the closing point",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "2.450-3.490",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.49,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.49
+      },
+      "offset": 3.49,
+      "vo": "A machine drew the world's glacier lakes. Twice.",
+      "phrase": "Twice.",
+      "shows": "a second Landsat tile with a date chip CIRCA 2020 slides in beside the first, and NIB's next line runs to that tile's right edge and stops, its tip hovering over blank vellum, a plate reads CIRCA 2000 \u00b7 CIRCA 2020",
+      "sfx": "slide",
+      "means": "circa 2000 \u00b7 circa 2020",
+      "rehook": "",
+      "draw": {
+        "subject": "a second Landsat tile with a date chip CIRCA 2020",
+        "action": "slides in beside the first, and NIB's next line runs to that tile's right edge and stops, its tip hovering over blank vellum",
+        "emotion": "curious",
+        "annotation": "CIRCA 2000 \u00b7 CIRCA 2020"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a second Landsat tile with a date chip CIRCA 2020 slides in beside the first, and NIB's next line runs to that tile's right edge and stops, its tip hovering over blank vellum, a plate reads CIRCA 2000 \u00b7 CIRCA 2020",
+        "reaction": "NIB's tines splay over the blank",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "3.490-5.080",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 5.08,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines.",
+      "phrase": "It read Landsat satellite",
+      "shows": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates tile to tile along a long strip of Landsat tiles, drawing outline after outline as the strip scrolls under it, a plate reads LANDSAT IMAGES",
+      "sfx": "whoosh",
+      "means": "landsat images",
+      "rehook": "",
+      "draw": {
+        "subject": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir",
+        "action": "skates tile to tile along a long strip of Landsat tiles, drawing outline after outline as the strip scrolls under it",
+        "emotion": "proud",
+        "annotation": "LANDSAT IMAGES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates tile to tile along a long strip of Landsat tiles, drawing outline after outline as the strip scrolls under it, a plate reads LANDSAT IMAGES",
+        "reaction": "outlines snap shut one after another",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "5.080-7.610",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 1,
+      "at_s": 7.61,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.53
+      },
+      "offset": 2.53,
+      "vo": "It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines.",
+      "phrase": "thousand and about twenty",
+      "shows": "the tile under NIB snaps its outline shut with a click as the next tile slides in under the tip, its date chip CIRCA 2000, a plate reads CIRCA 2000",
+      "sfx": "tick",
+      "means": "circa 2000",
+      "rehook": "",
+      "draw": {
+        "subject": "the tile under NIB",
+        "action": "snaps its outline shut with a click as the next tile slides in under the tip, its date chip CIRCA 2000",
+        "emotion": "focused",
+        "annotation": "CIRCA 2000"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the tile under NIB snaps its outline shut with a click as the next tile slides in under the tip, its date chip CIRCA 2000, a plate reads CIRCA 2000",
+        "reaction": "ink beads at the closing point",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "7.610-8.830",
+      "key": 41
+    },
+    {
+      "id": 6,
+      "shot": 1,
+      "at_s": 8.83,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines.",
+      "phrase": "twenty twenty, and traced",
+      "shows": "the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged, a plate reads CIRCA 2000 AND 2020",
+      "sfx": "pop",
+      "means": "circa 2000 and 2020",
+      "rehook": "",
+      "draw": {
+        "subject": "the strip of tiles",
+        "action": "slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged",
+        "emotion": "curious",
+        "annotation": "CIRCA 2000 AND 2020"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged, a plate reads CIRCA 2000 AND 2020",
+        "reaction": "the dates clack over",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "8.830-12.000",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 12.0,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then people checked the lines by hand.",
+      "phrase": "Then people checked the",
+      "shows": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil darts in from the lower frame and ticks NIB's outlines one by one while NIB glances back, a plate reads CHECKED BY HAND \u00b7 PER TU GRAZ",
+      "sfx": "tick",
+      "means": "checked by hand \u00b7 per tu graz",
+      "rehook": "",
+      "draw": {
+        "subject": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil",
+        "action": "darts in from the lower frame and ticks NIB's outlines one by one while NIB glances back",
+        "emotion": "steady",
+        "annotation": "CHECKED BY HAND \u00b7 PER TU GRAZ"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil darts in from the lower frame and ticks NIB's outlines one by one while NIB glances back, a plate reads CHECKED BY HAND \u00b7 PER TU GRAZ",
+        "reaction": "NIB straightens up",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "12.000-13.770",
+      "key": 6
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 13.77,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 1.77
+      },
+      "offset": 1.77,
+      "vo": "Then people checked the lines by hand.",
+      "phrase": "hand.",
+      "shows": "the persimmon pencil nudges one of NIB's lines a hair outward as NIB watches its line move and its tines click once, a plate reads MANUAL REFINEMENT \u00b7 PER THE PAPER",
+      "sfx": "pencil",
+      "means": "manual refinement \u00b7 per the paper",
+      "rehook": "",
+      "draw": {
+        "subject": "the persimmon pencil",
+        "action": "nudges one of NIB's lines a hair outward as NIB watches its line move and its tines click once",
+        "emotion": "steady",
+        "annotation": "MANUAL REFINEMENT \u00b7 PER THE PAPER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the persimmon pencil nudges one of NIB's lines a hair outward as NIB watches its line move and its tines click once, a plate reads MANUAL REFINEMENT \u00b7 PER THE PAPER",
+        "reaction": "the vellum ripples",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "13.770-14.920",
+      "key": 7
+    },
+    {
+      "id": 9,
+      "shot": 2,
+      "at_s": 14.92,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It's in Nature Climate Change, out November twentieth.",
+      "phrase": "It's in Nature Climate",
+      "shows": "the study's checker hand slides a journal card under the vellum beside the tile and its title glows up through the paper, a plate reads NATURE CLIMATE CHANGE \u00b7 NOVEMBER 20TH",
+      "sfx": "paper",
+      "means": "nature climate change \u00b7 november 20th",
+      "rehook": "",
+      "draw": {
+        "subject": "the study's checker hand",
+        "action": "slides a journal card under the vellum beside the tile and its title glows up through the paper",
+        "emotion": "calm",
+        "annotation": "NATURE CLIMATE CHANGE \u00b7 NOVEMBER 20TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the study's checker hand slides a journal card under the vellum beside the tile and its title glows up through the paper, a plate reads NATURE CLIMATE CHANGE \u00b7 NOVEMBER 20TH",
+        "reaction": "the vellum ripples",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "14.920-18.380",
+      "key": 8
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 18.38,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So does a lake eat its glacier?",
+      "phrase": "So does a lake",
+      "shows": "a gull on the ice front lifts off as the real turquoise lake laps against the ice wall at first light, a plate reads DOES A LAKE EAT ITS GLACIER? \u00b7 BY HOW MUCH?",
+      "sfx": "caw",
+      "means": "does a lake eat its glacier? \u00b7 by how much?",
+      "rehook": "",
+      "draw": {
+        "subject": "a gull on the ice front",
+        "action": "lifts off as the real turquoise lake laps against the ice wall at first light",
+        "emotion": "curious",
+        "annotation": "DOES A LAKE EAT ITS GLACIER? \u00b7 BY HOW MUCH?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a gull on the ice front lifts off as the real turquoise lake laps against the ice wall at first light, a plate reads DOES A LAKE EAT ITS GLACIER? \u00b7 BY HOW MUCH?",
+        "reaction": "mist curls off the water",
+        "ambient": "lake water lapping, a far gull"
+      },
+      "t": "18.380-20.250",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 20.25,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 1.87
+      },
+      "offset": 1.87,
+      "vo": "So does a lake eat its glacier?",
+      "phrase": "glacier?",
+      "shows": "a ripple on the lake rolls across the water and slaps the foot of the ice front, a plate reads THE QUESTION",
+      "sfx": "splash",
+      "means": "the question",
+      "rehook": "",
+      "draw": {
+        "subject": "a ripple on the lake",
+        "action": "rolls across the water and slaps the foot of the ice front",
+        "emotion": "uneasy",
+        "annotation": "THE QUESTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a ripple on the lake rolls across the water and slaps the foot of the ice front, a plate reads THE QUESTION",
+        "reaction": "the gull wheels away overhead",
+        "ambient": "lake water lapping, a far gull"
+      },
+      "t": "20.250-21.600",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 21.6,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent.",
+      "phrase": "Worldwide, lakes touching glaciers",
+      "shows": "tiny turquoise lake chips on a world sheet pinned to the wall burst up like popcorn among the sheet's old lakes, about 35 new chips for every 100 old lakes (35 of 100), a plate reads WORLD \u00b7 ICE-CONTACT LAKES",
+      "sfx": "pop",
+      "means": "world \u00b7 ice-contact lakes",
+      "rehook": "rehook: tiny turquoise lake chips burst up like popcorn across the world sheet on the wall",
+      "draw": {
+        "subject": "tiny turquoise lake chips on a world sheet pinned to the wall",
+        "action": "burst up like popcorn among the sheet's old lakes, about 35 new chips for every 100 old lakes (35 of 100)",
+        "emotion": "surprised",
+        "annotation": "WORLD \u00b7 ICE-CONTACT LAKES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "tiny turquoise lake chips on a world sheet pinned to the wall burst up like popcorn among the sheet's old lakes, about 35 new chips for every 100 old lakes (35 of 100), a plate reads WORLD \u00b7 ICE-CONTACT LAKES",
+        "reaction": "the pins rattle",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "21.600-24.410",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 24.41,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.81
+      },
+      "offset": 2.81,
+      "vo": "Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent.",
+      "phrase": "three thousand five hundred",
+      "shows": "an ink total writes itself stroke by stroke onto the sheet's margin as the chip bursts slow to a few late pops, landing on +3,567, a plate reads WORLD \u00b7 +3,567 LAKES",
+      "sfx": "scribble",
+      "means": "world \u00b7 +3,567 lakes",
+      "rehook": "",
+      "draw": {
+        "subject": "an ink total",
+        "action": "writes itself stroke by stroke onto the sheet's margin as the chip bursts slow to a few late pops, landing on +3,567",
+        "emotion": "surprised",
+        "annotation": "WORLD \u00b7 +3,567 LAKES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "an ink total writes itself stroke by stroke onto the sheet's margin as the chip bursts slow to a few late pops, landing on +3,567, a plate reads WORLD \u00b7 +3,567 LAKES",
+        "reaction": "the pins rattle",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "24.410-26.970",
+      "key": 42
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 26.97,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 5.37
+      },
+      "offset": 5.37,
+      "vo": "Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent.",
+      "phrase": "about thirty-five percent.",
+      "shows": "an ink bracket clamps over the burst chips and stamps +35% on the sheet's corner, a plate reads WORLD \u00b7 +35% LAKES",
+      "sfx": "stamp",
+      "means": "world \u00b7 +35% lakes",
+      "rehook": "",
+      "draw": {
+        "subject": "an ink bracket",
+        "action": "clamps over the burst chips and stamps +35% on the sheet's corner",
+        "emotion": "surprised",
+        "annotation": "WORLD \u00b7 +35% LAKES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "an ink bracket clamps over the burst chips and stamps +35% on the sheet's corner, a plate reads WORLD \u00b7 +35% LAKES",
+        "reaction": "the sheet shivers on its pins",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "26.970-28.180",
+      "key": 50
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 28.18,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But their area grew only about nine percent.",
+      "phrase": "But their area grew",
+      "shows": "a steel tape labelled AREA slides out along the sheet's foot and stops short at an inked 9% tick as the chip bursts stall, a plate reads WORLD \u00b7 AREA +9%",
+      "sfx": "squeak",
+      "means": "world \u00b7 area +9%",
+      "rehook": "",
+      "draw": {
+        "subject": "a steel tape labelled AREA",
+        "action": "slides out along the sheet's foot and stops short at an inked 9% tick as the chip bursts stall",
+        "emotion": "uneasy",
+        "annotation": "WORLD \u00b7 AREA +9%"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a steel tape labelled AREA slides out along the sheet's foot and stops short at an inked 9% tick as the chip bursts stall, a plate reads WORLD \u00b7 AREA +9%",
+        "reaction": "the tape case wobbles",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "28.180-32.626",
+      "key": 13
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 32.626,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.1,
+        "offset": 0.766
+      },
+      "offset": 0.766,
+      "vo": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.",
+      "phrase": "The study's press release",
+      "shows": "the study's press release card swings into frame on a TU Graz clip arm and pins down over the vellum's edge, a plate reads PRESS RELEASE \u00b7 TU GRAZ",
+      "sfx": "slide",
+      "means": "press release \u00b7 tu graz",
+      "rehook": "rehook: the study's press release card swings in on a clip arm and pins down over the vellum",
+      "draw": {
+        "subject": "the study's press release card",
+        "action": "swings into frame on a TU Graz clip arm and pins down over the vellum's edge",
+        "emotion": "curious",
+        "annotation": "PRESS RELEASE \u00b7 TU GRAZ"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "the study's press release card swings into frame on a TU Graz clip arm and pins down over the vellum's edge, a plate reads PRESS RELEASE \u00b7 TU GRAZ",
+        "reaction": "the clip arm bounces",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "32.626-35.690",
+      "key": 14
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 35.69,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.83
+      },
+      "offset": 3.83,
+      "vo": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.",
+      "phrase": "pronounced, but prints no",
+      "shows": "a pale yellow highlighter stripe sweeps across the card's quoted line, a plate reads \"PARTICULARLY PRONOUNCED IN ALASKA ...\" \u00b7 PER TU GRAZ",
+      "sfx": "squeak",
+      "means": "\"particularly pronounced in alaska ...\" \u00b7 per tu graz",
+      "rehook": "",
+      "draw": {
+        "subject": "a pale yellow highlighter stripe",
+        "action": "sweeps across the card's quoted line",
+        "emotion": "curious",
+        "annotation": "\"PARTICULARLY PRONOUNCED IN ALASKA ...\" \u00b7 PER TU GRAZ"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a pale yellow highlighter stripe sweeps across the card's quoted line, a plate reads \"PARTICULARLY PRONOUNCED IN ALASKA ...\" \u00b7 PER TU GRAZ",
+        "reaction": "the stripe glints",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "35.690-38.310",
+      "key": 43
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 38.31,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 6.45
+      },
+      "offset": 6.45,
+      "vo": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.",
+      "phrase": "number.",
+      "shows": "our pine clip tagged OUR QUESTIONS, with two empty tabs HOW MANY? and WHY? clamps onto the card's edge, nothing written on the tabs, a plate reads NO ALASKA NUMBER IN THE RELEASE",
+      "sfx": "snap",
+      "means": "no alaska number in the release",
+      "rehook": "",
+      "draw": {
+        "subject": "our pine clip tagged OUR QUESTIONS, with two empty tabs HOW MANY? and WHY?",
+        "action": "clamps onto the card's edge, nothing written on the tabs",
+        "emotion": "uneasy",
+        "annotation": "NO ALASKA NUMBER IN THE RELEASE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "our pine clip tagged OUR QUESTIONS, with two empty tabs HOW MANY? and WHY? clamps onto the card's edge, nothing written on the tabs, a plate reads NO ALASKA NUMBER IN THE RELEASE",
+        "reaction": "the tabs flutter",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "38.310-39.520",
+      "key": 15
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 39.52,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly.",
+      "phrase": "The authors posted their",
+      "shows": "our newsroom hand in a pine-green cuff swings open a folder marked THE AUTHORS' OPEN DATA and fans its tiles across the table, a plate reads THE AUTHORS' OPEN DATA \u00b7 FIGSHARE",
+      "sfx": "swoosh",
+      "means": "the authors' open data \u00b7 figshare",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "swings open a folder marked THE AUTHORS' OPEN DATA and fans its tiles across the table",
+        "emotion": "curious",
+        "annotation": "THE AUTHORS' OPEN DATA \u00b7 FIGSHARE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff swings open a folder marked THE AUTHORS' OPEN DATA and fans its tiles across the table, a plate reads THE AUTHORS' OPEN DATA \u00b7 FIGSHARE",
+        "reaction": "tiles skid and settle",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "39.520-43.690",
+      "key": 16
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 43.69,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.17
+      },
+      "offset": 4.17,
+      "vo": "The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly.",
+      "phrase": "matches theirs worldwide, exactly.",
+      "shows": "our newsroom hand in a pine-green cuff clicks a pine-green tally counter as oak drums roll through the stack and stop at 13,685, a plate reads 13,685 LAKES \u00b7 OUR COUNT",
+      "sfx": "ratchet",
+      "means": "13,685 lakes \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "clicks a pine-green tally counter as oak drums roll through the stack and stop at 13,685",
+        "emotion": "focused",
+        "annotation": "13,685 LAKES \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff clicks a pine-green tally counter as oak drums roll through the stack and stop at 13,685, a plate reads 13,685 LAKES \u00b7 OUR COUNT",
+        "reaction": "the drums blur, then stop",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "43.690-45.350",
+      "key": 17
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 45.35,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.83
+      },
+      "offset": 5.83,
+      "vo": "The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly.",
+      "phrase": "exactly.",
+      "shows": "our newsroom hand in a pine-green cuff presses a pine-green OUR COUNT stamp onto its own tally slip, a plate reads MATCHES THE PAPER \u00b7 COUNT ONLY \u00b7 OUR COUNT",
+      "sfx": "press",
+      "means": "matches the paper \u00b7 count only \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "presses a pine-green OUR COUNT stamp onto its own tally slip",
+        "emotion": "proud",
+        "annotation": "MATCHES THE PAPER \u00b7 COUNT ONLY \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff presses a pine-green OUR COUNT stamp onto its own tally slip, a plate reads MATCHES THE PAPER \u00b7 COUNT ONLY \u00b7 OUR COUNT",
+        "reaction": "the slip jumps",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "45.350-46.960",
+      "key": 18
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 46.96,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "By our count, Alaska's lakes touching glaciers went from nine hundred thirty-one to one thousand seventy-eight.",
+      "phrase": "By our count, Alaska's",
+      "shows": "our newsroom hand in a pine-green cuff lays the vellum with the true outline of Alaska over the tiles and the world's steel AREA tape, carried down from the wall, along its foot, a plate reads ALASKA \u00b7 OUR COUNT",
+      "sfx": "rustle",
+      "means": "alaska \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "lays the vellum with the true outline of Alaska over the tiles and the world's steel AREA tape, carried down from the wall, along its foot",
+        "emotion": "curious",
+        "annotation": "ALASKA \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff lays the vellum with the true outline of Alaska over the tiles and the world's steel AREA tape, carried down from the wall, along its foot, a plate reads ALASKA \u00b7 OUR COUNT",
+        "reaction": "the vellum settles",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "46.960-50.110",
+      "key": 19
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 50.11,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.15
+      },
+      "offset": 3.15,
+      "vo": "By our count, Alaska's lakes touching glaciers went from nine hundred thirty-one to one thousand seventy-eight.",
+      "phrase": "nine hundred thirty-one to",
+      "shows": "our newsroom hand in a pine-green cuff clips our pine count slip next to the card's HOW MANY? tab, the blank WHY? tab swinging once, as Alaska's coastal lake outlines drop onto the vellum one by one, a plate reads ALASKA \u00b7 931 TO 1,078 \u00b7 +16% \u00b7 OUR COUNT",
+      "sfx": "snap",
+      "means": "alaska \u00b7 931 to 1,078 \u00b7 +16% \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "clips our pine count slip next to the card's HOW MANY? tab, the blank WHY? tab swinging once, as Alaska's coastal lake outlines drop onto the vellum one by one",
+        "emotion": "focused",
+        "annotation": "ALASKA \u00b7 931 TO 1,078 \u00b7 +16% \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff clips our pine count slip next to the card's HOW MANY? tab, the blank WHY? tab swinging once, as Alaska's coastal lake outlines drop onto the vellum one by one, a plate reads ALASKA \u00b7 931 TO 1,078 \u00b7 +16% \u00b7 OUR COUNT",
+        "reaction": "the tab swings",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "50.110-52.900",
+      "key": 44
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 52.9,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers.",
+      "phrase": "Their area grew about",
+      "shows": "Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin, a plate reads ALASKA \u00b7 ABOUT 880 SQ KM \u00b7 C. 2000 \u00b7 OUR COUNT",
+      "sfx": "swell",
+      "means": "alaska \u00b7 about 880 sq km \u00b7 c. 2000 \u00b7 our count",
+      "rehook": "rehook: Alaska's coastal lakes rise like dough past their pencil lines",
+      "draw": {
+        "subject": "Alaska's coastal lake outlines along the Gulf of Alaska",
+        "action": "rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin",
+        "emotion": "wonder",
+        "annotation": "ALASKA \u00b7 ABOUT 880 SQ KM \u00b7 C. 2000 \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin, a plate reads ALASKA \u00b7 ABOUT 880 SQ KM \u00b7 C. 2000 \u00b7 OUR COUNT",
+        "reaction": "NIB backs up a step",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "52.900-55.210",
+      "key": 20
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 55.21,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.31
+      },
+      "offset": 2.31,
+      "vo": "Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers.",
+      "phrase": "thirty-five percent, to about",
+      "shows": "a second AREA tape runs out from the same zero as the world's tape, past the world's 9% tick, and stops at its own 35% tick on the same scale, a plate reads AREA \u00b7 +35% VS +9% \u00b7 OUR COUNT",
+      "sfx": "click",
+      "means": "area \u00b7 +35% vs +9% \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "a second AREA tape",
+        "action": "runs out from the same zero as the world's tape, past the world's 9% tick, and stops at its own 35% tick on the same scale",
+        "emotion": "surprised",
+        "annotation": "AREA \u00b7 +35% VS +9% \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11",
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a second AREA tape runs out from the same zero as the world's tape, past the world's 9% tick, and stops at its own 35% tick on the same scale, a plate reads AREA \u00b7 +35% VS +9% \u00b7 OUR COUNT",
+        "reaction": "the tape case spins",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "55.210-57.030",
+      "key": 45
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 57.03,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.13
+      },
+      "offset": 4.13,
+      "vo": "Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers.",
+      "phrase": "eleven hundred ninety square",
+      "shows": "our newsroom hand in a pine-green cuff lays a pine slip beside Alaska's tape as the swollen lakes settle, a plate reads ABOUT 1,190 SQ KM \u00b7 OUR COUNT",
+      "sfx": "clip",
+      "means": "about 1,190 sq km \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "lays a pine slip beside Alaska's tape as the swollen lakes settle",
+        "emotion": "steady",
+        "annotation": "ABOUT 1,190 SQ KM \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff lays a pine slip beside Alaska's tape as the swollen lakes settle, a plate reads ABOUT 1,190 SQ KM \u00b7 OUR COUNT",
+        "reaction": "the slip flutters flat",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "57.030-60.200",
+      "key": 51
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 60.2,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The world's lakes multiplied. Alaska's swelled.",
+      "phrase": "The world's lakes multiplied.",
+      "shows": "our newsroom hand in a pine-green cuff pins the Alaska vellum to the wall beside the world sheet, the world's many small new chips against Alaska's few swollen lakes, small tags under each: WORLD LAKES +35% AREA +9%, ALASKA LAKES +16% AREA +35%, a plate reads THE WORLD'S LAKES MULTIPLIED \u00b7 ALASKA'S SWELLED",
+      "sfx": "slam",
+      "means": "the world's lakes multiplied \u00b7 alaska's swelled",
+      "rehook": "rehook: our hand slams the Alaska sheet onto the wall beside the world's popcorn",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "pins the Alaska vellum to the wall beside the world sheet, the world's many small new chips against Alaska's few swollen lakes, small tags under each: WORLD LAKES +35% AREA +9%, ALASKA LAKES +16% AREA +35%",
+        "emotion": "surprised",
+        "annotation": "THE WORLD'S LAKES MULTIPLIED \u00b7 ALASKA'S SWELLED"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c6",
+        "c19",
+        "c10",
+        "c11"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff pins the Alaska vellum to the wall beside the world sheet, the world's many small new chips against Alaska's few swollen lakes, small tags under each: WORLD LAKES +35% AREA +9%, ALASKA LAKES +16% AREA +35%, a plate reads THE WORLD'S LAKES MULTIPLIED \u00b7 ALASKA'S SWELLED",
+        "reaction": "chips keep bursting on the world sheet while Alaska's lakes breathe outward",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "kick": true,
+      "t": "60.200-64.920",
+      "key": 22
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 64.92,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes.",
+      "phrase": "Alaska's added area alone",
+      "shows": "our newsroom hand in a pine-green cuff slides in an oak frame holding a vellum strip of the world's added lake area, a plate reads THE WORLD'S ADDED AREA \u00b7 OUR COUNT",
+      "sfx": "slide",
+      "means": "the world's added area \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "our newsroom hand in a pine-green cuff",
+        "action": "slides in an oak frame holding a vellum strip of the world's added lake area",
+        "emotion": "curious",
+        "annotation": "THE WORLD'S ADDED AREA \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "our newsroom hand in a pine-green cuff slides in an oak frame holding a vellum strip of the world's added lake area, a plate reads THE WORLD'S ADDED AREA \u00b7 OUR COUNT",
+        "reaction": "the frame rocks and settles",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "64.920-67.230",
+      "key": 23
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 67.23,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.31
+      },
+      "offset": 2.31,
+      "vo": "Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes.",
+      "phrase": "half the world's, by",
+      "shows": "the strip's left half fills with turquoise from the left end with a glug as the view pulls back to show the whole strip, ALASKA on it, the right half grey, a plate reads ABOUT HALF THE WORLD'S ADDED AREA \u00b7 OUR COUNT",
+      "sfx": "bubble",
+      "means": "about half the world's added area \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "the strip's left half",
+        "action": "fills with turquoise from the left end with a glug as the view pulls back to show the whole strip, ALASKA on it, the right half grey",
+        "emotion": "curious",
+        "annotation": "ABOUT HALF THE WORLD'S ADDED AREA \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the strip's left half fills with turquoise from the left end with a glug as the view pulls back to show the whole strip, ALASKA on it, the right half grey, a plate reads ABOUT HALF THE WORLD'S ADDED AREA \u00b7 OUR COUNT",
+        "reaction": "the frame rocks",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "67.230-70.350",
+      "key": 46
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 70.35,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 5.43
+      },
+      "offset": 5.43,
+      "vo": "Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes.",
+      "phrase": "thirteen of those lakes.",
+      "shows": "thirteen little lake chips drop onto the frame one by one and the seventh lands wearing an ALASKA tag, a plate reads 1,078 OF 13,685 \u00b7 ABOUT 1 IN 13 \u00b7 OUR COUNT",
+      "sfx": "pop",
+      "means": "1,078 of 13,685 \u00b7 about 1 in 13 \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "thirteen little lake chips",
+        "action": "drop onto the frame one by one and the seventh lands wearing an ALASKA tag",
+        "emotion": "curious",
+        "annotation": "1,078 OF 13,685 \u00b7 ABOUT 1 IN 13 \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "thirteen little lake chips drop onto the frame one by one and the seventh lands wearing an ALASKA tag, a plate reads 1,078 OF 13,685 \u00b7 ABOUT 1 IN 13 \u00b7 OUR COUNT",
+        "reaction": "the tagged chip wobbles",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "70.350-72.540",
+      "key": 24
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 72.54,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.",
+      "phrase": "Our count's biggest Alaska",
+      "shows": "an oblique aerial of Bering Glacier's white lobe at first light rises into view, a lake at its foot with two ultramarine inventory rings inked on the water, circa 2000 inside circa 2020, cloud shadows drifting across, a plate reads BERING GLACIER \u00b7 AERIAL VIEW",
+      "sfx": "whoosh",
+      "means": "bering glacier \u00b7 aerial view",
+      "rehook": "rehook: an aerial of Bering Glacier rises into view, a turquoise lake ringed at its foot",
+      "draw": {
+        "subject": "an oblique aerial of Bering Glacier's white lobe at first light",
+        "action": "rises into view, a lake at its foot with two ultramarine inventory rings inked on the water, circa 2000 inside circa 2020, cloud shadows drifting across",
+        "emotion": "wonder",
+        "annotation": "BERING GLACIER \u00b7 AERIAL VIEW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "an oblique aerial of Bering Glacier's white lobe at first light rises into view, a lake at its foot with two ultramarine inventory rings inked on the water, circa 2000 inside circa 2020, cloud shadows drifting across, a plate reads BERING GLACIER \u00b7 AERIAL VIEW",
+        "reaction": "crevasse lines catch the low sun",
+        "ambient": "high wind over the ice"
+      },
+      "t": "72.540-74.510",
+      "key": 25
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 74.51,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 1.97
+      },
+      "offset": 1.97,
+      "vo": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.",
+      "phrase": "Vitus Lake, at the",
+      "shows": "a pine flag drops from above and stakes into the lake shore, flagged VITUS LAKE, a plate reads VITUS LAKE \u00b7 BIGGEST ALASKA GAIN \u00b7 OUR COUNT",
+      "sfx": "tap",
+      "means": "vitus lake \u00b7 biggest alaska gain \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "a pine flag",
+        "action": "drops from above and stakes into the lake shore, flagged VITUS LAKE",
+        "emotion": "steady",
+        "annotation": "VITUS LAKE \u00b7 BIGGEST ALASKA GAIN \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a pine flag drops from above and stakes into the lake shore, flagged VITUS LAKE, a plate reads VITUS LAKE \u00b7 BIGGEST ALASKA GAIN \u00b7 OUR COUNT",
+        "reaction": "the pin's flag flutters",
+        "ambient": "high wind over the ice"
+      },
+      "t": "74.510-77.730",
+      "key": 47
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 77.73,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.19
+      },
+      "offset": 5.19,
+      "vo": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.",
+      "phrase": "hundred five square kilometers",
+      "shows": "the inner ring pulses once as a pine tag swings onto it, a plate reads C. 2000 \u00b7 ABOUT 105 SQ KM \u00b7 OUR COUNT",
+      "sfx": "ping",
+      "means": "c. 2000 \u00b7 about 105 sq km \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "the inner ring",
+        "action": "pulses once as a pine tag swings onto it",
+        "emotion": "steady",
+        "annotation": "C. 2000 \u00b7 ABOUT 105 SQ KM \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "the inner ring pulses once as a pine tag swings onto it, a plate reads C. 2000 \u00b7 ABOUT 105 SQ KM \u00b7 OUR COUNT",
+        "reaction": "the tag swings",
+        "ambient": "high wind over the ice"
+      },
+      "t": "77.730-79.150",
+      "key": 52
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 79.15,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 6.61
+      },
+      "offset": 6.61,
+      "vo": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.",
+      "phrase": "became a hundred fifty-eight.",
+      "shows": "the band of new turquoise water between the two rings shimmers and fills from the inner ring out to the outer one, a plate reads C. 2020 \u00b7 ABOUT 158 SQ KM \u00b7 OUR COUNT",
+      "sfx": "swell",
+      "means": "c. 2020 \u00b7 about 158 sq km \u00b7 our count",
+      "rehook": "",
+      "draw": {
+        "subject": "the band of new turquoise water between the two rings",
+        "action": "shimmers and fills from the inner ring out to the outer one",
+        "emotion": "wonder",
+        "annotation": "C. 2020 \u00b7 ABOUT 158 SQ KM \u00b7 OUR COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "the band of new turquoise water between the two rings shimmers and fills from the inner ring out to the outer one, a plate reads C. 2020 \u00b7 ABOUT 158 SQ KM \u00b7 OUR COUNT",
+        "reaction": "the outer ring glints",
+        "ambient": "high wind over the ice"
+      },
+      "t": "79.150-81.340",
+      "key": 26
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 81.34,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
+      "phrase": "Now the case for",
+      "shows": "two glacier fronts at first light rise into view side by side, the left one ending in a turquoise lake, the right one on grey gravel, a survey stake in front holding a strip of the vellum's Gulf coast, a plate reads THE CASE FOR YES",
+      "sfx": "rush",
+      "means": "the case for yes",
+      "rehook": "rehook: two glacier fronts rise side by side at first light, one into a turquoise lake, one onto gravel",
+      "draw": {
+        "subject": "two glacier fronts at first light",
+        "action": "rise into view side by side, the left one ending in a turquoise lake, the right one on grey gravel, a survey stake in front holding a strip of the vellum's Gulf coast",
+        "emotion": "determined",
+        "annotation": "THE CASE FOR YES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "two glacier fronts at first light rise into view side by side, the left one ending in a turquoise lake, the right one on grey gravel, a survey stake in front holding a strip of the vellum's Gulf coast, a plate reads THE CASE FOR YES",
+        "reaction": "mist curls off the lake",
+        "ambient": "cold wind off the ice, meltwater trickling"
+      },
+      "t": "81.340-85.530",
+      "key": 27
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 85.53,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
+      "phrase": "sixty-six centimeters of water",
+      "shows": "a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it, a plate reads WORLDWIDE \u00b7 LAKE-ENDING \u00b7 ABOUT 66 CM A YEAR \u00b7 ON AVERAGE",
+      "sfx": "bubble",
+      "means": "worldwide \u00b7 lake-ending \u00b7 about 66 cm a year \u00b7 on average",
+      "rehook": "",
+      "draw": {
+        "subject": "a glass water column beside the lake-ending front",
+        "action": "fills to 66 cm as meltwater pours from the ice into it",
+        "emotion": "determined",
+        "annotation": "WORLDWIDE \u00b7 LAKE-ENDING \u00b7 ABOUT 66 CM A YEAR \u00b7 ON AVERAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it, a plate reads WORLDWIDE \u00b7 LAKE-ENDING \u00b7 ABOUT 66 CM A YEAR \u00b7 ON AVERAGE",
+        "reaction": "the lake front drips",
+        "ambient": "cold wind off the ice, meltwater trickling"
+      },
+      "t": "85.530-89.050",
+      "key": 28
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 89.05,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 7.71
+      },
+      "offset": 7.71,
+      "vo": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
+      "phrase": "land, about forty.",
+      "shows": "a second glass column beside the land front fills to 40 cm, visibly shorter than the first, a plate reads ON LAND \u00b7 ABOUT 40 CM A YEAR",
+      "sfx": "drip",
+      "means": "on land \u00b7 about 40 cm a year",
+      "rehook": "",
+      "draw": {
+        "subject": "a second glass column beside the land front",
+        "action": "fills to 40 cm, visibly shorter than the first",
+        "emotion": "steady",
+        "annotation": "ON LAND \u00b7 ABOUT 40 CM A YEAR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a second glass column beside the land front fills to 40 cm, visibly shorter than the first, a plate reads ON LAND \u00b7 ABOUT 40 CM A YEAR",
+        "reaction": "a pebble rolls off the moraine",
+        "ambient": "cold wind off the ice, meltwater trickling"
+      },
+      "t": "89.050-91.240",
+      "key": 29
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 91.24,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Tobias Bolch, a co-author at TU Graz, says contact with a lake further accelerates the loss of ice.",
+      "phrase": "Tobias Bolch, a co-author",
+      "shows": "ripples on the lake-ending front's water run out in rings past the survey stake as a tag on the stake turns face up, a plate reads TOBIAS BOLCH \u00b7 CO-AUTHOR \u00b7 TU GRAZ",
+      "sfx": "splash",
+      "means": "tobias bolch \u00b7 co-author \u00b7 tu graz",
+      "rehook": "",
+      "draw": {
+        "subject": "ripples on the lake-ending front's water",
+        "action": "run out in rings past the survey stake as a tag on the stake turns face up",
+        "emotion": "determined",
+        "annotation": "TOBIAS BOLCH \u00b7 CO-AUTHOR \u00b7 TU GRAZ"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "ripples on the lake-ending front's water run out in rings past the survey stake as a tag on the stake turns face up, a plate reads TOBIAS BOLCH \u00b7 CO-AUTHOR \u00b7 TU GRAZ",
+        "reaction": "the stake trembles",
+        "ambient": "water lapping, wind"
+      },
+      "t": "91.240-95.550",
+      "key": 30
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 95.55,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 4.31
+      },
+      "offset": 4.31,
+      "vo": "Tobias Bolch, a co-author at TU Graz, says contact with a lake further accelerates the loss of ice.",
+      "phrase": "accelerates the loss of",
+      "shows": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil lifts the full 66 column off the shore to carry it indoors as the stake's tag shows Bolch's line, a plate reads \"CONTACT WITH A LAKE FURTHER ACCELERATES THE LOSS OF ICE\" \u00b7 TOBIAS BOLCH \u00b7 PER TU GRAZ",
+      "sfx": "swish",
+      "means": "\"contact with a lake further accelerates the loss of ice\" \u00b7 tobias bolch \u00b7 per tu graz",
+      "rehook": "",
+      "draw": {
+        "subject": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil",
+        "action": "lifts the full 66 column off the shore to carry it indoors as the stake's tag shows Bolch's line",
+        "emotion": "determined",
+        "annotation": "\"CONTACT WITH A LAKE FURTHER ACCELERATES THE LOSS OF ICE\" \u00b7 TOBIAS BOLCH \u00b7 PER TU GRAZ"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil lifts the full 66 column off the shore to carry it indoors as the stake's tag shows Bolch's line, a plate reads \"CONTACT WITH A LAKE FURTHER ACCELERATES THE LOSS OF ICE\" \u00b7 TOBIAS BOLCH \u00b7 PER TU GRAZ",
+        "reaction": "the columns catch the light",
+        "ambient": "water lapping, wind"
+      },
+      "t": "95.550-97.760",
+      "key": 31
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 97.76,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then the team's machine learning models weighed the factors.",
+      "phrase": "Then the team's machine",
+      "shows": "a nickel rail of three spring scales with empty pans lowers on its column onto the light table beside the 66 column carried in from the field, plate MACHINE LEARNING MODELS, the release card's clip arm at its right end with an empty pan already hanging from it, a plate reads MACHINE LEARNING \u00b7 WEIGHS THE FACTORS",
+      "sfx": "clank",
+      "means": "machine learning \u00b7 weighs the factors",
+      "rehook": "rehook: a nickel rail of spring scales lowers onto the table beside the carried column",
+      "draw": {
+        "subject": "a nickel rail of three spring scales with empty pans",
+        "action": "lowers on its column onto the light table beside the 66 column carried in from the field, plate MACHINE LEARNING MODELS, the release card's clip arm at its right end with an empty pan already hanging from it",
+        "emotion": "steady",
+        "annotation": "MACHINE LEARNING \u00b7 WEIGHS THE FACTORS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a nickel rail of three spring scales with empty pans lowers on its column onto the light table beside the 66 column carried in from the field, plate MACHINE LEARNING MODELS, the release card's clip arm at its right end with an empty pan already hanging from it, a plate reads MACHINE LEARNING \u00b7 WEIGHS THE FACTORS",
+        "reaction": "the pans swing",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "97.760-100.230",
+      "key": 32
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 100.23,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "Then the team's machine learning models weighed the factors.",
+      "phrase": "factors.",
+      "shows": "three nickel weights on hooks swing down and hang over the empty pans, LAKE with a turquoise lake inlay, CLIMATE and GLACIER SHAPE stamped on them, a plate reads LAKE \u00b7 CLIMATE \u00b7 GLACIER SHAPE",
+      "sfx": "swing",
+      "means": "lake \u00b7 climate \u00b7 glacier shape",
+      "rehook": "",
+      "draw": {
+        "subject": "three nickel weights on hooks",
+        "action": "swing down and hang over the empty pans, LAKE with a turquoise lake inlay, CLIMATE and GLACIER SHAPE stamped on them",
+        "emotion": "steady",
+        "annotation": "LAKE \u00b7 CLIMATE \u00b7 GLACIER SHAPE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "three nickel weights on hooks swing down and hang over the empty pans, LAKE with a turquoise lake inlay, CLIMATE and GLACIER SHAPE stamped on them, a plate reads LAKE \u00b7 CLIMATE \u00b7 GLACIER SHAPE",
+        "reaction": "the pans sway",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "100.230-103.648",
+      "key": 48
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 103.648,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.2,
+        "offset": 2.108
+      },
+      "offset": 2.108,
+      "vo": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six.",
+      "phrase": "For lake-ending glaciers worldwide,",
+      "shows": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil strikes the lake-ending glass column at the margin with a knuckle and its tag swings over, a plate reads LAKE-ENDING GLACIERS \u00b7 WORLDWIDE",
+      "sfx": "knock",
+      "means": "lake-ending glaciers \u00b7 worldwide",
+      "rehook": "",
+      "draw": {
+        "subject": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil",
+        "action": "strikes the lake-ending glass column at the margin with a knuckle and its tag swings over",
+        "emotion": "steady",
+        "annotation": "LAKE-ENDING GLACIERS \u00b7 WORLDWIDE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil strikes the lake-ending glass column at the margin with a knuckle and its tag swings over, a plate reads LAKE-ENDING GLACIERS \u00b7 WORLDWIDE",
+        "reaction": "the column rings",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "103.648-104.670",
+      "key": 53
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 104.67,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.13
+      },
+      "offset": 3.13,
+      "vo": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six.",
+      "phrase": "eleven percent of the",
+      "shows": "a small nickel weight labelled LAKE drops into the first pan, a small nickel weight with a turquoise lake inlay, and its spring stretches a short way down, a plate reads LAKE ~11% \u00b7 LAKE-ENDING GLACIERS \u00b7 WORLDWIDE",
+      "sfx": "clunk",
+      "means": "lake ~11% \u00b7 lake-ending glaciers \u00b7 worldwide",
+      "rehook": "",
+      "draw": {
+        "subject": "a small nickel weight labelled LAKE",
+        "action": "drops into the first pan, a small nickel weight with a turquoise lake inlay, and its spring stretches a short way down",
+        "emotion": "steady",
+        "annotation": "LAKE ~11% \u00b7 LAKE-ENDING GLACIERS \u00b7 WORLDWIDE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a small nickel weight labelled LAKE drops into the first pan, a small nickel weight with a turquoise lake inlay, and its spring stretches a short way down, a plate reads LAKE ~11% \u00b7 LAKE-ENDING GLACIERS \u00b7 WORLDWIDE",
+        "reaction": "the pan bobs",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "104.670-107.610",
+      "key": 33
+    },
+    {
+      "id": 44,
+      "shot": 13,
+      "at_s": 107.61,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 6.07
+      },
+      "offset": 6.07,
+      "vo": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six.",
+      "phrase": "forty-three. The glacier's own",
+      "shows": "a big nickel weight labelled CLIMATE drops into the second pan and its spring stretches far past the LAKE spring, a plate reads CLIMATE ~43%",
+      "sfx": "thud",
+      "means": "climate ~43%",
+      "rehook": "",
+      "draw": {
+        "subject": "a big nickel weight labelled CLIMATE",
+        "action": "drops into the second pan and its spring stretches far past the LAKE spring",
+        "emotion": "steady",
+        "annotation": "CLIMATE ~43%"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a big nickel weight labelled CLIMATE drops into the second pan and its spring stretches far past the LAKE spring, a plate reads CLIMATE ~43%",
+        "reaction": "the rail hums",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "107.610-110.610",
+      "key": 34
+    },
+    {
+      "id": 45,
+      "shot": 13,
+      "at_s": 110.61,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 9.07
+      },
+      "offset": 9.07,
+      "vo": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six.",
+      "phrase": "forty-six.",
+      "shows": "a big nickel weight labelled GLACIER SHAPE drops into the third pan and its spring stretches a little further still, a plate reads GLACIER SHAPE ~46%",
+      "sfx": "thump",
+      "means": "glacier shape ~46%",
+      "rehook": "",
+      "draw": {
+        "subject": "a big nickel weight labelled GLACIER SHAPE",
+        "action": "drops into the third pan and its spring stretches a little further still",
+        "emotion": "steady",
+        "annotation": "GLACIER SHAPE ~46%"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a big nickel weight labelled GLACIER SHAPE drops into the third pan and its spring stretches a little further still, a plate reads GLACIER SHAPE ~46%",
+        "reaction": "the three pans settle while the empty fourth pan on the clip keeps swaying",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "110.610-112.080",
+      "key": 35
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 112.08,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A real push. The smallest of the three.",
+      "phrase": "A real push. The",
+      "shows": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir stands small on the survey stake at the lake-ending front, the empty pan hanging beside it, and turns from the water back toward the ice and holds still, a plate reads A REAL PUSH \u00b7 THE SMALLEST OF THE THREE",
+      "sfx": "creak",
+      "means": "a real push \u00b7 the smallest of the three",
+      "rehook": "",
+      "draw": {
+        "subject": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir",
+        "action": "stands small on the survey stake at the lake-ending front, the empty pan hanging beside it, and turns from the water back toward the ice and holds still",
+        "emotion": "curious",
+        "annotation": "A REAL PUSH \u00b7 THE SMALLEST OF THE THREE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir stands small on the survey stake at the lake-ending front, the empty pan hanging beside it, and turns from the water back toward the ice and holds still, a plate reads A REAL PUSH \u00b7 THE SMALLEST OF THE THREE",
+        "reaction": "the empty pan creaks on its hook",
+        "ambient": "wind off the ice, water lapping"
+      },
+      "t": "112.080-115.580",
+      "key": 36
+    },
+    {
+      "id": 47,
+      "shot": 14,
+      "at_s": 115.58,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The release and abstract give no split for Alaska. Here, the push could be bigger, or smaller.",
+      "phrase": "The release and abstract",
+      "shows": "the blank WHY? tab flutters in on the wind and drops into the empty pan on the stake, the pan that hung from the release card's clip since the weigh-in began, a plate reads ALASKA'S SPLIT \u00b7 NOT IN THE RELEASE OR ABSTRACT",
+      "sfx": "rustle",
+      "means": "alaska's split \u00b7 not in the release or abstract",
+      "rehook": "",
+      "draw": {
+        "subject": "the blank WHY? tab",
+        "action": "flutters in on the wind and drops into the empty pan on the stake, the pan that hung from the release card's clip since the weigh-in began",
+        "emotion": "curious",
+        "annotation": "ALASKA'S SPLIT \u00b7 NOT IN THE RELEASE OR ABSTRACT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "the blank WHY? tab flutters in on the wind and drops into the empty pan on the stake, the pan that hung from the release card's clip since the weigh-in began, a plate reads ALASKA'S SPLIT \u00b7 NOT IN THE RELEASE OR ABSTRACT",
+        "reaction": "the stake leans and the pan swings on its hook",
+        "ambient": "wind off the ice, water lapping"
+      },
+      "kick": true,
+      "t": "115.580-119.650",
+      "key": 37
+    },
+    {
+      "id": 48,
+      "shot": 14,
+      "at_s": 119.65,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 4.07
+      },
+      "offset": 4.07,
+      "vo": "The release and abstract give no split for Alaska. Here, the push could be bigger, or smaller.",
+      "phrase": "bigger, or smaller.",
+      "shows": "the empty pan on the stake rocks and settles level, the blank tab lying in it weighing nothing, no needle, no number, a plate reads COULD BE BIGGER \u00b7 OR SMALLER",
+      "sfx": "creak",
+      "means": "could be bigger \u00b7 or smaller",
+      "rehook": "rehook: the empty pan rocks level on the stake against the real ice",
+      "draw": {
+        "subject": "the empty pan on the stake",
+        "action": "rocks and settles level, the blank tab lying in it weighing nothing, no needle, no number",
+        "emotion": "curious",
+        "annotation": "COULD BE BIGGER \u00b7 OR SMALLER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the empty pan on the stake rocks and settles level, the blank tab lying in it weighing nothing, no needle, no number, a plate reads COULD BE BIGGER \u00b7 OR SMALLER",
+        "reaction": "NIB's tines splay",
+        "ambient": "wind off the ice, water lapping"
+      },
+      "t": "119.650-122.120",
+      "key": 38
+    },
+    {
+      "id": 49,
+      "shot": 15,
+      "at_s": 122.12,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The map stops at about twenty twenty. Who traces the next one?",
+      "phrase": "The map stops at",
+      "shows": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates its line to the vellum's right edge, ruled THE MAP ENDS \u00b7 CIRCA 2020, and stops, its tip hovering over blank vellum, a plate reads THE MAP ENDS \u00b7 CIRCA 2020",
+      "sfx": "scribble",
+      "means": "the map ends \u00b7 circa 2020",
+      "rehook": "",
+      "draw": {
+        "subject": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir",
+        "action": "skates its line to the vellum's right edge, ruled THE MAP ENDS \u00b7 CIRCA 2020, and stops, its tip hovering over blank vellum",
+        "emotion": "curious",
+        "annotation": "THE MAP ENDS \u00b7 CIRCA 2020"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates its line to the vellum's right edge, ruled THE MAP ENDS \u00b7 CIRCA 2020, and stops, its tip hovering over blank vellum, a plate reads THE MAP ENDS \u00b7 CIRCA 2020",
+        "reaction": "the lamp warms",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "122.120-124.390",
+      "key": 39
+    },
+    {
+      "id": 50,
+      "shot": 15,
+      "at_s": 124.39,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 2.27
+      },
+      "offset": 2.27,
+      "vo": "The map stops at about twenty twenty. Who traces the next one?",
+      "phrase": "Who traces the next",
+      "shows": "the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it, a plate reads THE NEXT MAP \u00b7 ?",
+      "sfx": "slide",
+      "means": "the next map \u00b7 ?",
+      "rehook": "",
+      "draw": {
+        "subject": "the persimmon pencil hand and our pine-green hand",
+        "action": "come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it",
+        "emotion": "curious",
+        "annotation": "THE NEXT MAP \u00b7 ?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it, a plate reads THE NEXT MAP \u00b7 ?",
+        "reaction": "the pencil rolls to a stop",
+        "ambient": "a quiet drafting room, the lamp's hum"
+      },
+      "t": "124.390-125.440",
+      "key": 40
+    }
+  ]
+}

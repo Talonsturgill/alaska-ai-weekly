@@ -1,0 +1,97 @@
+{
+ "j1": {
+  "total": 7.57,
+  "axis_scores": {
+   "Hook & retention": 7.4,
+   "Illustration craft & detail": 7.5,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 7.5,
+   "Color & grade": 7.8,
+   "Typography & captions": 7.6,
+   "Sound design & mix": 7.2,
+   "VO–illustration sync & entertainment": 7.6,
+   "Accuracy & sourcing": 8.4,
+   "Alaska authenticity & cultural respect": 7.8,
+   "Writing & post quality": 8.2
+  },
+  "concrete_defects": [
+   "micro-type tabs and slip at 0:55 and 0:59",
+   "LAKE emboss half hidden by the pan rim at 1:44-1:52",
+   "S14 holds 1:52-2:02 under 5.3% change, empty lower 40% at 2:01.6",
+   "S10 new-water band barely moves at 1:19",
+   "WORLD AREA tape cut at the left edge at 0:55",
+   "rigid hands with no articulation",
+   "synth-only ambience beds, 80.5 s gap at -12.7 dBFS",
+   "0.73 s orphan caption cue 'on average.'"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "total": 7.4,
+  "axis_scores": {
+   "Hook & retention": 7.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.7,
+   "Composition & staging": 7.2,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO–illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 8.0
+  },
+  "concrete_defects": [
+   "ink bracket beat at 27 s holds while the stamp SFX plays",
+   "lake-ending column flickers pale at 85.6-87.9 s",
+   "LAKE ~11% plate over the LAKE weight at 111.6 s",
+   "rigid hands",
+   "pine arm rises from under the table at 46.5 s",
+   "placeholder bars on the release card",
+   "empty top 22% headroom",
+   "lamp breaks the table plane at 72 s",
+   "uneven gap beds"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "total": 6.89,
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 6.5,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 6.75,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO–illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "concrete_defects": [
+   "generic hook, the half payoff arrives at 64 s",
+   "rigid hands",
+   "low-motion holds at 27.3, 74.7, 77.9, 119.9, 79.4 and 112.3 s",
+   "empty top headroom",
+   "micro-type at 59.7 s",
+   "plates over NIB's reservoir at 11.5 s and the spring hook at 121.6 s",
+   "NIB hides the WORLD tape zero at 59.7 s",
+   "sheen bands read as smudges",
+   "S10 moraine double lines read as roads",
+   "66 CM column label lacks WORLDWIDE",
+   "possible column flicker at 85.6-87.9 s",
+   "persimmon hand over the caption in the first frame at 124.46 s",
+   "quiet gaps at -39 dBFS"
+  ],
+  "hard_blockers": []
+ },
+ "median": 7.4,
+ "named_open_defects": [
+  "rigid hands with no articulation (all three seats, Motion weakest)",
+  "low-motion holds in S14 and at the ink bracket",
+  "micro-type on the release card tabs and slip",
+  "empty top headroom on interiors",
+  "synth-only ambience"
+ ]
+}

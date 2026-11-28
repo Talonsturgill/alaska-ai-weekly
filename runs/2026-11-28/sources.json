@@ -1,0 +1,10 @@
+{
+ "run_date": "2026-11-28",
+ "title": "The Map Swelled",
+ "sources": [
+  {"id": "s1", "title": "Climate and glacier geometry dominate global glacier-lake interactions (Zhao et al., incl. Tobias Bolch), Nature Climate Change, doi 10.1038/s41558-026-02808-5", "outlet": "Nature Climate Change, November 20th", "credit": "NATURE CLIMATE CHANGE", "url": "https://www.nature.com/articles/s41558-026-02808-5", "claims": ["c1", "c2", "c3", "c4", "c6", "c8", "c14", "c17", "c18", "c19"]},
+  {"id": "s2", "title": "Global analysis reveals lakes amplify glacier ice loss (TU Graz press release)", "outlet": "TU Graz via phys.org, November 20th", "credit": "TU GRAZ", "url": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html", "claims": ["c5", "c7", "c15", "c16"]},
+  {"id": "s3", "title": "Global Glacial Lake Inventory for 2000 and 2020 (the authors' open data), tallied by Alaska.Ai", "outlet": "Figshare, doi 10.6084/m9.figshare.34332987", "credit": "FIGSHARE", "url": "https://doi.org/10.6084/m9.figshare.34332987", "claims": ["c8", "c9", "c10", "c11", "c12", "c13", "c20"]},
+  {"id": "s4", "title": "Vitus Lake (location at the Bering Lobe, Yakutat)", "outlet": "Wikipedia", "credit": "WIKIPEDIA", "url": "https://en.wikipedia.org/wiki/Vitus_Lake", "claims": ["c13"]}
+ ]
+}

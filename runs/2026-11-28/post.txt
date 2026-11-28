@@ -1,0 +1,22 @@
+Alaska added about half the world's new lake area at glacier edges, by a tally of open data.
+The release never printed that. The authors' open data did. Their Nature Climate Change study, out November 20th, used deep learning to map glacier lakes worldwide on Landsat images from about 2000 and about 2020. People then checked the lakes by hand.
+
+Worldwide, lakes touching glaciers rose by 3,567. That is about 35 percent more lakes. Their area grew only about 9 percent.
+
+The authors posted their whole inventory. A tally of it matches their world lake count exactly.
+
+In that tally, Alaska's lakes touching glaciers went from 931 to 1,078, about 16 percent more. Their area grew about 35 percent, to about 1,190 square kilometers. The world's lakes grew mostly in number while Alaska's grew in size.
+
+Alaska holds about 1 in 13 of those lakes and about half of the area the world added. Alaska's biggest single gain in the tally sits at the foot of Bering Glacier, where Vitus Lake went from about 105 to about 158 square kilometers.
+
+Does the lake eat the glacier? Worldwide, glaciers ending in a lake lost about 66 centimeters of water a year on average. Glaciers on land lost about 40.
+
+The team's machine learning models then weighed the factors. For lake-ending glaciers worldwide the lake explained about 11 percent of their ice loss. Climate explained about 43 and glacier shape about 46.
+
+So the lake is a real push, and the smallest of the three.
+
+The release said particularly pronounced. The open data says about half. A deep learning map with its inventory posted turns a regional gesture into a number.
+
+The inventory is public and stops at about 2020. Which Alaska glacier lake would you check in it first, and why?
+
+#Alaska #MachineLearning #GlacialLakes #RemoteSensing

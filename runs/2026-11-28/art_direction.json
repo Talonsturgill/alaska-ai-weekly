@@ -1,0 +1,114 @@
+{
+ "run_date": "2026-11-28",
+ "title": "The Map Swelled",
+ "treatment": "A drafting-pen nib called NIB, the study's deep-learning tracer, draws glacier lakes on glowing Landsat tiles while the study's checker ticks its lines in persimmon pencil; our newsroom hand in a pine-green cuff counts the authors' open map and finds Alaska's lakes swelled more than they multiplied; THE CASE FOR YES is drawn at two real glacier fronts at first light; then a nickel rail of three spring scales (the team's machine learning models) weighs lake about 11, climate about 43, shape about 46, and the release card's empty WHY? tab hangs from the card's own clip as an empty pan.",
+ "palette": {
+  "roles": {
+   "room": "warm umber #2A2018 drafting den, #3A2D22 lit wall, #1C150F darkest dark under the table",
+   "vellum": "amber-cream vellum #F6DDA8 with #E0C084 shade and #FCEFCF highlight, lamp-warm, clearly not 11-27's parchment or 11-26's bone",
+   "wood": "honey oak #6B4E34 table rim, oak counters and frames (#8E6A48 light, #4A3422 dark)",
+   "machine_ink": "ultramarine #3346C8: Nib's lines and reservoir, and only the plates where the machine is the subject (A MACHINE \u00b7 DEEP LEARNING, 2000 AND 2020)",
+   "study_pencil": "persimmon #E0662A, hairline strokes only: the study's checker's pencil and ticks; the checker's cuff is oatmeal #CDBFA3",
+   "our_count": "pine #2F6B45, stamp and type form only: OUR COUNT stamps, slips, tabs, the newsroom hand's cuff and clicker; never a hairline beside ultramarine",
+   "lakes": "rock-flour turquoise #7FC8C2 with #4FA39C shade, lakes only (and the ALASKA half of the added-area strip, because that strip IS lake area)",
+   "metal": "nickel #8E949C with #D3D7DC highlights and #4E535A shade for the scales and weights (no brass anywhere this film)",
+   "tiles": "Landsat grey #9A9894 with snowy ice #EEF3F6 and rock #8C8A86",
+   "outdoors": "first-light dawn: lavender-grey zenith #5E5A78 to a rose-peach horizon #E9B49A, ice rimmed in pale rose #F6C6C6; amber stays the lamp's colour indoors (moved off 11-26's steel-blue pre-dawn #2D4660 and 11-25's railway amber)",
+   "highlighter": "pale yellow NB.hilite #F3E39A with edge #D9C25A, one stripe, on the release card's Alaska line only, never on vellum",
+   "tape": "steel tape #C9CDD3 with ink numerals; the 9% scale tick in ink, Alaska's 35% tick in pine",
+   "release_card": "TU Graz card on cool white stock #F2F3EF with ink type, so the pale yellow #F3E39A highlighter (edge #D9C25A) reads by hue"
+  },
+  "mood": "a bright lamplit survey room: careful, amber, a little wondrous; first light outdoors",
+  "divergence": "11-27 an outdoor green-slate storm with lemon lightning and brass; 11-26 celadon and orchid under a bone lightbox; 11-25 bone noon snow and railway amber; 11-24 olive tundra and vermilion pins; 11-23 apricot-plum twilight and scarlet. This film: warm umber room, amber-cream vellum, three role inks (ultramarine 232 lines, persimmon 20 hairlines, pine 143 stamps), turquoise lakes, nickel. Honest overlaps: 11-26 also lit an interior from a glowing surface (a clinical bone lightbox; here an amber vellum table plus a lamp key from top left); persimmon sits about 9 degrees from 11-24's vermilion, kept to hairline strokes; the brass streak is broken by nickel. Rock-flour turquoise shares 11-27's green-slate hue family but only as small, high-chroma lake shapes against amber vellum, never as an ambient field."
+ },
+ "light": {
+  "overall": "key from a warm lamp top-left on every table shot, the vellum glowing from beneath as backlight and bounce; warm S1 to S9, the lamp cooling for the weighing (S13, S14), warming again at S15; S13 the lamp key cools to about #E8E2D2 with the vellum fill down about 20 percent; S14 is outdoors in lavender first light; S15 back to the warm key, the lamp brightening as NIB touches the blank; the den's window shows the same lavender first light as the exteriors",
+  "per_set": [
+   {
+    "set": "overhead table (S1, S5, S7, S15)",
+    "key": "lamp top-left raking across the vellum",
+    "fill": "vellum glow from beneath",
+    "rim": "cool white on Nib's right edge",
+    "darkest": "oak rim and pencil tray",
+    "top_band": "clip arm, tile-box edges, plates",
+    "floor": "oak rim, pencil tray, tile boxes, eraser"
+   },
+   {
+    "set": "eye-level table (S2, S6, S9, S13)",
+    "key": "lamp from frame left",
+    "fill": "vellum bounce",
+    "rim": "window glow",
+    "darkest": "under the table",
+    "top_band": "framed survey map of Alaska, window onto a range, shelf of tile boxes",
+    "floor": "floor and table legs"
+   },
+   {
+    "set": "wall sheet (S4, S8)",
+    "key": "lamp grazing the pinned sheets from below-left",
+    "fill": "room bounce",
+    "rim": "none",
+    "darkest": "wall corners",
+    "top_band": "sheet pins and plates",
+    "floor": "oak shelf"
+   },
+   {
+    "set": "aerial Bering lobe (S10, signature)",
+    "key": "low sun from upper left raking long crevasse shadows",
+    "fill": "rose dawn sky",
+    "rim": "rose on the ice edge",
+    "darkest": "rock shadow",
+    "top_band": "far peaks and sky",
+    "floor": "moraine below the lake"
+   },
+   {
+    "set": "glacier fronts and the dawn lakeshore (S3, S11)",
+    "key": "first light behind the far peaks from frame left",
+    "fill": "lavender sky",
+    "rim": "pale rose on the ice",
+    "darkest": "moraine gravel",
+    "top_band": "peaks",
+    "floor": "gravel, stones, the survey stake"
+   },
+   {
+    "set": "ground-level lake-ending front with the empty pan (S14)",
+    "key": "first light from frame left",
+    "fill": "lavender sky",
+    "rim": "nickel on the pan lip",
+    "darkest": "the moraine",
+    "top_band": "the ice front and peaks",
+    "floor": "gravel"
+   },
+   {
+    "set": "overhead shore (S12)",
+    "key": "first light from upper left",
+    "fill": "lavender sky",
+    "rim": "pale rose on the ice edge",
+    "darkest": "the stake's shadow and wet gravel",
+    "top_band": "the ice edge",
+    "floor": "gravel"
+   }
+  ]
+ },
+ "shape_language": "the machine is sharp and narrow (Nib's chisel triangle, ruled lines, the scale's straight beam), the world it measures is soft and swelling (rounded lake blobs that rise like dough, the curling vellum, the scalloped glacier fronts); the human hand is rounded and warm. The contrast IS the story: a precise tool tracing soft, growing water.",
+ "casting": {
+  "hero": "NIB (NET-NEW, lib/nib.tsx): a knee-high steel drafting-pen nib on its split tines, one breather-hole eye and no brows or mouth (eye-only instrument, acting through tines, lean and ink line), ultramarine reservoir, cues; never damaged; never carries OUR COUNT material. Shelf check: ASSET_INDEX has ReviewPen (a human's pen) and nothing that traces.",
+  "supporting": [
+   "CheckHand (NET-NEW, lib/nib.tsx) in two roles: the study's checker (oatmeal cuff, persimmon pencil, touches only study material) and our newsroom hand (pine cuff, pine tally clicker, touches only OUR COUNT material)",
+   "LightTable, LandsatTile, lakeBlob/LakeFill/LakeOutline, LakeChip, TapeMeasure, BrassWeight (drawn nickel), SpringScale, WeighRail (NET-NEW, lib/nib.tsx)",
+   "episode-local: the release card on a TU Graz clip arm with two pine tabs, the open-data folder, oak counter drums, the OUR COUNT stamp and slip, the added-area strip in an oak frame, two glass water columns, the survey stake, glacier fronts hand-drawn in this palette, the satellite Bering lobe",
+   "AlaskaOutline (lib/akgeo) on the vellum, true geography"
+  ],
+  "people": "anonymous hands only; Tobias Bolch is a plate, never drawn"
+ },
+ "motion_language": "Nib skates on its tines with anticipation and overshoot, ink lines draw on with an eased dash offset, the pencil darts in and ticks; lakes swell like dough with a soft overshoot; popcorn chips burst with squash; tapes slide and stop at inked ticks on one scale; spring scales stretch with a damped spring as each weight lands, LAKE first, then CLIMATE, then SHAPE, in the order the narration says them; the empty pan rocks level",
+ "composition": {
+  "focal_hierarchy": "Nib or the hand first, then the line being drawn or the number made physical, then the vellum and the room",
+  "negative_space": "the dark room above the lamp, held still for one beat before the scale lands",
+  "safe_area": "hero and plates inside y 420 to 1500; the clip arm, Nib's head, the wall map or the scale's column reach into y 420 to 690; the oak rim, tile boxes and pencil tray give y 1470 to 1920 a job",
+  "signature_shot": "S10: an oblique aerial of the real Bering lobe at first light, moraine stripes and crevasses raked by low sun, cloud shadow drifting, Vitus Lake's two ultramarine inventory rings inked on the water, a pine flag dropping onto the shore from above, the band of new turquoise shimmering"
+ },
+ "craft_advance": "none required by this film beyond the net-new lib/nib.tsx family",
+ "per_set": {
+  "board_shot_numbers": "1 trace and tile strip, 2 checked by hand, 3 dawn lakeshore, 4 wall sheet, 5 release card, 6 we counted, 7 Alaska swelled, 8 wall contrast, 9 about half, 10 Bering aerial (signature), 11 glacier fronts, 12 Bolch's line and the carried column, 13 weigh-in, 14 the release card's clip and empty pan, 15 the map ends"
+ }
+}

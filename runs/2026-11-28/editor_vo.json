@@ -1,0 +1,30 @@
+{
+ "ship": true,
+ "findings": [
+  {
+   "line": 11,
+   "risk": "Low and optional: 'multiplied' could be heard as many-fold; context from lines 5 and 10 makes the contrast clear.",
+   "fix": "keep as is (declined, word budget)"
+  }
+ ],
+ "rounds": [
+  {
+   "round": 1,
+   "ship": false,
+   "real_risks": [
+    9,
+    12,
+    13,
+    17,
+    19
+   ],
+   "applied": "all ten fixes"
+  },
+  {
+   "round": 2,
+   "ship": true
+  }
+ ],
+ "script_sha256": "2405f53f308dccb721ec758d52f208db4fea206e26d67fc66fba91c80e97e5d6",
+ "claims_sha256": "739aeeb4cd9fb8675f279f229dfcbded3d915c2b11aa3fbaa0c206507e4ccceb"
+}
