@@ -1,16 +1,15 @@
 {
   "last_pass": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "shipped": [
-      "ambience-synth-only: synthesised storm ambience kind, thunder rolls placed in VO breaths, board_sync_check storm row from 11-28 (d5f8c24, 498e617)",
-      "ambience self-test bands re-measured for the 11-08 room and wind retune, the test had failed on main since (5538591)",
-      "action-outside-strip-window: build_evidence whole-beat action strips for physical beats (6c9c604)",
-      "board-md-stale: board_md.py renders and stamps storyboard.md, Gate 0A fails a stale stamp (0e12b22)",
-      "quote-slip-char-wrap: typed_wrap_check source gate in make_cut (9b945a6)"
+      "lib-hand-asset (engine advance): lib/hand.tsx articulated Hand with wrist, knuckles and cue-driven strike, CheckHand uses it with cues, hand_check.py measures it (79b789b)",
+      "music-bed-not-built: music_bed_check source gate in make_cut, get_music keeps a same-track credit and refuses a non-WAV --out (0b0a246)",
+      "music-pool-drained, curious branch: five verified CC BY 4.0 tracks (0e513fe)",
+      "hf-whisper-rate-limit: whisper_prefetch.py fills the cache before any paid synth (cce6f2c)"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision on the caption bar, still open, repeat 12)",
-      "gate0-critic-rounds cap (owner decision on the round cap, still open, repeat 13)"
+      "caption-scorer-hair-under-bar (owner decision on the caption bar, still open; 11-28 cleared it at 8.53)",
+      "gate0-critic-rounds cap (owner decision on the round cap, still open, repeat 14)"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
