@@ -1,5 +1,5 @@
 # The Map Swelled (Dispatch 2026-11-28)
-<!-- rendered by scripts/board_md.py from storyboard.json sha256:f54dfd98db997071 -->
+<!-- rendered by scripts/board_md.py from storyboard.json sha256:3d79035a57efdec9 -->
 
 Concept. A study in Nature Climate Change (November 20th, Zhao et al., co-author Tobias Bolch of TU Graz) used deep learning to map glacier lakes worldwide from Landsat images of about 2000 and about 2020, and people checked them by hand. Lakes touching glaciers rose by 3,567, about 35 percent, but their area only about 9 percent. The release calls Alaska's growth particularly pronounced but prints no Alaska number, so we counted the authors' open map: our count matches their world lake count exactly, Alaska's went 931 to 1,078 while their area grew about 35 percent to about 1,190 sq km, about half the world's added area from about 1 in 13 of its lakes, Vitus Lake at Bering Glacier the biggest gain (about 105 to 158 sq km). The case for yes: lake-ending glaciers lost about 66 cm of water a year against about 40 on land, and Bolch says lake contact further accelerates loss. Then the team's machine learning models weighed the factors: lake about 11, climate about 43, glacier shape about 46, for lake-ending glaciers worldwide. A real push, the smallest of the three. The release and abstract give no split for Alaska. Drawn as NIB, a drafting-pen nib that traces lakes on glowing Landsat tiles while the study's persimmon pencil checks the lines and our pine-cuffed hand counts, a world of popcorn lake chips against Alaska's lakes rising like dough, two inventory rings at Vitus Lake with our pin, two glacier fronts with water columns, a rail of three spring scales, and the release card's blank WHY row hanging as an empty fourth pan.
 
@@ -16,7 +16,7 @@ Palette. bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 l
   - b3 3.49s [slide] a second Landsat tile with a date chip CIRCA 2020 slides in beside the first, and NIB's next line runs to that tile's right edge and stops, its tip hovering over blank vellum. Plate: CIRCA 2000 · CIRCA 2020. Reaction: NIB's tines splay over the blank
   - b4 5.08s [whoosh] NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates tile to tile along a long strip of Landsat tiles, drawing outline after outline as the strip scrolls under it. Plate: LANDSAT IMAGES. Reaction: outlines snap shut one after another
   - b5 7.61s [tick] the tile under NIB snaps its outline shut with a click as the next tile slides in under the tip, its date chip CIRCA 2000. Plate: CIRCA 2000. Reaction: ink beads at the closing point
-  - b6 8.83s [pop] the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged. Plate: 2000 AND 2020. Reaction: the dates clack over
+  - b6 8.83s [pop] the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged. Plate: CIRCA 2000 AND 2020. Reaction: the dates clack over
 - S2 12.000-18.380 **Checked by hand** (two-up, eye, dollyThrough). At eye level across the table the study's checker hand ticks NIB's outlines in persimmon, nudges one line as NIB watches, and slides a journal card under the vellum
   - ambient: a quiet drafting room, the lamp's hum
   - b7 12s [tick] the study's checker, a person's hand in an oatmeal cuff holding a persimmon pencil darts in from the lower frame and ticks NIB's outlines one by one while NIB glances back. Plate: CHECKED BY HAND · PER TU GRAZ. Reaction: NIB straightens up
@@ -35,7 +35,7 @@ Palette. bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 l
 - S5 31.860-39.520 **No Alaska number** (push-detail, high, craneDown). From above the study's press release card swings in on a TU Graz clip arm, a highlighter sweeps its Alaska line, and two empty pine tabs, HOW MANY? and WHY?, snap onto its edge
   - ambient: a quiet drafting room, the lamp's hum
   - b16 32.626s [slide] the study's press release card swings into frame on a TU Graz clip arm and pins down over the vellum's edge. Plate: PRESS RELEASE · TU GRAZ. Reaction: the clip arm bounces
-  - b17 35.69s [squeak] a pale yellow highlighter stripe sweeps across the card's quoted line. Plate: "PARTICULARLY PRONOUNCED IN ALASKA" · PER TU GRAZ. Reaction: the stripe glints
+  - b17 35.69s [squeak] a pale yellow highlighter stripe sweeps across the card's quoted line. Plate: "PARTICULARLY PRONOUNCED IN ALASKA ..." · PER TU GRAZ. Reaction: the stripe glints
   - b18 38.31s [snap] our pine clip tagged OUR QUESTIONS, with two empty tabs HOW MANY? and WHY? clamps onto the card's edge, nothing written on the tabs. Plate: NO ALASKA NUMBER IN THE RELEASE. Reaction: the tabs flutter
 - S6 39.520-46.960 **We counted** (data-panel, eye, dollyThrough). Our pine-cuffed hand opens a folder of the authors' open data, clicks a tally counter as oak drums stop at 13,685, and stamps OUR COUNT on its own slip
   - ambient: a quiet drafting room, the lamp's hum
@@ -46,7 +46,7 @@ Palette. bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 l
   - ambient: a quiet drafting room, the lamp's hum
   - b22 46.96s [rustle] our newsroom hand in a pine-green cuff lays the vellum with the true outline of Alaska over the tiles and the world's steel AREA tape, carried down from the wall, along its foot. Plate: ALASKA · OUR COUNT. Reaction: the vellum settles
   - b23 50.11s [snap] our newsroom hand in a pine-green cuff clips our pine count slip next to the card's HOW MANY? tab, the blank WHY? tab swinging once, as Alaska's coastal lake outlines drop onto the vellum one by one. Plate: ALASKA · 931 TO 1,078 · +16% · OUR COUNT. Reaction: the tab swings
-  - b24 52.9s [swell] Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin. Plate: ALASKA · ABOUT 880 SQ KM IN 2000 · OUR COUNT. Reaction: NIB backs up a step
+  - b24 52.9s [swell] Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin. Plate: ALASKA · ABOUT 880 SQ KM · C. 2000 · OUR COUNT. Reaction: NIB backs up a step
   - b25 55.21s [click] a second AREA tape runs out from the same zero as the world's tape, past the world's 9% tick, and stops at its own 35% tick on the same scale. Plate: AREA · +35% VS +9% · OUR COUNT. Reaction: the tape case spins
   - b26 57.03s [clip] our newsroom hand in a pine-green cuff lays a pine slip beside Alaska's tape as the swollen lakes settle. Plate: ABOUT 1,190 SQ KM · OUR COUNT. Reaction: the slip flutters flat
 - S8 60.200-64.920 **Multiplied, swelled** (two-up, eye, truckAcross). Back at the wall, our hand pins the Alaska vellum beside the world sheet, the world's many small popcorn chips against Alaska's few swollen lakes
@@ -66,8 +66,8 @@ Palette. bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 l
 - S11 81.340-91.240 **The case for yes** (two-up, ground, riseWith). At ground level at first light two glacier fronts stand side by side, one into a turquoise lake and one onto gravel, and two glass water columns fill to 66 and 40 cm
   - ambient: cold wind off the ice, meltwater trickling
   - b35 81.34s [rush] two glacier fronts at first light rise into view side by side, the left one ending in a turquoise lake, the right one on grey gravel, a survey stake in front holding a strip of the vellum's Gulf coast. Plate: THE CASE FOR YES. Reaction: mist curls off the lake
-  - b36 85.53s [bubble] a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it. Plate: LAKE-ENDING · 66 CM A YEAR · ON AVERAGE. Reaction: the lake front drips
-  - b37 89.05s [drip] a second glass column beside the land front fills to 40 cm, visibly shorter than the first. Plate: ON LAND · 40 CM A YEAR. Reaction: a pebble rolls off the moraine
+  - b36 85.53s [bubble] a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it. Plate: WORLDWIDE · LAKE-ENDING · ABOUT 66 CM A YEAR · ON AVERAGE. Reaction: the lake front drips
+  - b37 89.05s [drip] a second glass column beside the land front fills to 40 cm, visibly shorter than the first. Plate: ON LAND · ABOUT 40 CM A YEAR. Reaction: a pebble rolls off the moraine
 - S12 91.240-97.760 **Further accelerates** (alt-vantage, overhead, craneDown). From straight above the lake-ending front's shore, the survey stake's tag carries Bolch's line as ripples run in rings across the turquoise water, and the study's checker hand lifts the 66 column to carry it indoors
   - ambient: water lapping, wind
   - b38 91.24s [splash] ripples on the lake-ending front's water run out in rings past the survey stake as a tag on the stake turns face up. Plate: TOBIAS BOLCH · CO-AUTHOR · TU GRAZ. Reaction: the stake trembles
@@ -88,7 +88,7 @@ Palette. bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8 l
 - S15 122.120-125.440 **The map ends** (subject-portrait, overhead, truckAcross). Overhead, NIB skates its line to the vellum's right edge ruled THE MAP ENDS · CIRCA 2020 and hovers over blank vellum as both hands come to rest beside it
   - ambient: a quiet drafting room, the lamp's hum
   - b49 122.12s [scribble] NIB, a knee-high steel drafting-pen nib with a breather-hole eye and an ultramarine ink reservoir skates its line to the vellum's right edge, ruled THE MAP ENDS · CIRCA 2020, and stops, its tip hovering over blank vellum. Plate: THE MAP ENDS · CIRCA 2020. Reaction: the lamp warms
-  - b50 124.39s [slide] the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it. Plate: NEXT MAP · NOT DRAWN YET. Reaction: the pencil rolls to a stop
+  - b50 124.39s [slide] the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it. Plate: THE NEXT MAP · ?. Reaction: the pencil rolls to a stop
 
 ## Loops, reveals and throughline
 

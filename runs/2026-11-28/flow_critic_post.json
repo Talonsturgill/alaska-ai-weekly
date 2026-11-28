@@ -1,0 +1,17 @@
+{"round": 1, "ship": false, "score": 6.8,
+ "craft_causes": [
+  {"label": "b: largest object least modelled", "frames": ["f074.9", "f080.8"], "fix": "S10 rebuilt as a true high oblique aerial of Bering's lobe: moraine stripes, crevasse hatching, cloud shadows, lake from above; C. 2020 tag on the outer ring"},
+  {"label": "a: one outdoor drawing carries nine stills", "frames": ["f021.1", "f074.9", "f080.8", "f084.8", "f090.7", "f094.8", "f097.3", "f114.8", "f121.6"], "fix": "per-set ice and ground mark-making"},
+  {"label": "c: dead lower third", "frames": ["f074.9", "f084.8", "f097.3", "f121.6", "f114.8"], "fix": "foreground plane with scaled near stones, wet sheen, raked stake shadow, rivulets"},
+  {"label": "b/c: overhead without depth", "frames": ["f094.8", "f097.3"], "fix": "S12 ice top surface with crevasses, cast shadow on water, hand lifting the column"},
+  {"label": "d: overlap artifact", "frames": ["f024.9"], "fix": "keep chips off the +3,567 total"},
+  {"label": "e: tonal arc flat outdoors", "frames": ["f084.8", "f090.7", "f114.8", "f121.6"], "fix": "S14 colder dimmer with one lit object"}],
+ "sequence_defects": [
+  "S14 f121.6: COULD BE BIGGER plate covers the pan, WHY? tab not visibly in the pan",
+  "S6-S9: four indoor desk shots back to back with the same hand",
+  "S10 b33-b34: the new-water band reveal barely moves (3.3-3.5%)",
+  "S14 112-122s: near-still ending",
+  "S11 f084.8: survey stake behind the caption bar",
+  "S10: aerial drawn at ground eye level"],
+ "strongest": "S13 weigh-in and S7 Alaska swelled",
+ "weakest": "S10 Vitus Lake, predicted art 6.5"}

@@ -980,22 +980,22 @@
       "offset": 3.75,
       "vo": "It read Landsat satellite pictures from about two thousand and about twenty twenty, and traced shorelines.",
       "phrase": "twenty twenty, and traced",
-      "shows": "the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged, a plate reads 2000 AND 2020",
+      "shows": "the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged, a plate reads CIRCA 2000 AND 2020",
       "sfx": "pop",
-      "means": "2000 and 2020",
+      "means": "circa 2000 and 2020",
       "rehook": "",
       "draw": {
         "subject": "the strip of tiles",
         "action": "slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged",
         "emotion": "curious",
-        "annotation": "2000 AND 2020"
+        "annotation": "CIRCA 2000 AND 2020"
       },
       "plate_at": "on-object",
       "claims": [
         "c3"
       ],
       "choreo": {
-        "primary": "the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged, a plate reads 2000 AND 2020",
+        "primary": "the strip of tiles slides on as each tile's date flips to CIRCA 2020 and new small lake outlines pop up between the old ones, the old outlines unchanged, a plate reads CIRCA 2000 AND 2020",
         "reaction": "the dates clack over",
         "ambient": "a quiet drafting room, the lamp's hum"
       },
@@ -1365,22 +1365,22 @@
       "offset": 3.83,
       "vo": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.",
       "phrase": "pronounced, but prints no",
-      "shows": "a pale yellow highlighter stripe sweeps across the card's quoted line, a plate reads \"PARTICULARLY PRONOUNCED IN ALASKA\" \u00b7 PER TU GRAZ",
+      "shows": "a pale yellow highlighter stripe sweeps across the card's quoted line, a plate reads \"PARTICULARLY PRONOUNCED IN ALASKA ...\" \u00b7 PER TU GRAZ",
       "sfx": "squeak",
-      "means": "\"particularly pronounced in alaska\" \u00b7 per tu graz",
+      "means": "\"particularly pronounced in alaska ...\" \u00b7 per tu graz",
       "rehook": "",
       "draw": {
         "subject": "a pale yellow highlighter stripe",
         "action": "sweeps across the card's quoted line",
         "emotion": "curious",
-        "annotation": "\"PARTICULARLY PRONOUNCED IN ALASKA\" \u00b7 PER TU GRAZ"
+        "annotation": "\"PARTICULARLY PRONOUNCED IN ALASKA ...\" \u00b7 PER TU GRAZ"
       },
       "plate_at": "on-object",
       "claims": [
         "c7"
       ],
       "choreo": {
-        "primary": "a pale yellow highlighter stripe sweeps across the card's quoted line, a plate reads \"PARTICULARLY PRONOUNCED IN ALASKA\" \u00b7 PER TU GRAZ",
+        "primary": "a pale yellow highlighter stripe sweeps across the card's quoted line, a plate reads \"PARTICULARLY PRONOUNCED IN ALASKA ...\" \u00b7 PER TU GRAZ",
         "reaction": "the stripe glints",
         "ambient": "a quiet drafting room, the lamp's hum"
       },
@@ -1610,22 +1610,22 @@
       "offset": 0.0,
       "vo": "Their area grew about thirty-five percent, to about eleven hundred ninety square kilometers.",
       "phrase": "Their area grew about",
-      "shows": "Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin, a plate reads ALASKA \u00b7 ABOUT 880 SQ KM IN 2000 \u00b7 OUR COUNT",
+      "shows": "Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin, a plate reads ALASKA \u00b7 ABOUT 880 SQ KM \u00b7 C. 2000 \u00b7 OUR COUNT",
       "sfx": "swell",
-      "means": "alaska \u00b7 about 880 sq km in 2000 \u00b7 our count",
+      "means": "alaska \u00b7 about 880 sq km \u00b7 c. 2000 \u00b7 our count",
       "rehook": "rehook: Alaska's coastal lakes rise like dough past their pencil lines",
       "draw": {
         "subject": "Alaska's coastal lake outlines along the Gulf of Alaska",
         "action": "rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin",
         "emotion": "wonder",
-        "annotation": "ALASKA \u00b7 ABOUT 880 SQ KM IN 2000 \u00b7 OUR COUNT"
+        "annotation": "ALASKA \u00b7 ABOUT 880 SQ KM \u00b7 C. 2000 \u00b7 OUR COUNT"
       },
       "plate_at": "on-object",
       "claims": [
         "c11"
       ],
       "choreo": {
-        "primary": "Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin, a plate reads ALASKA \u00b7 ABOUT 880 SQ KM IN 2000 \u00b7 OUR COUNT",
+        "primary": "Alaska's coastal lake outlines along the Gulf of Alaska rise like dough under the vellum, bulging past their old dashed pencil lines as NIB watches from the margin, a plate reads ALASKA \u00b7 ABOUT 880 SQ KM \u00b7 C. 2000 \u00b7 OUR COUNT",
         "reaction": "NIB backs up a step",
         "ambient": "a quiet drafting room, the lamp's hum"
       },
@@ -2035,22 +2035,22 @@
       "offset": 4.19,
       "vo": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
       "phrase": "sixty-six centimeters of water",
-      "shows": "a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it, a plate reads LAKE-ENDING \u00b7 66 CM A YEAR \u00b7 ON AVERAGE",
+      "shows": "a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it, a plate reads WORLDWIDE \u00b7 LAKE-ENDING \u00b7 ABOUT 66 CM A YEAR \u00b7 ON AVERAGE",
       "sfx": "bubble",
-      "means": "lake-ending \u00b7 66 cm a year \u00b7 on average",
+      "means": "worldwide \u00b7 lake-ending \u00b7 about 66 cm a year \u00b7 on average",
       "rehook": "",
       "draw": {
         "subject": "a glass water column beside the lake-ending front",
         "action": "fills to 66 cm as meltwater pours from the ice into it",
         "emotion": "determined",
-        "annotation": "LAKE-ENDING \u00b7 66 CM A YEAR \u00b7 ON AVERAGE"
+        "annotation": "WORLDWIDE \u00b7 LAKE-ENDING \u00b7 ABOUT 66 CM A YEAR \u00b7 ON AVERAGE"
       },
       "plate_at": "on-object",
       "claims": [
         "c14"
       ],
       "choreo": {
-        "primary": "a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it, a plate reads LAKE-ENDING \u00b7 66 CM A YEAR \u00b7 ON AVERAGE",
+        "primary": "a glass water column beside the lake-ending front fills to 66 cm as meltwater pours from the ice into it, a plate reads WORLDWIDE \u00b7 LAKE-ENDING \u00b7 ABOUT 66 CM A YEAR \u00b7 ON AVERAGE",
         "reaction": "the lake front drips",
         "ambient": "cold wind off the ice, meltwater trickling"
       },
@@ -2070,22 +2070,22 @@
       "offset": 7.71,
       "vo": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
       "phrase": "land, about forty.",
-      "shows": "a second glass column beside the land front fills to 40 cm, visibly shorter than the first, a plate reads ON LAND \u00b7 40 CM A YEAR",
+      "shows": "a second glass column beside the land front fills to 40 cm, visibly shorter than the first, a plate reads ON LAND \u00b7 ABOUT 40 CM A YEAR",
       "sfx": "drip",
-      "means": "on land \u00b7 40 cm a year",
+      "means": "on land \u00b7 about 40 cm a year",
       "rehook": "",
       "draw": {
         "subject": "a second glass column beside the land front",
         "action": "fills to 40 cm, visibly shorter than the first",
         "emotion": "steady",
-        "annotation": "ON LAND \u00b7 40 CM A YEAR"
+        "annotation": "ON LAND \u00b7 ABOUT 40 CM A YEAR"
       },
       "plate_at": "on-object",
       "claims": [
         "c14"
       ],
       "choreo": {
-        "primary": "a second glass column beside the land front fills to 40 cm, visibly shorter than the first, a plate reads ON LAND \u00b7 40 CM A YEAR",
+        "primary": "a second glass column beside the land front fills to 40 cm, visibly shorter than the first, a plate reads ON LAND \u00b7 ABOUT 40 CM A YEAR",
         "reaction": "a pebble rolls off the moraine",
         "ambient": "cold wind off the ice, meltwater trickling"
       },
@@ -2526,22 +2526,22 @@
       "offset": 2.27,
       "vo": "The map stops at about twenty twenty. Who traces the next one?",
       "phrase": "Who traces the next",
-      "shows": "the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it, a plate reads NEXT MAP \u00b7 NOT DRAWN YET",
+      "shows": "the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it, a plate reads THE NEXT MAP \u00b7 ?",
       "sfx": "slide",
-      "means": "next map \u00b7 not drawn yet",
+      "means": "the next map \u00b7 ?",
       "rehook": "",
       "draw": {
         "subject": "the persimmon pencil hand and our pine-green hand",
         "action": "come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it",
         "emotion": "curious",
-        "annotation": "NEXT MAP \u00b7 NOT DRAWN YET"
+        "annotation": "THE NEXT MAP \u00b7 ?"
       },
       "plate_at": "lower-third",
       "claims": [
         "narration"
       ],
       "choreo": {
-        "primary": "the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it, a plate reads NEXT MAP \u00b7 NOT DRAWN YET",
+        "primary": "the persimmon pencil hand and our pine-green hand come to rest on the table as NIB steps past the edge, touches its tip to the blank vellum once and lifts it, a plate reads THE NEXT MAP \u00b7 ?",
         "reaction": "the pencil rolls to a stop",
         "ambient": "a quiet drafting room, the lamp's hum"
       },
