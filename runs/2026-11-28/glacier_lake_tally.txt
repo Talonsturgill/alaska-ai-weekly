@@ -1,0 +1,22 @@
+[('Greenland Periphery', 29251), ('Arctic Canada, South', 21740), ('Scandinavia', 20377), ('Southern Andes', 17027), ('Asia, Central', 9730), ('Asia, North', 7938), ('Western Canada and USA', 7888), ('Alaska', 7418), ('Low Latitudes', 6682), ('Arctic Canada, North', 3651), ('Asia, South East', 3615), ('Asia, South West', 2402), ('Central Europe', 2305), ('Russian Arctic', 2113), ('Iceland', 2007), ('Svalbard and Jan Mayen', 1798), ('New Zealand', 326), ('Caucasus and Middle East', 308)]
+Alaska                         C n    931->  1078 (+16%) area 880.7->1191.4 (+35%) vol 61239->98062
+Arctic Canada, North           C n    916->  1058 (+16%) area 369.1->337.1 (-9%) vol 12454->11150
+Arctic Canada, South           C n    662->   717 (+8%) area 1213.3->1126.0 (-7%) vol 163021->158663
+Asia, Central                  C n   1277->  2141 (+68%) area 96.5->127.6 (+32%) vol 2716->3762
+Asia, North                    C n     32->    40 (+25%) area 1.9->12.8 (+562%) vol 19->663
+Asia, South East               C n    388->   484 (+25%) area 96.0->121.0 (+26%) vol 4064->5540
+Asia, South West               C n    320->   471 (+47%) area 21.7->27.2 (+25%) vol 499->434
+Caucasus and Middle East       C n     11->    47 (+327%) area 0.5->1.2 (+157%) vol 4->10
+Central Europe                 C n     54->   121 (+124%) area 2.7->5.1 (+88%) vol 31->61
+Greenland Periphery            C n   3280->  4293 (+31%) area 2791.0->2876.4 (+3%) vol 187769->201267
+Iceland                        C n    104->   111 (+7%) area 60.6->74.8 (+23%) vol 3770->5150
+Low Latitudes                  C n    117->   123 (+5%) area 7.7->7.5 (-2%) vol 114->107
+New Zealand                    C n     10->     5 (-50%) area 1.5->0.4 (-75%) vol 22->5
+Russian Arctic                 C n    169->   219 (+30%) area 200.0->235.9 (+18%) vol 12521->14525
+Scandinavia                    C n    198->   423 (+114%) area 118.8->88.5 (-25%) vol 6760->2430
+Southern Andes                 C n    822->  1233 (+50%) area 4428.8->4636.7 (+5%) vol 1778106->1815276
+Svalbard and Jan Mayen         C n     54->    85 (+57%) area 70.5->100.0 (+42%) vol 2856->4947
+Western Canada and USA         C n    773->  1036 (+34%) area 61.5->89.8 (+46%) vol 1120->2077
+GLOBAL C [10118, 10422.855644612693, 2237087.2432922176] [13685, 11059.413553121829, 2324128.7068533218]
+2000 Alaska all types {'D': (4181, 2040.8), 'C': (931, 880.7), 'S': (2306, 111.1)}
+2020 Alaska all types {'D': (4843, 2127.4), 'C': (1078, 1191.4), 'S': (2366, 141.0)}

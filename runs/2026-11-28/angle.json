@@ -1,0 +1,26 @@
+{
+ "thesis": "Deep learning drew the world's glacier lakes and people checked them, and because the authors posted that map we could pull the Alaska numbers the release and abstract don't print: by our count, from about 2000 to 2020 Alaska's ice-contact lakes swelled more than they multiplied (about 16 percent more lakes, about 35 percent more area, roughly half the world's added lake area), while the study's own machine learning models rank the lake as the smallest of three predictors of loss for lake-ending glaciers worldwide, a real push but not the main one, and the release and abstract give no split for Alaska.",
+ "falsifiability": "False if our count failed to reproduce the paper's world total (it matches exactly, c9); if Alaska's lake count grew as fast as its area (c10 +16 percent vs c11 +35 percent); if Alaska's added area were a small share of the world's (c12 about half); or if lakes rivalled climate and glacier shape as a cause (c17 about 11 percent, ranges not overlapping 43 and 46).",
+ "supporting_facts": [
+  "The mechanism: deep learning drew glacier lakes worldwide from Landsat images for 2000 and 2020 (c3, c4), people checked them by hand (c5), and the whole inventory is public (c8).",
+  "The world multiplied, Alaska swelled: worldwide ice-contact lakes rose 35 percent in number (c6) but about 9 percent in area (c19); our count matches the world's lake count exactly (c9, count only) and finds Alaska's 931 to 1,078, +16 percent (c10), while their area grew about 35 percent (c11), about half the world's added area (c12) from about 1 in 13 of its ice-contact lakes (c20), Vitus Lake at Bering Glacier the biggest gain (c13).",
+  "The weight of the lake, both ways: lake-ending glaciers lose about 66 cm of water a year against about 40 on land (c14) and Bolch says contact further accelerates the loss (c15), but machine learning models give the lake about 11 percent, climate about 43, glacier shape about 46 (c16, c17)."
+ ],
+ "counterpoint_to_honor": "Gets its own scene at full strength: lake-ending glaciers lose ice about two thirds faster (c14) and the co-author says lake contact further accelerates loss (c15), and Alaska is where lake area grew most, while the release and abstract give no split for Alaska, so the local push could be bigger than the global 11 percent. The film says plainly it's an open question and holds both: a real push, the smaller one. Our count is ours, not peer reviewed, labelled on every surface; area carries about.",
+ "valence": "curious, leaning celebratory about the method: a global, human-checked, open census that a small Alaska newsroom could reproduce to the lake. No hazard claim, the abstract and release make none.",
+ "runner_up_angles": [
+  {
+   "angle": "Analyst B, the lake is mostly a witness: Alaska's swelling lakes are a gauge of loss driven by climate and shape",
+   "why_lost": "folded in as the second movement; on its own it under-sells the real accelerant (c14, c15) and loses the AI-and-open-data story the viewer can feel"
+  },
+  {
+   "angle": "Analyst C, open data lets Alaska pull its own numbers from a global paper",
+   "why_lost": "became the spine; on its own it risked ending on a methods brag without the cause question"
+  },
+  {
+   "angle": "Analyst A, AI-first human-checked map shows swelling not multiplying, a free repeatable way to track glaciers, not an alarm",
+   "why_lost": "'free, repeatable' implies a future update the record doesn't promise (c18 the map stops at 2020); kept as the button's question"
+  }
+ ],
+ "cross_challenge": "Round one: three analysts (mechanism, counterweight, Alaska upside). Round two: an editor red-teamed the synthesis and it was revised: dropped 'for the first time' and 'every lake', limited 'matches exactly' to the count, past tense with dates, cut 'gauge' as the study's verdict (our reading at most), put the model framing on the 11/43/46 split (c16 beside c17), one up-front OUR COUNT label, credit to the open data not to us, and promoted the world-multiplied-Alaska-swelled contrast (c19, c20) to the middle movement."
+}

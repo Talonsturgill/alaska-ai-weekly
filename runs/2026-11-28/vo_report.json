@@ -1,0 +1,72 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.963,
+    "heard": "A machine drew the world's glacier lakes. Twice. It read land-sat satellite pictures from about 2000 and about 2020 and traced shorelines. Then people checked lines by hand. It's in nature climate change out November 20th. So does a lake eat its glacier? Worldwide, lakes touching glaciers rose by 3567, about 35%. But their area grew only about 9%. The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number. The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly. By our count, Alaska's lakes touching glaciers went from 931 to 1078. Their area grew about 35%, about 1190 square kilometers. The world's lakes multiplied. Alaska's swelled. Alaska's added area alone is about half the world's, by our count, from about 1 in 13 of those lakes. Our count's biggest Alaska gain was vitus lake at the foot of bearing glacier. About 105 square kilometers became 158. Now the case for yes. Glacier's ending in a lake lost about 66 centimeters of water a year on average. On land, about 40. Tobias Boch, a co-author at TU Gras, says contact with the lake further accelerates the loss of ice. Then the team's machine learning models weighed the factors. For lake ending glaciers worldwide, the lake explained about 11% of the ice loss. Climate, about 43, the glacier's own shape, about 46, a real push, the smallest of the three. The release and abstract give no split for Alaska. Here, the push could be bigger or smaller. The map stops at about 2020. Who traces the next one?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.04,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 3.83,
+        "voiced_frac": 0.46,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.84,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.84,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 34,
+    "seconds": 26.1,
+    "runtime_s": 125.44,
+    "share": 0.2081,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 1.12
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.963,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.953,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.958,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

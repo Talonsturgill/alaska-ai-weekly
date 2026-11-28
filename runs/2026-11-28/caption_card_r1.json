@@ -1,0 +1,16 @@
+{
+ "round": 1,
+ "scores": {
+  "Hook / scroll-stop": 8.5,
+  "Point of view / take": 7.5,
+  "Substance & specificity": 9,
+  "Readability & restraint": 7.5,
+  "Engagement design (CTA + comment-bait)": 6.5,
+  "Brand voice & accuracy": 8,
+  "Hashtag craft": 7.5
+ },
+ "total": 7.88,
+ "hard_fails": [],
+ "weakest_criterion": "Engagement design (CTA + comment-bait)",
+ "one_sentence_fix": "Replace the redraw question with one tied to the take; tighten the hook to lake area touching glaciers."
+}

@@ -1,0 +1,374 @@
+{
+ "run_date": "2026-11-28",
+ "fact_check_verdict": "PASS WITH CONDITIONS. One adversarial validator plus a showrunner read of the Nature abstract and a tally of the authors' Figshare inventory. Paper, TU Graz release (phys.org and tugraz.at, same release), Eurasia Review republication, Wikipedia for Vitus Lake. The validator advised no Alaska numbers on screen because no publication states them; declined on measurement: our tally reproduces the paper's global count exactly (10,118 to 13,685, +3,567), so Alaska counts from the same data are labelled OUR COUNT on every surface; area carries about; volume reserved.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "It's in Nature Climate Change, out November twentieth.",
+   "on_screen": "NATURE CLIMATE CHANGE \u00b7 NOVEMBER 20TH",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "Nature page, labelled non-quotation: Published 20 November 2026, Nature Climate Change, Zhao et al.",
+   "requires": [
+    "ordinal date, no year on screen"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-two-sources",
+   "spoken": "Tobias Bolch, a co-author at TU Graz.",
+   "on_screen": "TOBIAS BOLCH \u00b7 CO-AUTHOR \u00b7 TU GRAZ",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "Nature author list, labelled non-quotation: Tobias Bolch, Graz University of Technology, co-author; first author Shaochun Zhao",
+   "requires": [
+    "co-author, never lead author"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-two-sources",
+   "spoken": "It mapped glacier lakes worldwide, in two thousand and in twenty twenty, with deep learning.",
+   "on_screen": "2000 AND 2020",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "\"by mapping glacial lakes worldwide in 2000 and 2020 using deep learning and manual refinement\"",
+   "requires": [
+    "circa 2000 and circa 2020, never exact years claimed as image dates"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The images were Landsat satellite pictures.",
+   "on_screen": "LANDSAT IMAGES",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": null,
+   "verbatim_source": "\"The Landsat images used for glacial lake mapping are available from the US Geological Survey\"",
+   "requires": [
+    "per the paper"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-two-sources",
+   "spoken": "Then people checked the lakes by hand.",
+   "on_screen": "CHECKED BY HAND \u00b7 PER TU GRAZ",
+   "source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "\"Artificial intelligence was used to identify glacial lakes from the images, which were then checked manually.\"",
+   "requires": [
+    "the AI did the first pass, people checked"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-two-sources",
+   "spoken": "Worldwide, lakes touching glaciers rose by three thousand five hundred sixty-seven, about thirty-five percent.",
+   "on_screen": "WORLD \u00b7 +3,567 LAKES",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "\"ice-contact lakes increased by 3,567 (+35%) in number\"",
+   "requires": [
+    "count, not area",
+    "2000 to 2020"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-two-sources",
+   "spoken": "The study's press release calls Alaska's growth particularly pronounced, but prints no Alaska number.",
+   "on_screen": "\"PARTICULARLY PRONOUNCED IN ALASKA\" \u00b7 PER TU GRAZ",
+   "source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "second_source": "https://www.tugraz.at/en/news/article/glacier-retreat-lakes-mass-loss",
+   "verbatim_source": "\"The expansion of the lakes was particularly pronounced in Alaska and the southern Andes.\"",
+   "requires": [
+    "per the release",
+    "no Alaska number or split in the release or abstract"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "The authors posted their whole lake map online.",
+   "on_screen": "THE AUTHORS' OPEN DATA \u00b7 FIGSHARE",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "verbatim_source": "Nature data availability, labelled non-quotation: the global glacial lake inventory for circa 2000 and 2020 is available via Figshare at doi 10.6084/m9.figshare.34332987",
+   "requires": [
+    "inventory public, code on request"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "The authors posted their map, so we counted. Our lake count matches theirs worldwide, exactly.",
+   "on_screen": "13,685 LAKES \u00b7 OUR COUNT",
+   "source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "labelled non-quotation: our tally of the authors' Figshare inventory (global_glacial_lake_2000/2020 .dbf, Region and Type fields), script and output kept in runs/2026-11-28/glacier_lake_tally.txt: ice-contact (Type C) 10,118 in 2000, 13,685 in 2020",
+   "requires": [
+    "our count, labelled",
+    "count only, never area"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "By our count, Alaska's lakes touching glaciers went from nine hundred thirty-one to one thousand seventy-eight.",
+   "on_screen": "ALASKA \u00b7 931 TO 1,078 \u00b7 +16% \u00b7 OUR COUNT",
+   "source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "labelled non-quotation: our tally of the authors' Figshare inventory (global_glacial_lake_2000/2020 .dbf, Region and Type fields), script and output kept in runs/2026-11-28/glacier_lake_tally.txt: Region Alaska, Type C, 931 in 2000, 1,078 in 2020",
+   "requires": [
+    "our count, labelled",
+    "ice-contact lakes only"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "Their area grew about thirty-five percent, from about eight hundred eighty to about eleven hundred ninety square kilometers.",
+   "on_screen": "ALASKA \u00b7 ABOUT 880 SQ KM IN 2000 \u00b7 OUR COUNT",
+   "source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "labelled non-quotation: our tally of the authors' Figshare inventory (global_glacial_lake_2000/2020 .dbf, Region and Type fields), script and output kept in runs/2026-11-28/glacier_lake_tally.txt: Region Alaska, Type C, area 880.7 km2 in 2000, 1191.4 km2 in 2020",
+   "requires": [
+    "about",
+    "our count, labelled"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "Alaska's added area alone is about half the world's, by our count, from about one in thirteen of those lakes.",
+   "on_screen": "ABOUT HALF THE WORLD'S ADDED AREA \u00b7 OUR COUNT",
+   "source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "labelled non-quotation: our tally of the authors' Figshare inventory (global_glacial_lake_2000/2020 .dbf, Region and Type fields), script and output kept in runs/2026-11-28/glacier_lake_tally.txt: Alaska +310.7 km2 of world +636.6 km2 ice-contact area (paper's own world figure 604 +- 22 km2, so the share is 49 to 51 percent either way)",
+   "requires": [
+    "about half",
+    "our count, labelled"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "Our count's biggest Alaska gain was Vitus Lake, at the foot of Bering Glacier. About a hundred five square kilometers became a hundred fifty-eight.",
+   "on_screen": "C. 2020 \u00b7 ABOUT 158 SQ KM \u00b7 OUR COUNT",
+   "source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "second_source": "https://en.wikipedia.org/wiki/Vitus_Lake",
+   "verbatim_source": "labelled non-quotation: our tally of the authors' Figshare inventory (global_glacial_lake_2000/2020 .dbf, Region and Type fields), script and output kept in runs/2026-11-28/glacier_lake_tally.txt: Alaska's largest single ice-contact gain, inventory Group 92377, 104.9 to 158.0 km2, centroid 60.15 N 143.42 W, which is Vitus Lake (Wikipedia: Vitus Lake forms the southern limit of the Bering Lobe, Yakutat City and Borough)",
+   "requires": [
+    "our count",
+    "the study didn't single it out",
+    "at the southern edge of Bering Glacier's lobe"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-two-sources",
+   "spoken": "Now the case for yes. Glaciers ending in a lake lost about sixty-six centimeters of water a year, on average. On land, about forty.",
+   "on_screen": "LAKE-ENDING \u00b7 66 CM A YEAR \u00b7 ON AVERAGE",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "\"lake-terminating glaciers experienced higher mass loss rates (-0.66 +- 0.16 m w.e. yr-1) than land- (-0.40 +- 0.12 m w.e. yr-1)\"",
+   "requires": [
+    "water equivalent",
+    "average 2000 to 2020"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-sources",
+   "spoken": "Bolch says contact with a lake further accelerates the loss of ice.",
+   "on_screen": "\"CONTACT WITH A LAKE FURTHER ACCELERATES THE LOSS OF ICE\" \u00b7 TOBIAS BOLCH \u00b7 PER TU GRAZ",
+   "source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "second_source": "https://www.tugraz.at/en/news/article/glacier-retreat-lakes-mass-loss",
+   "verbatim_source": "\"Our research has shown that contact with a lake further accelerates the loss of ice from a glacier,\"",
+   "requires": [
+    "attributed on screen",
+    "per the release"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-two-sources",
+   "spoken": "Then the team's machine learning models weighed the factors.",
+   "on_screen": "MACHINE LEARNING \u00b7 WEIGHS THE FACTORS",
+   "source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "\"The research team used machine learning models to assess the impact of various factors on the glacier mass balance.\"",
+   "requires": [
+    "per the release"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-two-sources",
+   "spoken": "For lake-ending glaciers worldwide, the lake explained about eleven percent of the ice loss. Climate, about forty-three. The glacier's own shape, about forty-six. A real push. The smallest of the three.",
+   "on_screen": "LAKE ~11% \u00b7 LAKE-ENDING GLACIERS \u00b7 WORLDWIDE",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "\"Ice-contact lakes explain 11 +- 7% of the mass loss of lake-terminating glaciers globally, whereas climate forcing (43 +- 10%) and glacier geometry (46 +- 10%) are more relevant predictors for ice loss.\"",
+   "requires": [
+    "about",
+    "lake-terminating glaciers, globally",
+    "share of influence"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "The map stops at twenty twenty.",
+   "on_screen": "THE MAP ENDS \u00b7 CIRCA 2020",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "verbatim_source": "\"mapping glacial lakes worldwide in 2000 and 2020\"",
+   "requires": [
+    "circa"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-two-sources",
+   "spoken": "But their area grew only about nine percent.",
+   "on_screen": "WORLD \u00b7 AREA +9%",
+   "source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "second_source": "https://phys.org/news/2026-11-global-analysis-reveals-lakes-amplify.html",
+   "verbatim_source": "\"604 +- 22 km 2 (+9%) in area\"",
+   "requires": [
+    "ice-contact lakes",
+    "2000 to 2020"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "Alaska has about one in thirteen of the world's lakes touching glaciers.",
+   "on_screen": "1,078 OF 13,685 \u00b7 ABOUT 1 IN 13 \u00b7 OUR COUNT",
+   "source": "https://doi.org/10.6084/m9.figshare.34332987",
+   "second_source": "https://www.nature.com/articles/s41558-026-02808-5",
+   "verbatim_source": "labelled non-quotation: our arithmetic on our tally of the authors' Figshare inventory, Alaska 1,078 of the world's 13,685 ice-contact lakes in 2020, 7.9 percent",
+   "requires": [
+    "our count",
+    "circa 2020"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "reserve": [
+  {
+   "id": "r1",
+   "fact": "Release: findings relevant when assessing outburst risks",
+   "reason": "hazard framing the study didn't measure"
+  },
+  {
+   "id": "r2",
+   "fact": "Alaska estimated volume 61 to 98 km3",
+   "reason": "formula estimate"
+  },
+  {
+   "id": "r3",
+   "fact": "three lakes near Bering, Yakutat, Malaspina hold about 41 percent of Alaska's added area",
+   "reason": "unnamed lakes"
+  },
+  {
+   "id": "r5",
+   "fact": "marine-terminating -0.36",
+   "reason": "density"
+  }
+ ],
+ "cut": [
+  {
+   "id": "x1",
+   "fact": "Figshare description quote",
+   "reason": "page 403 to validator; method backed by abstract instead"
+  },
+  {
+   "id": "x2",
+   "fact": "paper figure 919 km2 without ice dams",
+   "reason": "conflicts with abstract; use 604"
+  }
+ ]
+}

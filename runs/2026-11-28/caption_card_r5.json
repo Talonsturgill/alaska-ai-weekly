@@ -1,0 +1,16 @@
+{
+ "round": 5,
+ "scores": {
+  "Hook / scroll-stop": 8.5,
+  "Point of view / take": 8.5,
+  "Substance & specificity": 9.0,
+  "Readability & restraint": 8.5,
+  "Engagement design (CTA + comment-bait)": 8.5,
+  "Brand voice & accuracy": 8.5,
+  "Hashtag craft": 8.0
+ },
+ "total": 8.53,
+ "hard_fails": [],
+ "weakest_criterion": "Hashtag craft",
+ "one_sentence_fix": "Swap #MachineLearning for a mid-tier tag."
+}

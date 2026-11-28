@@ -1,0 +1,16 @@
+{
+ "round": 4,
+ "scores": {
+  "Hook / scroll-stop": 8.5,
+  "Point of view / take": 8.5,
+  "Substance & specificity": 9.0,
+  "Readability & restraint": 8.0,
+  "Engagement design (CTA + comment-bait)": 8.5,
+  "Brand voice & accuracy": 8.5,
+  "Hashtag craft": 8.0
+ },
+ "total": 8.47,
+ "hard_fails": [],
+ "weakest_criterion": "Readability & restraint",
+ "one_sentence_fix": "Cut the middle restatement of release vs open data and the filler 'Anyone can check it.'"
+}

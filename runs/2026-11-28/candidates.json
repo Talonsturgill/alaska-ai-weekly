@@ -1,0 +1,25 @@
+{
+  "locked_story": {
+    "headline": "Deep learning mapped the world's glacial lakes in 2000 and 2020, people checked them, and ice-contact lakes grew by 3,567 (Nature Climate Change, Zhao et al., November 20th); in the study's open inventory Alaska's ice-contact lakes grew from 931 to 1,078 and from about 881 to 1,191 sq km, Vitus Lake at Bering Glacier the biggest gain; the lakes explain about 11 percent of lake-terminating glacier loss, climate and geometry far more",
+    "found_at_rung": "in_window_sweep",
+    "note": "Rejected 11-26 as regional only with no Alaska site, runner-up 11-27 with the paper unread. Today the abstract was read on nature.com and the authors' open Figshare inventory (doi 10.6084/m9.figshare.34332987) was tallied: it reproduces the paper's global count exactly (10,118 to 13,685, +3,567) and gives Alaska-specific counts, area and the lakes that grew most, which removes both objections. ML is load-bearing: deep learning drew the inventory, people refined it.",
+    "date": "2026-11-20"
+  },
+  "rungs": [
+    {"rung": "in_window_sweep", "attempted": true, "candidates_found": 15, "note": "4 researchers (energy/policy, science, fisheries/rural/health, defense/aviation/wildcard), about 80 WebSearch calls and many uncapped index WebFetches. All four called it a slow Thanksgiving week."},
+    {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 0, "note": "Covered in round one: ADN, Alaska Public, Alaska Beacon (403 on articles), KTOO, Alaska's News Source, News-Miner, Must Read Alaska, KYUK, KDLG, KUCB, KFSK, KMXT, Alaska Native News, UAF, UAA, AVO, USGS, NOAA Fisheries, phys.org, arXiv indexes."},
+    {"rung": "primary_source_mining", "attempted": true, "candidates_found": 1, "note": "Figshare inventory of the Nature Climate Change paper downloaded and tallied by region (Alaska RGI region)."}
+  ],
+  "candidates": [
+    {"headline": "AI-mapped glacier lakes, Alaska tally from the open inventory (Nature Climate Change, November 20th)", "verdict": "LOCKED", "why": "in window, deep learning load-bearing, Alaska-specific numbers from primary data, honest counterweight in the paper itself (lakes 11%, climate 43%, geometry 46%), no Alaska outlet coverage"},
+    {"headline": "Senate passes BAAJA permitting bill 62-33 with a data-centers-pay clause, Sullivan votes yes (November 19th)", "verdict": "runner-up", "why": "AI only as the bill's framing; seventh data center film in a month would fatigue the audience"},
+    {"headline": "Character.AI consumer privacy ombudsman, Alaska Department of Law (November 19th)", "verdict": "rejected", "why": "covered November 21st"},
+    {"headline": "Kreiss-Tomkins asks AIDEA to pause; AIDEA refuses (November 19th to 23rd)", "verdict": "rejected", "why": "follow-up of covered AIDEA items, AI angle is context"},
+    {"headline": "BBRSDA automated sonar counter on the Naknek (November 12th to 13th)", "verdict": "rejected", "why": "sources say automated, not AI; outside window"},
+    {"headline": "CFC26 salmon sonar AI benchmark with Kenai and Nushagak (arXiv October 15th)", "verdict": "rejected", "why": "44 days old"},
+    {"headline": "UAF avalanche road model (KTOO November 18th)", "verdict": "rejected", "why": "not machine learning"},
+    {"headline": "Coast Guard Storis Bering Sea drone tests (November 17th)", "verdict": "rejected", "why": "uncrewed aircraft, no AI"},
+    {"headline": "KTUU AI-assisted bill record reconstruction (November 25th)", "verdict": "rejected", "why": "methodology note, not news"},
+    {"headline": "STAT RapidAI stroke network", "verdict": "rejected", "why": "covered November 26th"}
+  ]
+}
