@@ -4134,3 +4134,16 @@ Shipped cut 4 of a 124.7 s film (139.0 s with credits) on Krause et al. in Earth
 
 ## 2026-11-27 weekly machine pass
 Shipped 5538591 (ambience self-test bands re-measured for the 11-08 room and wind levels, so the self-test passes on main again), d5f8c24 and 498e617 (a deterministic synthesised 'storm' ambience kind, with thunder rolls placed in the VO's own breaths, and a Gate 0A row for storm boards from 11-28), 6c9c604 (build_evidence adds a whole-beat action strip for every physical beat, so an action is never graded off-window), 0e12b22 (scripts/board_md.py renders storyboard.md from the JSON with a hash stamp checked by storyboard_check), 9b945a6 (typed_wrap_check source gate for a fixed character slice that cuts a word), d398437 (queue and machine_pass). The showrunner reran every verify command and all passed. No engine advance. Open: plate-crosses-hero, vo-patch-isolated-read-slow, music pool (repeat 3), hero-touch-other-party, unitless-number-on-screen, stray-cloud-arc. Owner-only: the caption bar (repeat 12) and the Gate 0 round cap (repeat 13). Social delivery for 11-27 published all 11 placements, and the LinkedIn first comment was verified.
+
+## 2026-11-28 The Map Swelled (Dispatch1128)
+Shipped cut 4 of a 125.4 s film on Zhao et al. in Nature Climate Change (November 20th). A deep learning model mapped the world's glacier lakes on Landsat images from about 2000 and about 2020. A newsroom tally of the authors' open Figshare inventory reproduces their +3,567 world count exactly and finds Alaska added about half the world's new ice-contact lake area (310.7 of 636.6 sq km). The release and abstract print no Alaska figure. Hero NIB, a drafting-pen nib in the new lib/nib.tsx family (CheckHand in two roles, LandsatTile, TapeMeasure, SpringScale, WeighRail and more).
+
+Panel on cut 4: 7.57 / 7.40 / 6.89, median 7.40 against 7.0, no hard blockers. Seat 1 went 7.38 (cut 2), then 7.45 (cut 3), then 7.57. Cut 3's 6.89 seat had two hard blockers, both type on type, and both were cleared on cut 4. Caption 8.53 on round 5, the first caption to clear the 8.5 bar in five runs.
+
+Gate 0 took four to five rounds. On the first full cut the mix stopped on a missing music_bed.wav, and rebuilding the bed broke credits_check through a changed credit string. Both were fixed in-run.
+
+In-run fixes:
+- 5e316ff: S10 rebuilt as a true high oblique aerial, the share bar labelled ADDED AREA, count marks retired on the area beat, CIRCA headline, edge clips.
+- 7d0d3f7: the unsupported NEXT MAP · NOT DRAWN YET plate replaced, IN 2000 changed to C. 2000, WORLDWIDE added on the 66 cm plate, the quote given its ellipsis, the closing frame cleared of type on type.
+
+Queued: gate0 rounds (repeat 14), music pool (repeat 4), lib Hand asset (repeat 1), music-bed-not-built, share-bar-quantity, one-outdoor-vocabulary (repeat 1).

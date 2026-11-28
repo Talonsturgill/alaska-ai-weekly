@@ -4201,3 +4201,53 @@ dispatch_history:
     metaphor: a sealed glass instrument that learned the sky from one year, a hatched
       range column of strikes, a dial whose two gear trains differ, and a test card
       that waits on a stake
+- date: '2026-11-28'
+  topic: Glacier lakes mapped by deep learning; Alaska about half the added area by
+    a tally of the open inventory
+  slug: the-map-swelled
+  key_entities:
+  - Nature Climate Change
+  - TU Graz
+  - Tobias Bolch
+  - Vitus Lake
+  - Bering Glacier
+  - Landsat
+  - Figshare
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: curious
+  angle: 'Deep learning drew the world''s glacier lakes and people checked them, and
+    because the authors posted that map we could pull the Alaska numbers the release
+    and abstract don''t print: by our count, from about 2000 to 2020 Alaska''s ice-contact
+    lakes swelled more than they multiplied (about 16 percent more lakes, about 35
+    percent more area, roughly half the world''s added lake area), while the study''s
+    own machine learning models rank the lake as the smallest of three predictors
+    of loss for lake-ending glaciers worldwide, a real push but not the main one,
+    and the release and abstract give no split for Alaska.'
+  hero: Nib
+  cast:
+  - Nib
+  - CheckHand
+  - LandsatTile
+  - TapeMeasure
+  - SpringScale
+  - WeighRail
+  - AlaskaOutline
+  composition:
+    pov: top-down-map
+    motion_vector: radial-emanate
+    hero_treatment: instrument-as-subject
+    layout: grid-modular
+    register: cartoon-interior-drafting-table
+    palette: 'bright lamplit umber drafting den #2A2018, amber-cream vellum #F6DDA8
+      lit from beneath, honey oak #6B4E34, Landsat frames #9A9894 with snowy ice #EEF3F6,
+      rock-flour turquoise lakes #7FC8C2, ultramarine #3346C8 for the machine alone,
+      persimmon #E0662A for the study''s pencil alone, pine #2F6B45 for OUR COUNT
+      alone, nickel #8E949C scales, lavender #5E5A78 to rose #E9B49A first light outdoors'
+    camera_strategy: overhead-light-table-and-ground-level-fronts
+    light_story: bright amber lamplight that cools as the weighing begins and warms
+      again at the end
+    metaphor: a drafting-pen nib that traces lakes while a person's pencil checks
+      it, lakes that rise like dough, two tree rings at one lake, and a rail of spring
+      scales with an empty fourth pan
