@@ -196,7 +196,7 @@ const S1a: React.FC<SceneProps> = ({p}) => {
   const th = tr * Math.PI * 2 - Math.PI / 2;
   let nx = la.cx + la.rx * Math.cos(th), ny = la.cy + la.ry * Math.sin(th);
   if (run > 0) {
-    nx = lerp(lb.cx + lb.rx, Bt.x + Bt.w + 34, run);
+    nx = lerp(lb.cx + lb.rx, Bt.x + Bt.w - 110, run);
     ny = lerp(lb.cy, lb.cy - 20, run);
   }
   const lineEnd = Math.min(Bt.x + Bt.w, nx);
@@ -214,7 +214,7 @@ const S1a: React.FC<SceneProps> = ({p}) => {
         {slideB > 0.01 && (
           <g transform={`translate(${(1 - slideB) * 620} 0)`}>
             <LandsatTile f={f} {...Bt} seed={8} trace={run > 0 ? 1 : 0} glow={0.35} date="CIRCA 2020" lakeR={0.24} />
-            {run > 0 && <path d={`M ${lb.cx + lb.rx} ${lb.cy} L ${lineEnd} ${lerp(lb.cy, lb.cy - 20, clamp01((lineEnd - lb.cx - lb.rx) / Math.max(1, Bt.x + Bt.w + 34 - lb.cx - lb.rx)))}`} stroke={NB.ultra} strokeWidth={6} strokeLinecap="round" />}
+            {run > 0 && <path d={`M ${lb.cx + lb.rx} ${lb.cy} L ${lineEnd} ${lerp(lb.cy, lb.cy - 20, clamp01((lineEnd - lb.cx - lb.rx) / Math.max(1, Bt.x + Bt.w - 110 - lb.cx - lb.rx)))}`} stroke={NB.ultra} strokeWidth={6} strokeLinecap="round" />}
           </g>
         )}
         <g transform={`translate(0 ${(1 - drop) * -700})`}>
@@ -238,7 +238,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} warmth={0.05} cam={(ff) => ({z: lerp(1.45, 1.0, easeIO(ff, b(4), 22)), fx: 540, fy: lerp(980, 920, easeIO(ff, b(4), 22))})} overlay={<>
           <Plate x={540} text="LANDSAT IMAGES" y={530} size={32} p={win(f, b(4) + 4, b(41))} />
           <Plate x={540} text="CIRCA 2000" y={606} size={32} tone="dark" p={win(f, b(41) + 2, b(5))} />
-          <Plate x={540} text="2000 AND 2020" y={682} size={34} tone="ultra" p={win(f, b(5) + 2)} />
+          <Plate x={540} text="CIRCA 2000 AND 2020" y={682} size={34} tone="ultra" p={win(f, b(5) + 2)} />
         </>}>
       <SVG>
         <TableTop f={f} seed={2} />
@@ -429,7 +429,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <rect x={64} y={600} width={952} height={640} fill={NB.vellum} stroke={INK} strokeWidth={6} />
           {[[90, 610], [990, 610], [90, 1230], [990, 1230]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={11} fill={NB.oakD} stroke={INK} strokeWidth={3} />)}
           {Array.from({length: OLD}, (_, i) => <path key={i} d={lakeBlob(110 + (i % 14) * 62 + 14 * h01(80, i), 690 + Math.floor(i / 14) * 70 + 14 * h01(81, i), 10, 7, 500 + i, 8, 0.35)} fill={NB.lakeD} stroke={INK} strokeWidth={2} opacity={0.75} />)}
-          {Array.from({length: NEW}, (_, i) => <LakeChip key={`n${i}`} x={130 + h01(82, i) * 820} y={700 + h01(83, i) * 500} r={11} pop={(f - popT(i)) / 9} seed={i} />)}
+          {Array.from({length: NEW}, (_, i) => <LakeChip key={`n${i}`} x={130 + h01(82, i) * 820} y={700 + h01(83, i) * 440} r={9 + 5 * h01(84, i)} pop={(f - popT(i)) / 9} seed={i} />)}
         </g>
         <HeldTravel f={f} x={64} y={600} w={952} h={640} mode="shadow" seed={51}><rect x={64} y={600} width={952} height={640} fill={NB.vellum} opacity={0.01} /></HeldTravel>
         {/* the shelf with the oak counter and the tape */}
@@ -437,9 +437,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {f >= b(42) - 4 && (() => {
           const txt = '+3,567';
           const n = Math.max(0, Math.min(txt.length, Math.ceil(roll * txt.length)));
-          return <g transform="translate(860 1205) rotate(-4)"><text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={46} fill={INK}>{txt.slice(0, n)}</text>{roll >= 1 && <path d="M -90 14 q 90 10 180 0" stroke={INK} strokeWidth={4} fill="none" />}</g>;
+          return <g transform="translate(860 1205) rotate(-4)" opacity={1 - 0.7 * ease(f, b(13), 12)}><text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={46} fill={INK}>{txt.slice(0, n)}</text>{roll >= 1 && <path d="M -90 14 q 90 10 180 0" stroke={INK} strokeWidth={4} fill="none" />}</g>;
         })()}
-        {f >= b(50) - 2 && <g transform={`translate(860 1110) scale(${spring(clamp01((f - b(50) + 2) / 12))})`}><rect x={-80} y={-32} width={160} height={58} rx={6} fill={NB.vellumL} stroke={INK} strokeWidth={4} /><text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={INK}>+35%</text></g>}
+        {f >= b(50) - 2 && <g transform={`translate(860 1110) scale(${spring(clamp01((f - b(50) + 2) / 12))})`} opacity={1 - 0.7 * ease(f, b(13), 12)}><rect x={-120} y={-32} width={240} height={58} rx={6} fill={NB.vellumL} stroke={INK} strokeWidth={4} /><text x={0} y={11} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={INK}>LAKES +35%</text></g>}
         <TapeMeasure f={f} x={160} y={1260} len={tape} label={f >= b(13) ? 'AREA' : undefined} marks={[{at: 270 * (9 / 35), label: '9%'}]} />
       </SVG>
     </Frame>
@@ -643,9 +643,9 @@ const S8: React.FC<SceneProps> = ({p}) => {
             <AkVellum f={f} swell={sw} drop={drop} labelVitus={sw > 0.5} />
           </g>
         </HeldTravel>
-        <g transform="translate(840 1180)"><ReleaseCard f={f} x={0} y={0} s={0.3} tabs={1} slip={ease(f, b(44), 12)} arm={false} /></g>
-        <TapeMeasure f={f} x={160} y={1222} len={tapeW} label={tapeA < 10 ? 'WORLD AREA' : undefined} marks={[{at: 9 * SC, label: '9%'}]} />
-        <TapeMeasure f={f} x={160} y={1318} len={tapeA} label={tapeA > 10 ? 'ALASKA AREA' : undefined} marks={[{at: 9 * SC, label: '9%'}, {at: 35 * SC, label: '35% · OUR COUNT', color: NB.cobalt}]} />
+        <g transform="translate(770 1180)"><ReleaseCard f={f} x={0} y={0} s={0.3} tabs={1} slip={ease(f, b(44), 12)} arm={false} /></g>
+        <TapeMeasure f={f} x={160} y={1222} len={tapeW} label={tapeA < 10 ? 'WORLD AREA' : undefined} marks={[{at: 9 * SC, label: 'WORLD 9%'}]} />
+        <TapeMeasure f={f} x={160} y={1318} len={tapeA} label={tapeA > 10 ? 'ALASKA AREA' : undefined} marks={[{at: 35 * SC, label: '35% · OUR COUNT', color: NB.cobalt}]} />
         <Nib f={f} x={120} y={1300} s={0.34} emotion={f > b(45) ? 'surprised' : 'wonder'} look={0.7} label={false} cues={[b(19), b(44), b(20), b(45)]} seed={7} ink={0} />
         {away < 1 && <CheckHand f={f} x={hx} y={hy} s={1.0} angle={-20} role="ours" />}
       </SVG>
@@ -657,8 +657,9 @@ const S8: React.FC<SceneProps> = ({p}) => {
 const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const pin = ease(f, b(22) - 6, 12);
-  const hx = lerp(1150, 820, easeIO(f, b(22) - 18, 12)) + 500 * easeIO(f, b(22) + 14, 14);
-  const hy = lerp(1500, 760, easeIO(f, b(22) - 18, 12)) + 800 * easeIO(f, b(22) + 14, 14);
+  const gone = easeIO(f, b(22) + 10, 8);
+  const hx = lerp(1150, 820, easeIO(f, b(22) - 18, 12)) + 700 * gone;
+  const hy = lerp(1500, 760, easeIO(f, b(22) - 18, 12)) + 1000 * gone;
   return (
     <Frame p={p} warmth={0.04} cam={(ff) => ({z: 1.0 + 0.03 * easeIO(ff, 0, p.dur), fx: lerp(520, 560, easeIO(ff, 0, p.dur)), fy: 920})} overlay={<>
           <Plate x={540} text="THE WORLD'S LAKES MULTIPLIED · ALASKA'S SWELLED" displayLines={["THE WORLD'S LAKES MULTIPLIED", "ALASKA'S SWELLED"]} y={530} size={32} tone="dark" p={win(f, b(22) + 6)} />
@@ -682,7 +683,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
         <rect x={-60} y={1290} width={1200} height={22} fill={NB.oak} stroke={INK} strokeWidth={4} />
         <NLab x={275} y={1258} text="LAKES +35% · AREA +9%" size={17} />
         <NLab x={805} y={1258} text="LAKES +16% · AREA +35% · OUR COUNT" size={15} ink={NB.cobalt} edge={NB.cobalt} />
-        <CheckHand f={f} x={hx} y={hy} s={1.0} angle={-20} role="ours" />
+        {gone < 1 && <CheckHand f={f} x={hx} y={hy} s={1.0} angle={-20} role="ours" />}
       </SVG>
     </Frame>
   );
@@ -711,9 +712,10 @@ const S9: React.FC<SceneProps> = ({p}) => {
             <rect x={110} y={1030} width={860} height={90} rx={8} fill={NB.vellumL} stroke={INK} strokeWidth={3} />
             <rect x={110} y={1030} width={430 * lit} height={90} rx={8} fill={NB.lake} stroke={INK} strokeWidth={3} />
             <rect x={540} y={1030} width={430} height={90} rx={8} fill={NB.tile} stroke={INK} strokeWidth={3} />
-            {lit > 0.6 && <NLab x={325} y={1075} text="ALASKA" size={26} fill={NB.lakeL} />}
+            {lit > 0.6 && <NLab x={325} y={1075} text="ALASKA · ADDED AREA" size={20} fill={NB.lakeL} />}
             {(easeIO(f, b(23) + 10, 16) * (1 - pull) < 0.15) && <text x={755} y={1088} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={NB.vellumL}>REST OF WORLD</text>}
             <path d="M 540 1000 L 540 1150" stroke={INK} strokeWidth={6} strokeDasharray="12 8" />
+            {pull > 0.6 && <NLab x={540} y={1172} text="BAR · ADDED AREA · NOT LAKE COUNT" size={17} />}
           </g>
         </HeldTravel>
         {Array.from({length: 13}, (_, i) => (
@@ -733,14 +735,19 @@ const S9: React.FC<SceneProps> = ({p}) => {
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const rise = easeIO(f, 0, 34);
-  const cx = 540, cy = 1080;
+  const cx = 540, cy = 1090;
   const r0x = 290, r0y = 118, r1x = r0x * 1.23, r1y = r0y * 1.23;
   const flag = clamp01((f - b(47) + 6) / 12);
   const inner = f >= b(52) && f < b(52) + 14 ? 1 : 0;
-  const fill = easeIO(f, b(26) - 4, 24);
-  const cloud = (f * 1.6) % 1500;
+  const fill = easeIO(f, b(26) - 6, 44);
+  const front = fill > 0 && fill < 1 ? 1 : 0;
+  const k = lerp(1, 1.23, fill);
+  const drift = (f * 1.4) % 1400;
+  // the lobe: a fan from a far neck at the horizon to a wide snout above the lake
+  const HZ = 430;
+  const lobe = `M 470 ${HZ} C 300 520 40 640 -60 760 L -60 ${cy - r1y - 30} C 200 ${cy - r1y + 70} 880 ${cy - r1y + 70} 1140 ${cy - r1y - 30} L 1140 760 C 1040 640 780 520 610 ${HZ} Z`;
   return (
-    <Frame p={p} bg="#4A4664" warmth={0.02} cam={(ff) => ({z: lerp(1.25, 1.0, rise), fx: 540, fy: lerp(1100, 980, rise)})} overlay={<>
+    <Frame p={p} bg="#4A4664" warmth={0.02} cam={(ff) => ({z: lerp(1.25, 1.0, rise), fx: 540, fy: lerp(760, 980, rise)})} overlay={<>
           <Plate x={540} text="BERING GLACIER · AERIAL VIEW" y={530} size={30} tone="dark" p={win(f, b(25) + 8, b(47))} />
           <Plate x={540} text="VITUS LAKE · BIGGEST ALASKA GAIN · OUR COUNT" displayLines={['VITUS LAKE · BIGGEST ALASKA GAIN', 'OUR COUNT']} y={604} size={28} tone="count" p={win(f, b(47) + 6, b(52))} />
           <Plate x={540} text="C. 2000 · ABOUT 105 SQ KM · OUR COUNT" displayLines={['C. 2000 · ABOUT 105 SQ KM', 'OUR COUNT']} y={720} size={28} tone="count" p={win(f, b(52) + 2, b(26))} />
@@ -749,24 +756,56 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <defs>
           <linearGradient id="aerSky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#4A4664" /><stop offset="1" stopColor="#E9B49A" /></linearGradient>
+          <linearGradient id="aerIce" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#D9D4E6" /><stop offset="0.55" stopColor={NB.ice} /><stop offset="1" stopColor="#F8F2EE" /></linearGradient>
+          <linearGradient id="aerPlain" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#7A746E" /><stop offset="1" stopColor="#4E4842" /></linearGradient>
+          <clipPath id="aerLobe"><path d={lobe} /></clipPath>
         </defs>
-        <rect x={-60} y={-60} width={1200} height={760} fill="url(#aerSky)" />
-        <path d="M -60 640 L 100 520 L 220 590 L 380 470 L 540 560 L 700 450 L 880 560 L 1140 480 L 1140 720 L -60 720 Z" fill="#8E86A6" stroke={INK} strokeWidth={4} />
-        <path d="M 360 490 L 380 470 L 410 500 M 680 470 L 700 450 L 730 480" stroke="#F6C6C6" strokeWidth={6} fill="none" />
-        {/* the lobe in perspective, sun from upper left raking long crevasse shadows */}
-        <rect data-band="ok" x={-60} y={700} width={1200} height={1300} fill={NB.rock} />
-        {Array.from({length: 40}, (_, i) => <ellipse key={i} cx={h01(130, i) * 1100} cy={1250 + h01(131, i) * 700} rx={40 + 50 * h01(132, i)} ry={10 + 12 * h01(133, i)} fill={i % 2 ? NB.rockD : NB.tileD} opacity={0.5} data-band="ok" />)}
-        <path d={`M -60 700 L 1140 700 L 1140 900 C 960 ${cy - r1y - 30} 760 ${cy - r1y - 60} 540 ${cy - r1y - 46} C 320 ${cy - r1y - 60} 120 ${cy - r1y - 30} -60 900 Z`} fill={NB.ice} stroke={INK} strokeWidth={5} />
-        {[-260, -90, 90, 260].map((dx, i) => <path key={i} d={`M ${540 + dx * 0.5} 700 C ${540 + dx * 0.8} 800 ${540 + dx} 880 ${540 + dx * 1.05} ${cy - r1y - 50}`} stroke={NB.rockD} strokeWidth={9 + i % 2 * 4} fill="none" opacity={0.75} />)}
-        {Array.from({length: 14}, (_, i) => <path key={`c${i}`} d={`M ${20 + i * 80} ${740 + 40 * h01(134, i)} q 30 6 60 0`} stroke="#8C88A8" strokeWidth={4} fill="none" />)}
-        <path d={`M -60 ${880 + cloud * 0.3} q 300 -60 600 0 t 600 0 L 1140 ${960 + cloud * 0.3} L -60 ${960 + cloud * 0.3} Z`} fill="#000" opacity={0.08} />
-        <LakeFill cx={cx} cy={cy} rx={r1x} ry={r1y} seed={42} f={f} />
-        <path d={lakeBlob(cx, cy, r1x, r1y, 42)} fill="none" stroke={NB.lakeL} strokeWidth={30} opacity={fill * (0.3 + 0.15 * Math.sin(f / 6))} />
+        {/* far sky and a low range at the horizon, small with distance */}
+        <rect x={-60} y={-60} width={1200} height={HZ + 80} fill="url(#aerSky)" />
+        <path d={`M -60 ${HZ + 4} L 60 ${HZ - 40} L 150 ${HZ - 18} L 260 ${HZ - 62} L 380 ${HZ - 22} L 470 ${HZ - 48} L 600 ${HZ - 14} L 720 ${HZ - 58} L 860 ${HZ - 20} L 980 ${HZ - 44} L 1140 ${HZ - 8} L 1140 ${HZ + 20} L -60 ${HZ + 20} Z`} fill="#8E86A6" stroke={INK} strokeWidth={3} />
+        <path d={`M 230 ${HZ - 50} L 260 ${HZ - 62} L 290 ${HZ - 46} M 690 ${HZ - 46} L 720 ${HZ - 58} L 750 ${HZ - 44}`} stroke="#F6C6C6" strokeWidth={4} fill="none" />
+        {/* the outwash and the foothills either side of the lobe */}
+        <rect data-band="ok" x={-60} y={HZ + 10} width={1200} height={1600} fill="url(#aerPlain)" />
+        {Array.from({length: 10}, (_, i) => <path key={`fh${i}`} d={`M ${-60 + i * 130} ${HZ + 60 + i % 3 * 30} q 70 -26 140 0`} stroke="#5E5A56" strokeWidth={3} fill="none" opacity={0.6} />)}
+        {/* the lobe itself */}
+        <path d={lobe} fill="url(#aerIce)" stroke={INK} strokeWidth={5} />
+        <g clipPath="url(#aerLobe)">
+          {/* banded medial moraines converging on the neck */}
+          {[-0.55, -0.18, 0.26, 0.6].map((u, i) => {
+            const xb = 540 + u * 760, wig = (i % 2 ? 1 : -1) * (40 + 30 * i);
+            const pts = `M ${540 + u * 60} ${HZ} C ${540 + u * 160 + wig * 0.3} 520 ${540 + u * 300 - wig} 600 ${540 + u * 420} 680 S ${xb + wig} 840 ${xb} ${cy - r1y + 30}`;
+            return <g key={`m${i}`}><path d={pts} stroke={NB.rockD} strokeWidth={10 + 12 * i % 3} fill="none" opacity={0.8} strokeLinecap="round" /><path d={pts} stroke={NB.rock} strokeWidth={3 + 4 * (i % 2)} fill="none" opacity={0.9} strokeDasharray="22 9 6 12" strokeLinecap="round" /></g>;
+          })}
+          {/* crevasse bands, lit lip over a shadow face, tighter toward the neck */}
+          {Array.from({length: 11}, (_, r) => {
+            const yy = HZ + 30 + Math.pow(r / 10, 1.5) * (cy - r1y - 90 - HZ);
+            const half = 70 + (yy - HZ) * 0.95;
+            const n = 4 + Math.floor(r * 0.9);
+            return Array.from({length: n}, (_, j) => {
+              const x0 = 540 - half + (j + 0.5) * (2 * half / n) + 10 * h01(300 + r, j);
+              const len = 18 + r * 5;
+              const sag = 3 + r * 0.8;
+              return <g key={`c${r}-${j}`}><path d={`M ${x0 - len / 2} ${yy} q ${len / 2} ${sag} ${len} 0`} stroke="#9C98B8" strokeWidth={2 + r * 0.35} fill="none" /><path d={`M ${x0 - len / 2} ${yy - 1.5 - r * 0.2} q ${len / 2} ${sag} ${len} 0`} stroke="#FFFFFF" strokeWidth={1 + r * 0.15} fill="none" opacity={0.85} /></g>;
+            });
+          })}
+          {/* cloud shadows drifting down-valley */}
+          <ellipse cx={-300 + drift} cy={640} rx={260} ry={60} fill="#3A3650" opacity={0.16} />
+          <ellipse cx={-900 + drift} cy={820} rx={340} ry={80} fill="#3A3650" opacity={0.14} />
+        </g>
+        {/* the dark sediment rim where the snout meets the lake */}
+        <path d={`M -60 ${cy - r1y - 30} C 200 ${cy - r1y + 70} 880 ${cy - r1y + 70} 1140 ${cy - r1y - 30}`} stroke={NB.rockD} strokeWidth={14} fill="none" />
+        {/* the lake: the 2000 water, then the new water spreading outward to the 2020 line */}
+        <path d={lakeBlob(cx, cy, r1x, r1y, 42)} fill="none" stroke={NB.lakeD} strokeWidth={4} strokeDasharray="14 10" opacity={1 - fill} />
+        <LakeFill cx={cx} cy={cy} rx={r0x * k} ry={r0y * k} seed={42} f={f} />
+        {front > 0 && <path d={lakeBlob(cx, cy, r0x * k, r0y * k, 42)} fill="none" stroke={NB.lakeL} strokeWidth={10 + 6 * Math.sin(f / 2)} opacity={0.9} />}
+        <path d={lakeBlob(cx, cy, r1x, r1y, 42)} fill="none" stroke={NB.lakeL} strokeWidth={26} opacity={fill >= 1 ? 0.25 + 0.15 * Math.sin(f / 6) : 0} />
         <path d={lakeBlob(cx, cy, r0x, r0y, 42)} fill="none" stroke={NB.ultraL} strokeWidth={16} opacity={0.25 + 0.35 * inner} />
         <LakeOutline cx={cx} cy={cy} rx={r0x} ry={r0y} seed={42} p={1} width={8} />
-        <LakeOutline cx={cx} cy={cy} rx={r1x} ry={r1y} seed={42} p={1} width={8} />
+        <LakeOutline cx={cx} cy={cy} rx={r1x} ry={r1y} seed={42} p={fill} width={8} />
+        {/* small bergs calved off the snout drifting on the lake */}
+        {Array.from({length: 7}, (_, i) => <path key={`bg${i}`} d={`M ${cx - 220 + i * 70 + 6 * Math.sin(f / 30 + i)} ${cy - 60 + 30 * h01(310, i)} l 12 -6 l 10 4 l -4 8 z`} fill="#FFFFFF" stroke={INK} strokeWidth={2} />)}
         <NLab x={cx - 40} y={cy + 4} text="C. 2000" size={16} />
-        <NLab x={cx - r1x + 70} y={cy + r1y + 26} text="C. 2020" size={16} />
+        {fill > 0.85 && <NLab x={cx - (r0x + r1x) / 2 + 14} y={cy + 8} text="C. 2020" size={16} />}
         <HeldTravel f={f} x={140} y={900} w={800} h={360} mode="sweep" seed={101}><path d={lakeBlob(cx, cy, r1x, r1y, 42)} fill={NB.lake} opacity={0.02} /></HeldTravel>
         {flag > 0.01 && (
           <g transform={`translate(${cx + r1x - 30} ${cy + r1y + 6 - (1 - spring(flag)) * 600})`}>
@@ -775,7 +814,23 @@ const S10: React.FC<SceneProps> = ({p}) => {
             <path d={`M 0 -150 L 120 ${-130 + 6 * Math.sin(f / 6)} L 0 -104 Z`} fill={NB.cobalt} stroke={INK} strokeWidth={4} />
           </g>
         )}
-        <g data-band="ok">{Array.from({length: 16}, (_, i) => <ellipse key={i} cx={h01(120, i) * 1100} cy={1480 + h01(121, i) * 420} rx={24 + 24 * h01(122, i)} ry={10 + 6 * h01(123, i)} fill={i % 2 ? NB.gravel : '#9A928A'} stroke={INK} strokeWidth={2.5} />)}</g>
+        {/* braided meltwater channels running out of the lake across the outwash, wider as they near */}
+        <g data-band="ok">
+          {[[-0.35, 0], [0.05, 1], [0.4, 2]].map(([u, i]) => (
+            <path key={`br${i}`} d={`M ${cx + (u as number) * 300} ${cy + r1y - 6} C ${cx + (u as number) * 420 + 40} ${cy + 260} ${cx + (u as number) * 600 - 60} ${cy + 520} ${cx + (u as number) * 900} 1990`} stroke={NB.lakeD} strokeWidth={8 + 10 * (i as number)} fill="none" opacity={0.85} />
+          ))}
+          {[[-0.35, 0], [0.05, 1], [0.4, 2]].map(([u, i]) => (
+            <path key={`bs${i}`} d={`M ${cx + (u as number) * 300} ${cy + r1y - 6} C ${cx + (u as number) * 420 + 40} ${cy + 260} ${cx + (u as number) * 600 - 60} ${cy + 520} ${cx + (u as number) * 900} 1990`} stroke={NB.lakeL} strokeWidth={2 + 2 * (i as number)} fill="none" opacity={0.7} strokeDasharray={`${30 + 10 * (i as number)} 40`} strokeDashoffset={-f * (1.5 + (i as number) * 0.5)} />
+          ))}
+          {/* gravel bars, sized by distance: small near the lake, large at the bottom of frame */}
+          {Array.from({length: 34}, (_, i) => {
+            const v = h01(320, i);
+            const yy = cy + r1y + 30 + v * v * (1950 - cy - r1y - 30);
+            const s = 0.3 + 1.4 * v * v;
+            const xx = h01(321, i) * 1140 - 30;
+            return <g key={`st${i}`}><ellipse cx={xx + 6 * s} cy={yy + 5 * s} rx={22 * s} ry={8 * s} fill="#000" opacity={0.25} /><ellipse cx={xx} cy={yy} rx={20 * s} ry={11 * s} fill={i % 3 ? NB.gravel : '#9A928A'} stroke={INK} strokeWidth={1.5 + s} /><path d={`M ${xx - 12 * s} ${yy - 4 * s} q ${8 * s} ${-5 * s} ${18 * s} ${-2 * s}`} stroke="#C8C0B6" strokeWidth={1 + s} fill="none" /></g>;
+          })}
+        </g>
       </SVG>
     </Frame>
   );
@@ -804,7 +859,7 @@ const GlacierFront: React.FC<{f: number; x: number; y: number; w: number; lake: 
 );
 
 /** a glass water column on a stand: level 0..1 of `max` cm, ticks every 10 cm, its label above */
-const WaterTube: React.FC<{f: number; x: number; y: number; h: number; level: number; max?: number; label: string}> = ({f, x, y, h, level, max = 70, label}) => {
+const WaterTube: React.FC<{f: number; x: number; y: number; h: number; level: number; max?: number; label: string; tickInk?: string}> = ({f, x, y, h, level, max = 70, label, tickInk = NB.vellumL}) => {
   const lv = clamp01(level);
   const fillH = h * lv;
   return (
@@ -814,7 +869,7 @@ const WaterTube: React.FC<{f: number; x: number; y: number; h: number; level: nu
       <rect x={-46} y={-20 - h} width={92} height={h} rx={10} fill={NB.vellumL} opacity={0.35} stroke={INK} strokeWidth={5} />
       <rect x={-40} y={-20 - fillH} width={80} height={fillH} fill={NB.lake} />
       {fillH > 4 && <path d={`M -40 ${-20 - fillH} q 20 ${4 * Math.sin(f / 5)} 40 0 t 40 0`} stroke={NB.lakeL} strokeWidth={4} fill="none" />}
-      {Array.from({length: Math.floor(max / 10) + 1}, (_, i) => <g key={i}><path d={`M 46 ${-20 - (h * i * 10) / max} l 14 0`} stroke={NB.vellumL} strokeWidth={3} /><text x={66} y={-14 - (h * i * 10) / max} fontFamily={MONO} fontWeight={800} fontSize={14} fill={NB.vellumL}>{i * 10}</text></g>)}
+      {Array.from({length: Math.floor(max / 10) + 1}, (_, i) => <g key={i}><path d={`M 46 ${-20 - (h * i * 10) / max} l 14 0`} stroke={tickInk} strokeWidth={3} /><text x={66} y={-14 - (h * i * 10) / max} fontFamily={MONO} fontWeight={800} fontSize={16} fill={tickInk}>{i * 10}</text></g>)}
       <path d={`M -30 ${-10 - h} L -30 -40`} stroke="#FFFFFF" strokeWidth={5} opacity={0.5} />
       <NLab x={0} y={-56 - h} text={label} size={18} />
     </g>
@@ -825,13 +880,13 @@ const WaterTube: React.FC<{f: number; x: number; y: number; h: number; level: nu
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const rise = ease(f, b(27) - 2, 22);
-  const l66 = lin(f, b(28) - 4, 30) * (66 / 70);
+  const l66 = lin(f, b(28) - 14, 30) * (66 / 70);
   const l40 = lin(f, b(29) - 2, 24) * (40 / 70);
   return (
     <Frame p={p} bg="#4A4664" z0={1.0} z1={1.05} warmth={0.01} overlay={<>
           <Plate x={540} text="THE CASE FOR YES" y={530} size={40} tone="dark" p={win(f, b(27) + 4)} />
           <Plate x={300} text="LAKE-ENDING · 66 CM A YEAR · ON AVERAGE" displayLines={['LAKE-ENDING · 66 CM', 'A YEAR · ON AVERAGE']} y={614} size={24} p={win(f, b(28) + 10)} />
-          <Plate x={790} text="ON LAND · 40 CM A YEAR" displayLines={['ON LAND · 40 CM', 'A YEAR']} y={722} size={24} p={win(f, b(29) + 6)} />
+          <Plate x={790} text="ON LAND · ABOUT 40 CM A YEAR" displayLines={['ON LAND · ABOUT 40 CM', 'A YEAR']} y={722} size={24} p={win(f, b(29) + 6)} />
         </>}>
       <SVG>
         <DawnWorld f={f} seed={11} />
@@ -844,8 +899,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 30}, (_, i) => <ellipse key={i} cx={h01(115, i) * 1100} cy={1180 + h01(116, i) * 700} rx={14 + 16 * h01(117, i)} ry={8 + 8 * h01(118, i)} fill={i % 2 ? NB.gravel : '#9A928A'} stroke={INK} strokeWidth={2.5} data-band="ok" />)}
         <HeldTravel f={f} x={180} y={760} w={720} h={500} mode="sweep" seed={111}>
           <g>
-            <WaterTube f={f} x={290} y={1300} h={420} level={l66} label="LAKE-ENDING" />
-            <WaterTube f={f} x={790} y={1300} h={420} level={l40} label="ON LAND" />
+            <WaterTube f={f} x={290} y={1300} h={420} level={l66} label="LAKE-ENDING" tickInk={INK} />
+            <WaterTube f={f} x={790} y={1300} h={420} level={l40} label="ON LAND" tickInk={INK} />
           </g>
         </HeldTravel>
         {/* the survey stake carrying a strip of the vellum's Gulf coast into the field */}
@@ -934,14 +989,14 @@ const S13: React.FC<SceneProps> = ({p}) => {
           <Plate x={540} text="MACHINE LEARNING · WEIGHS THE FACTORS" displayLines={['MACHINE LEARNING', 'WEIGHS THE FACTORS']} y={530} size={30} tone="dark" p={win(f, b(32) + 6, b(48))} />
           <Plate x={540} text="LAKE · CLIMATE · GLACIER SHAPE" y={650} size={30} tone="dark" p={win(f, b(48) + 4, b(53))} />
           <Plate x={540} text="LAKE-ENDING GLACIERS · WORLDWIDE" y={724} size={30} tone="dark" p={win(f, b(53) + 2, b(33))} />
-          <Plate x={240} text="LAKE ~11% · LAKE-ENDING GLACIERS · WORLDWIDE" displayLines={['LAKE ~11%', 'LAKE-ENDING GLACIERS', 'WORLDWIDE']} y={798} size={22} p={win(f, b(33) + 4)} />
+          <Plate x={272} text="LAKE ~11% · LAKE-ENDING GLACIERS · WORLDWIDE" displayLines={['LAKE ~11%', 'LAKE-ENDING · WORLDWIDE']} y={822} size={22} p={win(f, b(33) + 4)} />
           <Plate x={540} text="CLIMATE ~43%" y={940} size={22} p={win(f, b(34) + 4)} />
           <Plate x={800} text="GLACIER SHAPE ~46%" y={1006} size={22} p={win(f, b(35) + 4)} />
         </>}>
       <SVG>
         <Room f={f} tableY={1300} lamp={false} seed={13} />
         <rect data-band="ok" x={-60} y={-60} width={1200} height={2040} fill="#DCE0E8" opacity={0.14} style={{mixBlendMode: 'soft-light'}} />
-        <g transform="translate(190 1262)"><WaterTube f={f} x={0} y={0} h={200} level={66 / 70} label={f >= b(53) ? 'LAKE-ENDING · WORLDWIDE' : '66 CM · ALL FACTORS'} /></g>
+        <g transform="translate(190 1262)"><WaterTube f={f} x={0} y={0} h={200} level={66 / 70} label={f >= b(53) ? 'WORLDWIDE' : '66 CM · ALL'} /></g>
         <HeldTravel f={f} x={100} y={560} w={820} h={700} mode="sweep" seed={131}><g transform={`translate(0 ${(1 - lower) * -900})`}>
           <WeighRail f={f} x={500} y={1260} w={760} railY={-520} plate="">
             {[[-250, 11, b(33), 64, 'LAKE'], [0, 43, b(34), 124, 'CLIMATE'], [250, 46, b(35), 130, 'SHAPE']].map(([x, sh, bb, ww, lab], i) => (
@@ -971,7 +1026,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const fly = easeIO(f, b(37) + 2, 26);
   const landed = f >= b(37) + 28;
-  const sx = 600, sy = 860;
+  const sx = 600, sy = 1040;
   const turn = easeIO(f, 4, 20);
   return (
     <Frame p={p} bg="#4A4664" warmth={-0.02} cam={(ff) => ({z: 1.0 + 0.04 * easeIO(ff, 0, p.dur), fx: 560, fy: 980})} overlay={<>
@@ -997,7 +1052,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
           </g>
         </g>
         {fly > 0 && (
-          <g transform={`translate(${lerp(1120, sx, fly)} ${lerp(500, sy + 70, fly) + 60 * Math.sin(fly * Math.PI * 3)}) rotate(${(1 - fly) * 60 + (landed ? 3 * Math.sin(f / 9) : 0)})`}>
+          <g transform={`translate(${lerp(1120, sx, fly)} ${lerp(500, sy - 40, fly) + 60 * Math.sin(fly * Math.PI * 3)}) rotate(${(1 - fly) * 60 + (landed ? 3 * Math.sin(f / 9) : 0)})`}>
             <rect x={-70} y={-24} width={140} height={48} rx={6} fill={NB.vellumL} stroke={NB.cobalt} strokeWidth={4} />
             <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={NB.cobalt}>WHY?</text>
           </g>
@@ -1030,12 +1085,12 @@ const S15: React.FC<SceneProps> = ({p}) => {
           </g>
         </HeldTravel>
         <path d={`M ${edge} 480 L ${edge} 1320`} stroke={INK} strokeWidth={6} strokeDasharray="18 10" />
-        <NLab x={edge - 30} y={900} text="THE MAP ENDS · CIRCA 2020" size={18} rot={90} />
+        <NLab x={edge - 70} y={700} text="THE MAP ENDS · CIRCA 2020" size={18} rot={90} />
         <path d={`M 420 980 L ${Math.min(edge, nx)} 980`} stroke={NB.ultra} strokeWidth={6} strokeLinecap="round" />
         {stroke > 0.5 && <circle cx={edge + 70} cy={1000} r={6} fill={NB.ultra} />}
         <Nib f={f} x={nx + 40 * step} y={980 + 20 * step - 14 * Math.sin(stroke * Math.PI)} s={0.6} emotion={run >= 1 ? 'curious' : 'focused'} stroke={(run > 0 && run < 1) || (stroke > 0 && stroke < 1) ? 1 : 0} splay={run >= 1 ? 0.5 : 0} look={run >= 1 ? 0.3 : 0} lookY={run >= 1 ? 0.8 : 0} cues={[b(39), b(40)]} seed={7} ink={run >= 1 ? 0 : 1} />
-        {rest > 0.01 && <CheckHand f={f} x={lerp(1150, 990, rest)} y={lerp(1500, 1180, rest)} s={1.0} angle={-60} role="study" />}
-        {rest > 0.01 && <CheckHand f={f} x={lerp(1150, 1000, rest)} y={lerp(300, 760, rest)} s={1.0} angle={150} role="ours" />}
+        {rest > 0.01 && <CheckHand f={f} x={lerp(1150, 950, rest)} y={lerp(1500, 1200, rest)} s={1.0} angle={-60} role="study" />}
+        {rest > 0.01 && <CheckHand f={f} x={lerp(60, 210, rest)} y={lerp(1700, 1250, rest)} s={1.0} angle={200} role="ours" />}
       </SVG>
     </Frame>
   );
